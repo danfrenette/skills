@@ -19,6 +19,7 @@ The installer discovers the skills in this repository, lets you pick which to in
 | `commit-writer` | Generates conventional git commit messages from staged or unstaged changes. |
 | `sync-opencode-fork` | Rebases the OpenCode `dan-dev` fork onto V2, then production after release. |
 | `ticket-writer` | Turns requirements, bugs, chores, or diffs into Linear tickets. |
+| `yesterday` | Assembles an ephemeral standup update from the prior workday. |
 
 Each skill lives at `<skill-name>/SKILL.md`.
 
