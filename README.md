@@ -24,6 +24,7 @@ install, and prompts for a target agent (OpenCode supported).
 | `sync-opencode-fork` | Rebases the OpenCode `dan-dev` fork onto V2, then production after release. |
 | `ticket-writer` | Turns requirements, bugs, chores, or diffs into Linear tickets. |
 | `yesterday` | Assembles an ephemeral standup update from the prior workday. |
+| `today` | Assembles an ephemeral daily plan of to-dos, goals, and starting prompts. |
 
 Each skill lives at `<skill-name>/SKILL.md`.
 
