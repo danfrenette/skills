@@ -20,6 +20,7 @@ install, and prompts for a target agent (OpenCode supported).
 | Skill | Description |
 | --- | --- |
 | `commit-writer` | Generates conventional git commit messages from staged or unstaged changes. |
+| `morning` | Follows a Markdown morning checklist using existing scripts and skills. |
 | `slow-down` | Keeps agent edits sequential and explains how each one advances the session goal. |
 | `sync-opencode-fork` | Rebases the OpenCode `dan-dev` fork onto V2, then production after release. |
 | `ticket-writer` | Turns requirements, bugs, chores, or diffs into Linear tickets. |
