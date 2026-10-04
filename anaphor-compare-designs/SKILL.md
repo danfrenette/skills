@@ -15,14 +15,17 @@ Settle one implementation decision while preserving the accepted product behavio
    implementations.
 2. Define two or three alternatives that differ in a concrete constraint: where a decision belongs,
    what callers must know, or how failures propagate. Give every candidate the same requirements and
-   standards. Read installed `codebase-design` when interface or seam placement is the question.
+   standards. Read installed `codebase-design` and its `DESIGN-IT-TWICE.md` when interface or seam
+   placement is the question.
 3. Choose observable comparison criteria before generation: caller obligations, reachable failure
    cases, migration steps, and behavior-test results. Require standards and acceptance compliance
    from every candidate; alternatives cannot gain points by omitting requirements.
 4. Give each candidate a fresh context and the same baseline. For source-level designs, request
    interfaces, caller examples, and a traced scenario. Build the smallest experiment when source
-   reasoning cannot settle the question. Isolate writable experiments; obtain runtime resources
-   through project setup instructions only when needed.
+   reasoning cannot settle the question; read installed `prototype` for that disposable experiment.
+   Keep the accepted spec fixed and record the answer before returning to implementation. Isolate
+   writable experiments; obtain runtime resources through project setup instructions only when
+   needed.
 5. Inspect alternatives without sharing one candidate's rationale with another. Label results A/B/C
    and compare their evidence against the declared criteria. Resolve a factual disagreement with a
    test or source trace. Agreement alone does not select a winner.

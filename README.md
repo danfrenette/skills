@@ -48,7 +48,7 @@ The workflow is openly inspired by **Lauren Tan's pstack** and **Matt Pocock's s
 adaptations, and upstream license notices. The initial draft has not yet been validated through live
 implementation runs.
 
-## Maintaining this repository
+## Project dependencies
 
 [skills-lock.json](skills-lock.json) records the project-local external skills used to develop and
 review Anaphor. Restore them from this repository's root:
@@ -63,11 +63,11 @@ excludes locked dependencies there, so they are not republished as this reposito
 Commit the generated lock; keep local adaptations in the Anaphor references and profiles.
 
 The lock records sources and content hashes. With floating upstream references, restore can fetch
-newer content; inspect any resulting lock changes using [DAILY.md](DAILY.md). It is not a frozen
-package restore, and installing Anaphor elsewhere does not automatically install these dependencies.
+newer content; review resulting lock changes before adoption. It is not a frozen package restore,
+and installing Anaphor elsewhere does not automatically install these dependencies.
 
-`DAILY.md` defines staged update checks, compatibility review, validation, and reporting. It also
-tracks pstack and other guidance that is referenced rather than installed. Scheduling is separate.
+Management and review of this skillset belong to the external review mechanism. The source
+attribution records design provenance; this repository does not maintain an upstream-review loop.
 
 ## License
 

@@ -14,20 +14,23 @@ performance of an agent executing the workflow.
 - Runtime instructions contain no Marketfuel workspace commands, credentials, database names, Linear
   status IDs, model roster, or Cursor-specific orchestration API.
 
-## Dependency maintenance setup
+## Dependency setup
 
 On 2026-10-04, skills CLI 1.7.0 installed eight external disciplines into a temporary project and
 generated the root lock. The project copies and lock match that output byte-for-byte. `list --json`
 reports all eight as project-local; `add . --list` discovers only the 15 authored skills. Git and
-Prettier exclude downloaded dependencies. Authored Markdown formatting and maintenance file links
-pass their checks.
+Prettier exclude downloaded dependencies. Authored Markdown formatting and local file links pass
+their checks.
 
 The six Matt dependency hashes also match the CLI's folder-hash calculation. The Vercel snapshot
 entries use provider-returned hashes, which differ from a local folder hash; those entries retain
 the CLI's values. Verification of those copies establishes equality with the downloaded snapshot,
 not an independent match to its provider digest.
 
-The daily procedure has not yet been tested through an autonomous update/adaptation cycle.
+Matt's `handoff` was subsequently installed as the ninth dependency for user-requested session
+continuation. Dependency adaptations now live at their invocation sites. Upstream monitoring and
+maintenance instructions were removed in favor of external review. These routing changes still need
+live agent trials.
 
 ## Scenario walkthroughs
 
@@ -39,7 +42,7 @@ outcome are present; they do not demonstrate that an executing agent will follow
   **Expected route:** Carry confirmed test boundary into TDD; test public interface; create affected
   recipe; review; draft PR
 
-  **Written coverage:** Coordinator, dependencies, implementation, map creation, handoff
+  **Written coverage:** Coordinator delivery, implementation, and map creation
 
 - **Scenario:** Browser feature persists a change
 
@@ -52,7 +55,7 @@ outcome are present; they do not demonstrate that an executing agent will follow
 
   **Expected route:** Reuse confirmation; ask only for missing or materially changed boundaries
 
-  **Written coverage:** Dependencies: TDD composition
+  **Written coverage:** Implementation: TDD composition
 
 - **Scenario:** Implementation exposes a product ambiguity
 
@@ -71,7 +74,7 @@ outcome are present; they do not demonstrate that an executing agent will follow
 
   **Expected route:** Stop; report prerequisite and unverified criteria; no draft PR
 
-  **Written coverage:** Evidence: triage; handoff gate
+  **Written coverage:** Evidence: triage; coordinator delivery gate
 
 - **Scenario:** Browser reaches the app and finds broken behavior
 
@@ -122,13 +125,13 @@ outcome are present; they do not demonstrate that an executing agent will follow
   **Expected route:** Review document/links; retain test provenance and explain unchanged
   applicability
 
-  **Written coverage:** Handoff
+  **Written coverage:** Coordinator delivery
 
 - **Scenario:** Missing Matt TDD or code-review
 
   **Expected route:** Name dependency and leave dependent step incomplete; no silent replacement
 
-  **Written coverage:** Dependencies
+  **Written coverage:** Family setup instructions
 
 The walkthrough identified and tightened three draft rules: executed recipes must pass, unassessed
 required review passes prevent delivery, and unchanged creation-time recipe evidence can be reused

@@ -9,5 +9,3 @@ exceptions to the width limit, not reasons to leave ordinary prose unwrapped.
 
 Downloaded dependencies in `.agents/skills/` retain their upstream bytes and formatting. Manage them
 through the skills CLI; put local adaptations in Anaphor's integration references and profiles.
-
-For dependency and upstream-source maintenance, follow [DAILY.md](DAILY.md).

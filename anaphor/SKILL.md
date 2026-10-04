@@ -8,8 +8,8 @@ disable-model-invocation: true
 # Anaphor
 
 Own an accepted spec through implementation, verification, and a draft PR. Start after product
-discovery; a spec from Matt Pocock's `to-spec` is the expected input. Read
-[dependencies](references/dependencies.md) before dispatching work.
+discovery; an accepted spec from Matt Pocock's `to-spec` is the expected input. Its product
+synthesis and ticket-publication workflow stays upstream.
 
 ## 1. Establish the implementation brief
 
@@ -62,10 +62,25 @@ finding.
 
 ## 4. Deliver
 
-Follow [draft PR handoff](references/handoff.md): open a draft PR, then publish and link a durable
-Markdown walkthrough. Keep the PR in draft status for the user. Report the PR, walkthrough, tested
-revision, evidence, and any limitations.
+Push the verified branches and open draft PRs with the spec, scope, outcome, and verification
+evidence. Required blocked or unrun checks prevent this step. Link participating PRs and explain
+their dependency order. Reuse existing PRs if publication is interrupted.
+
+Use [anaphor-explain-change](../anaphor-explain-change/SKILL.md) to publish a durable walkthrough
+and link it from each PR. Review its final diff and links. For explanation-only commits, preserve
+the earlier test provenance and explain why it still applies; executable, configuration, or recipe
+changes return to affected review and verification. Confirm final heads and draft status. Report the
+PRs, walkthrough, implementation and final revisions, evidence, and limitations. Readiness, merge,
+and deployment remain separate user decisions.
 
 **Done:** the delivered revision is accounted for by review and verification, and every
 participating draft PR links the explanation. An unfinished required check or unpublished
 walkthrough keeps delivery open.
+
+## Continue in a fresh session
+
+When the user requests a session handoff, read Matt Pocock's installed `handoff` skill and use it to
+prepare the continuation document. Follow its temporary-file location and artifact-reference rules;
+point to the implementation brief, current revisions, verification receipts, remaining work, and the
+next applicable Anaphor skill. The continuation document does not satisfy draft-PR delivery or
+replace the published walkthrough.

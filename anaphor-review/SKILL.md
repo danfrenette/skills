@@ -7,10 +7,12 @@ description:
 
 # Anaphor: review
 
-Read Matt's `code-review` using the explicit
-[composition rules](../anaphor/references/dependencies.md), and
-[agent handoffs](../anaphor/references/agents.md) before dispatch. Review is read-only; findings
-return to the implementation owner.
+Read Matt Pocock's installed `code-review` and [agent handoffs](../anaphor/references/agents.md)
+before dispatch. Supply the accepted spec and original baseline directly; use tracker discovery only
+to retrieve missing requirements. Preserve its Standards/Spec separation and labelled smell
+heuristics, adding the Principles and triggered Execution/risk passes below. Use the host's agent
+mechanism and inherited model under the handoff rules. Review is read-only; findings return to the
+implementation owner.
 
 ## Pin the review
 

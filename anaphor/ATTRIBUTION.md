@@ -69,3 +69,10 @@ guidance, not bundled copies or independent delivery approvals.
 Upstream research is pinned so the rationale is inspectable. Installed discipline versions may
 differ: identify them when running and assess material differences explicitly. Future source updates
 should be deliberate reviews, not silent replacements of these policies.
+
+## Session continuation
+
+Matt Pocock's [handoff](https://github.com/mattpocock/skills/tree/main/skills/productivity/handoff)
+owns user-requested continuation documents. Inspected 2026-10-04 and installed through the project
+lock. Its temporary document references existing artifacts; Anaphor retains draft-PR delivery and
+the durable reviewer walkthrough as distinct outputs.

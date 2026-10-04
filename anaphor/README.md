@@ -32,14 +32,19 @@ they are installed together:
 
 - **`anaphor-explain-change`:** Write an evidence-linked Markdown walkthrough
 
-Install Matt Pocock's `tdd` and `code-review` separately through your harness's skill installation
-flow. Anaphor reads these installed disciplines rather than bundling copies. The Principles reviewer
-combines expandable local profiles with relevant skills and primary sources, recording what it uses.
-Optional references and explicit integration adaptations are documented in
-[dependencies](references/dependencies.md).
+Install Matt Pocock's `tdd` and `code-review` through your harness's skill installation flow;
+install `handoff` for user-requested session continuations. Resolve sibling skills relative to the
+installed family directory. If a required skill is missing, name it and its role and leave the
+dependent step incomplete. Installation is a separate action.
+
+Check authorship when another library exposes the same skill name. Record the installed source used
+for a run and surface material instruction conflicts. Integration adaptations live at their points
+of use: [implementation](references/implementation.md), [review](../anaphor-review/SKILL.md), and
+the coordinator's continuation branch. Optional source triggers live in the affected procedure and
+Principles profiles; load them only when that branch is reached.
 
 For development in this source repository, the root
-[maintenance setup](../README.md#maintaining-this-repository) restores the external skills from the
+[dependency setup](../README.md#project-dependencies) restores the external skills from the
 generated project lock. That lock does not create transitive installs for users of the family.
 
 The initial [Principles profiles](../anaphor-review/references/principles/README.md) cover
