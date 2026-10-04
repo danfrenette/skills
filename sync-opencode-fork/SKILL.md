@@ -8,8 +8,9 @@ description:
 
 # Sync OpenCode Fork
 
-Keep `fork/dan-dev` as the fork's patch stack over the correct upstream channel. Read
-[FORK.md](FORK.md) before rebasing so conflict resolutions preserve the fork's intent.
+Keep `fork/dan-dev` as the fork's patch stack over the correct upstream channel. Establish the
+fork's intent from its current patch stack, checkout instructions, and linked PR or issue sources
+before rebasing.
 
 ## Preconditions
 
@@ -58,9 +59,10 @@ release evidence are recorded.
 3. Rebase `dan-dev` onto the selected upstream ref.
 4. If conflicts occur, immediately invoke the installed `/resolving-merge-conflicts` skill. Do not
    resolve hunks through this skill.
-5. Give the conflict skill the merge goal: retain the behavior in [FORK.md](FORK.md) on current
-   upstream architecture without inventing new behavior. Provide the old fork SHA, old merge-base,
-   selected base SHA, conflicted paths, fork commit messages, and relevant PR or Linear sources.
+5. Give the conflict skill the merge goal: retain the behavior established from the fork patches and
+   their sources on current upstream architecture without inventing new behavior. Provide the old
+   fork SHA, old merge-base, selected base SHA, conflicted paths, fork commit messages, and relevant
+   PR or Linear sources.
 6. Let `/resolving-merge-conflicts` inspect primary sources, resolve every hunk, run its discovered
    checks, and continue until the entire rebase finishes. Resume this workflow at verification only
    after it returns.
