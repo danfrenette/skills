@@ -1,8 +1,8 @@
 # Anaphor: agreed workflow
 
 Agreed 2026-10-04. This brief records the decisions from the design discussion; it is not an
-installed skill. The executable draft starts at [anaphor](../anaphor/SKILL.md). Source research and
-pinned upstream references are in [the research note](research/software-factory-sources.md).
+installed skill. The executable draft starts at [anaphor](../anaphor/SKILL.md). Source attribution and
+pinned upstream references are in [the attribution note](../anaphor/ATTRIBUTION.md).
 
 ## Entry and ownership
 
