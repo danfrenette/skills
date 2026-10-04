@@ -163,12 +163,13 @@ UI progressive-disclosure routes were also traced on 2026-10-04:
 - Ruby service or Node utility: owning language only; no UI craft or Refactoring UI.
 - React data-fetching refactor with unchanged presentation: frontend performance checks; no visual
   profile unless tracing reveals a user-facing change.
-- Rails form validation feedback: frontend and UI craft; Emil forms and accessibility branches.
+- Rails form validation feedback: frontend and UI craft; Jakub accessibility and writing branches.
   Refactoring UI loads only if the changed feedback also affects visual hierarchy or layout.
 - CSS-only spacing or typography change: Principles remains triggered; UI craft and Refactoring UI
   apply even without a language-code change.
 - Keyboard-only handler fix: interface/accessibility review; no Refactoring UI visual-design load.
-- Missing Emil specialist: local checks with an explicit expansion limit, not fabricated coverage.
+- Missing selected UI specialist: local checks with an explicit expansion limit, not fabricated
+  coverage.
 - Missing rendered evidence for a visual judgment: pending verification, not a claimed visual pass.
 
 These routes have not yet been validated by observing an agent's actual source-loading behavior.
@@ -182,3 +183,11 @@ Compare fresh same-model review contexts with a single-context baseline on equiv
 Evaluate missed criteria, reproduced defects, unsupported claims, and time spent. Where an
 instruction's value is uncertain, repeat the scenario with and without it. This draft makes no
 measured claim about perspective diversity or reliability.
+
+## Locked UI source routing
+
+Eight official UI dependencies were added on 2026-10-04: two from Emil and six from Jakub. The lock
+now contains 17 skills. Source routing was traced for motion-only, typography-only, copy-only, and
+backend-only changes: each UI case selects its concern-specific guidance, while backend-only work
+loads none. The broad Jakub orchestration wrappers remain outside the factory review flow. These are
+instruction traces, not observed live review runs.

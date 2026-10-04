@@ -6,26 +6,34 @@ internal data-loading refactor with unchanged presentation stays in the frontend
 
 ## Choose the guidance
 
-Read the installed `emil-ui-review` for its review method. Resolve skills by name through the host;
-record the actual source path and revision or access date. These references target the Emil skill
-collection supplied by the user; names alone do not establish upstream authorship or availability.
+Select from the project-locked sources below. Resolve skills through the host and record the actual
+source and revision or access date. Installation makes guidance available; it does not load every
+skill into every review. Select only the branches affected by the change:
 
-Load a specialist only when its concern changed or a concrete finding needs its detail:
+- Interaction feedback, component behavior, or polish requiring design-engineering judgment: Emil
+  Kowalski's `emil-design-eng`. Read the sections for that concern rather than expanding its entire
+  set of topics into the review brief.
+- Transitions, gestures, entry/exit behavior, or motion preferences: Emil's `review-animations`.
+  Load its `STANDARDS.md` only when a finding needs a precise value or citation.
+- Layout, spacing, grouping, or responsive ordering: Jakub Krehel's `better-layout`.
+- Font metrics, wrapping, reading density, or numeric alignment: `better-typography`.
+- Palette, theme, semantic color tokens, or contrast: `better-colors`.
+- Focus, keyboard/touch use, accessible semantics, or form accessibility: `better-accessibility`.
+- User-facing labels, instructions, error messages, or empty-state wording: `better-writing`.
+- Surfaces, icons, optical alignment, loading states, or layout stability: `better-ui`. Follow its
+  supporting-file pointers only for affected concerns; its animation guidance need not repeat a
+  completed `review-animations` pass.
 
-- Layout, spacing, or visual priority: `emil-design-foundations`.
-- Font metrics, wrapping, reading density, or numeric alignment: `emil-typography`.
-- Palette, theme, or color contrast: `emil-color`.
-- Elevation, borders, radii, or layered surfaces: `emil-surfaces`.
-- Transitions, entry/exit behavior, gestures, or motion preferences: `emil-animations`.
-- Form controls, validation, or submission feedback: `emil-forms-and-inputs`.
-- Focus, input modality, target size, or accessible semantics: `emil-touch-and-accessibility`.
-- Shared component interfaces or composition: `emil-component-design`.
-- Paint, scrolling, large collections, or interaction latency: `emil-performance`.
-- Layout stability, loading/empty states, or detailed interaction feedback: `emil-ui-polish`.
+These names refer to `emilkowalski/skills` and `jakubkrehel/skills`, as recorded by the lock. The
+previous user-supplied `emil-*` collection is not an alias for those public skill names. Vercel's
+framework/performance guidance remains in the frontend profile. Use the local checks below when an
+optional source is missing, disclosing any material coverage limit.
 
-Follow `emil-ui-review`'s `STANDARDS.md` pointer only when a finding requires an exact threshold.
-Avoid broad umbrella skills that recursively load the collection. If a selected skill is absent,
-apply the local checks below and disclose the missing expansion under the profile procedure.
+Anaphor owns review scope, dispatch, and the final finding disposition. Do not invoke Jakub's
+`better-interface` or `interface-review` wrappers as an additional orchestration layer. Supply a
+specific diff and question when reading Emil's skills so their no-question greeting branch does not
+interrupt the review. Treat building/fixing instructions as recommendations in this read-only pass;
+return changes to the implementation owner.
 
 For changed visual hierarchy, spacing/grouping, typography, color emphasis, or data presentation,
 also read [Refactoring UI](refactoring-ui.md). A keyboard handler fix or invisible performance
@@ -47,7 +55,8 @@ change does not need that visual-design section.
    assigning severity. Author taste is not automatically a standards violation.
 5. Preserve source anchors, then report through Anaphor's finding fields and dispositions. An
    external "Ship it" verdict cannot bypass verification or change draft-PR delivery. Deduplicate
-   overlapping Vercel, Emil, and Refactoring UI observations; multiple sources are not extra votes.
+   overlapping Vercel, Emil, Jakub, and Refactoring UI observations; multiple sources are not extra
+   votes.
 
 **Example:** a changed error banner pushes the focused field below the viewport and gives no route
 back to it. Show the rendered state, affected field, and recovery cost; propose a scoped correction.
@@ -55,6 +64,10 @@ back to it. Show the rendered state, affected field, and recovery cost; propose 
 **Counterexample:** the existing design system uses restrained square corners. A rounder style in an
 external example does not justify replacing those tokens.
 
-Source method inspected 2026-10-04: user-supplied `emil-ui-review/SKILL.md`. Specialist rules remain
-owned by their installed skills and are read only on the branches above. Missing skills are optional
-expansions, not reasons to claim their rules were applied.
+Official skill definitions inspected 2026-10-04:
+[Emil Kowalski](https://github.com/emilkowalski/skills) and
+[Jakub Krehel](https://github.com/jakubkrehel/skills). The skills own their detailed rules; this
+profile owns selection and composition. Preserve their requested finding fields, adding Anaphor's
+evidence and disposition fields. For stored Markdown, use labelled entries when a source's table
+format would exceed the project's width rule. External approval or severity labels do not replace
+Anaphor's consequence-based judgment or verification gate.

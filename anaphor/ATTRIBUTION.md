@@ -44,12 +44,16 @@ The Vercel skills are optional referenced sources, not bundled copies. Local pro
 triggers, evidence requirements, and applicability limits so the review can expand beyond a bare
 skill invocation. Author heuristics remain distinct from mandatory repository rules.
 
-UI craft review also references the user-supplied Emil skill collection, with concern-specific
-loading and explicit reporting adaptations in the
-[UI craft profile](../anaphor-review/references/principles/ui-craft.md). Visual-design checks draw
-on Adam Wathan and Steve Schoger's public Refactoring UI material, linked in its
-[conditional profile](../anaphor-review/references/principles/refactoring-ui.md). These sources are
-guidance, not bundled copies or independent delivery approvals.
+UI craft review references selected official skills from
+[Emil Kowalski](https://github.com/emilkowalski/skills) and
+[Jakub Krehel](https://github.com/jakubkrehel/skills), installed through the project lock. The
+[UI craft profile](../anaphor-review/references/principles/ui-craft.md) owns concern-specific
+selection and read-only reporting adaptations. This replaces runtime references to the earlier
+user-supplied Emil collection; its writing guidance remains an authoring influence.
+
+Visual-design checks draw on Adam Wathan and Steve Schoger's public Refactoring UI material, linked
+in its [conditional profile](../anaphor-review/references/principles/refactoring-ui.md). These
+sources are guidance, not bundled copies or independent delivery approvals.
 
 ## Deliberate Anaphor choices
 
