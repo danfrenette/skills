@@ -34,19 +34,110 @@ for a target agent (OpenCode supported).
 
 Each skill lives at `<skill-name>/SKILL.md`.
 
-## Anaphor (draft)
+## Anaphor
 
-[Anaphor](anaphor/README.md) takes an accepted product spec through implementation, layered review,
-tests and real user-flow verification, then delivers a draft PR with a linked walkthrough. Workspace
-provisioning stays in project-local instructions.
+Anaphor is a software-delivery workflow for agents. Give it an accepted product spec and a working
+repository; it implements the change, reviews it from separate perspectives, verifies real behavior,
+and delivers a draft PR with a linked explanation.
 
-Install the eight `anaphor` / `anaphor-*` skills together, plus Matt Pocock's `tdd` and
-`code-review`. The [family guide](anaphor/README.md) lists their roles and dependencies.
+Product decisions stay in the accepted spec. Workspace provisioning stays in the project's own
+instructions. The workflow uses the host's tools and selected model, with parallel workers where
+available and sequential review passes when capacity is limited.
 
-The workflow is openly inspired by **Lauren Tan's pstack** and **Matt Pocock's skills**.
-[Attribution](anaphor/ATTRIBUTION.md) records the source revisions, influences, deliberate
-adaptations, and upstream license notices. The initial draft has not yet been validated through live
-implementation runs.
+### Install the family
+
+Install all eight skills together so their sibling references resolve:
+
+```bash
+npx skills@latest add danfrenette/skills --skill \
+  anaphor anaphor-compare-designs anaphor-implement-slices anaphor-review \
+  anaphor-verify anaphor-create-feature-map anaphor-audit-feature-map \
+  anaphor-explain-change
+npx skills@latest add mattpocock/skills --skill tdd code-review handoff
+```
+
+Choose your target agent and installation scope when prompted. The first command installs from the
+repository's default branch; to try unmerged work, install from that branch's GitHub URL instead.
+The [family guide](anaphor/README.md) explains source resolution and conditional dependencies.
+
+### Start a run
+
+Invoke `anaphor` explicitly with a spec path or issue reference and the owning repository paths. For
+example, in a harness with skill mentions:
+
+```text
+$anaphor Implement docs/specs/saved-searches.md in this repository.
+Use the testing boundaries already agreed in the spec and the setup instructions in AGENTS.md.
+```
+
+A spec from Matt Pocock's `to-spec` is the expected input. Include accepted behavior and confirmed
+test boundaries; the workflow does not repeat product discovery. Missing product decisions pause the
+affected work while independent work can continue.
+
+### How work moves through the factory
+
+1. Establish observable acceptance criteria, repository baselines, testing boundaries, and
+   verification routes.
+2. Implement the smallest verifiable change with TDD, or organize larger work into dependent slices.
+   Compare alternatives when an implementation decision remains unresolved.
+3. Review the complete change through Standards, Spec, and Principles. Add execution, security,
+   concurrency, migration, and performance passes when their triggers apply.
+4. Run repository checks and real user flows. Update affected feature-map recipes and execute them
+   against the delivered behavior.
+5. Open draft PRs and publish a durable walkthrough connecting behavior, decisions, code, and
+   verification evidence. Ready-for-review, merge, and deployment remain user decisions.
+
+Required verification cannot be replaced with reviewer agreement. Product failures return to
+implementation. If a required browser or environment prerequisite remains unavailable after one safe
+recovery attempt, the run stops and reports the block before PR delivery.
+
+### The skills
+
+- **[anaphor](anaphor/SKILL.md):** Own the accepted spec through verified delivery.
+- **[anaphor-compare-designs](anaphor-compare-designs/SKILL.md):** Explore alternatives with
+  distinct goals and compare their constraints, callers, tradeoffs, and evidence.
+- **[anaphor-implement-slices](anaphor-implement-slices/SKILL.md):** Sequence dependent slices and
+  verify the integrated result before dispatching dependent work.
+- **[anaphor-review](anaphor-review/SKILL.md):** Run separate review perspectives with sourced
+  language and interface guidance.
+- **[anaphor-verify](anaphor-verify/SKILL.md):** Execute tests and real flows, retain evidence, and
+  distinguish defects from unavailable prerequisites.
+- **[anaphor-create-feature-map](anaphor-create-feature-map/SKILL.md):** Add missing verification
+  recipes for affected behavior and prove they work.
+- **[anaphor-audit-feature-map](anaphor-audit-feature-map/SKILL.md):** Audit an entire existing map
+  when broader coverage is explicitly needed.
+- **[anaphor-explain-change](anaphor-explain-change/SKILL.md):** Produce an evidence-linked reviewer
+  walkthrough, using diagrams or other assets when they clarify the change.
+
+### Review guidance loads by concern
+
+The Principles reviewer selects language profiles from changed behavior. Ruby/Rails draws on
+thoughtbot and Sandi Metz; JavaScript/TypeScript draws on Kent C. Dodds and Matt Pocock. Frontend
+changes can add Vercel guidance. UI concerns select Emil Kowalski and Jakub Krehel skills, with
+Refactoring UI for visual hierarchy and layout. Motion reaches component recipes and interruption
+checks only when relevant. The local `emil-unslop-code` lens can also apply outside UI.
+
+The [Principles profiles](anaphor-review/references/principles/README.md) own these triggers and
+source-specific adaptations. Installed dependencies are available references, not instructions to
+load every skill into every review. Optional local Emil skills must be installed separately on each
+machine; the public dependency lock does not reproduce that collection.
+
+### Project setup and ongoing use
+
+Point project instructions to the existing environment setup, test commands, browser access, and
+feature maps. Anaphor uses those procedures without requiring a particular tracker, database,
+package manager, or model roster. Matt's `handoff` handles user-requested continuation in a fresh
+session; it does not replace the published PR walkthrough.
+
+For frequent development, keep a Git checkout on each machine and link the eight Anaphor directories
+into that harness's supported skill directory. Pulling the checkout then updates those links. Copy
+installations need an explicit update or reinstall; the source checkout alone does not update them.
+External and user-supplied skills have their own installation lifecycle.
+
+Anaphor is inspired by **Lauren Tan's pstack** and **Matt Pocock's skills**.
+[Attribution](anaphor/ATTRIBUTION.md) records sources, deliberate adaptations, and license notices.
+Structural checks have passed; end-to-end agent reliability has not yet been established through
+live implementation trials. Change-specific verification belongs in the PR that introduces it.
 
 ## Project dependencies
 

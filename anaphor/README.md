@@ -1,6 +1,6 @@
 # Anaphor
 
-Anaphor is a draft software-delivery workflow: take an accepted spec, implement it in verifiable
+Anaphor is a software-delivery workflow: take an accepted spec, implement it in verifiable
 increments, review it from separate perspectives, and deliver a draft PR with a linked explanation.
 
 It is inspired by **Lauren Tan's pstack** and **Matt Pocock's skills**. Pstack informs
@@ -47,10 +47,10 @@ For development in this source repository, the root
 [dependency setup](../README.md#project-dependencies) restores the external skills from the
 generated project lock. That lock does not create transitive installs for users of the family.
 
-The initial [Principles profiles](../anaphor-review/references/principles/README.md) cover
-Ruby/Rails through thoughtbot and Sandi Metz, JavaScript/TypeScript through Kent C. Dodds and Matt
-Pocock, and frontend concerns through Vercel. Add concrete checks, examples, exceptions, and sources
-within those profiles; the coordinator does not need another phase for each language.
+The [Principles profiles](../anaphor-review/references/principles/README.md) cover Ruby/Rails
+through thoughtbot and Sandi Metz, JavaScript/TypeScript through Kent C. Dodds and Matt Pocock, and
+frontend concerns through Vercel. Add concrete checks, examples, exceptions, and sources within
+those profiles; the coordinator does not need another phase for each language.
 
 Invoke `anaphor` with the accepted spec and working repository or repositories. Include the testing
 decisions already confirmed during `to-spec`. The coordinator is intended for explicit invocation;
@@ -75,8 +75,8 @@ Anaphor stops on unresolved required verification prerequisites after one safe d
 attempt. Product failures return to implementation. Successful delivery ends at draft PRs and a
 linked walkthrough; readiness, merge, and deployment remain subsequent decisions.
 
-## Draft status
+## Validation scope
 
-These files are an initial draft, not a proven automation. Structural checks and scenario
-walkthroughs are recorded in [validation notes](VALIDATION.md). Live trials must establish that the
-instructions produce the intended behavior before treating the workflow as validated.
+Structural checks have passed; end-to-end reliability has not yet been established through live
+implementation trials. Each change's verification evidence belongs in its PR. The root
+[usage guide](../README.md#anaphor) describes installation, invocation, and the delivery lifecycle.

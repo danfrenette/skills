@@ -1,8 +1,8 @@
 # Attribution
 
 Anaphor's architecture and instructions are informed by upstream skill collections, the engineering
-sources below, and an earlier project-specific implementation workflow. This draft is an adaptation,
-not an official distribution or endorsement of those sources.
+sources below, and an earlier project-specific implementation workflow. This workflow is an
+adaptation, not an official distribution or endorsement of those sources.
 
 ## Lauren Tan's pstack
 
@@ -28,8 +28,8 @@ not an official distribution or endorsement of those sources.
 
 ## Writing guidance
 
-The draft was written using **Emil Kowalski's `emil-writing-skills`** as supplied for this work, and
-Matt Pocock's **`writing-for-agents`**: concrete decision procedures, observable completion
+The workflow was written using **Emil Kowalski's `emil-writing-skills`** as supplied for this work,
+and Matt Pocock's **`writing-for-agents`**: concrete decision procedures, observable completion
 criteria, reasons for non-obvious rules, and references disclosed at the branch that needs them.
 These are authoring influences, not additional runtime dependencies.
 
