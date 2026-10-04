@@ -48,8 +48,11 @@ UI craft review references selected official skills from
 [Emil Kowalski](https://github.com/emilkowalski/skills) and
 [Jakub Krehel](https://github.com/jakubkrehel/skills), installed through the project lock. The
 [UI craft profile](../anaphor-review/references/principles/ui-craft.md) owns concern-specific
-selection and read-only reporting adaptations. This replaces runtime references to the earlier
-user-supplied Emil collection; its writing guidance remains an authoring influence.
+selection and read-only reporting adaptations. The conditional
+[motion profile](../anaphor-review/references/principles/motion.md) also uses the user-supplied
+`emil-animations` collection's recipes and techniques when available, recording the loaded source.
+That local collection is distinct from the public packages tracked in the lock; its writing guidance
+also remains an authoring influence.
 
 Visual-design checks draw on Adam Wathan and Steve Schoger's public Refactoring UI material, linked
 in its [conditional profile](../anaphor-review/references/principles/refactoring-ui.md). These
@@ -80,3 +83,8 @@ Matt Pocock's [handoff](https://github.com/mattpocock/skills/tree/main/skills/pr
 owns user-requested continuation documents. Inspected 2026-10-04 and installed through the project
 lock. Its temporary document references existing artifacts; Anaphor retains draft-PR delivery and
 the durable reviewer walkthrough as distinct outputs.
+
+The local collection additionally supplies `emil-ui-review`, `emil-design-foundations`,
+`emil-color`, `emil-typography`, and `emil-performance` through UI-specific triggers.
+`emil-unslop-code` supplies a cross-language cleanup lens adapted to read-only findings. Resolve
+these user-provided sources through the host; they are not claimed as public lockfile entries.

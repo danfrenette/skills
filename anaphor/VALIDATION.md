@@ -191,3 +191,11 @@ now contains 17 skills. Source routing was traced for motion-only, typography-on
 backend-only changes: each UI case selects its concern-specific guidance, while backend-only work
 loads none. The broad Jakub orchestration wrappers remain outside the factory review flow. These are
 instruction traces, not observed live review runs.
+
+## Deeper local Emil routing
+
+Instruction traces cover a reversible drawer reaching motion interruption and its component recipe;
+a color-only change reaching color guidance without motion; typography loading its matching
+reference; and agent-written backend code reaching `emil-unslop-code` without UI guidance. Source
+conflicts and missing rendered evidence remain explicit. These additions have not been exercised in
+a live product review.

@@ -6,6 +6,10 @@ internal data-loading refactor with unchanged presentation stays in the frontend
 
 ## Choose the guidance
 
+For changed user-facing surfaces, read local `emil-ui-review` for its craft review method. Load its
+`STANDARDS.md` only when a finding needs an exact threshold. Keep Anaphor's scope and evidence
+rules.
+
 Select from the project-locked sources below. Resolve skills through the host and record the actual
 source and revision or access date. Installation makes guidance available; it does not load every
 skill into every review. Select only the branches affected by the change:
@@ -13,8 +17,9 @@ skill into every review. Select only the branches affected by the change:
 - Interaction feedback, component behavior, or polish requiring design-engineering judgment: Emil
   Kowalski's `emil-design-eng`. Read the sections for that concern rather than expanding its entire
   set of topics into the review brief.
-- Transitions, gestures, entry/exit behavior, or motion preferences: Emil's `review-animations`.
-  Load its `STANDARDS.md` only when a finding needs a precise value or citation.
+- Transitions, gestures, entry/exit behavior, or motion preferences: the [motion review](motion.md)
+  branch selects `review-animations` and the deeper local `emil-animations` recipes and techniques
+  by concern.
 - Layout, spacing, grouping, or responsive ordering: Jakub Krehel's `better-layout`.
 - Font metrics, wrapping, reading density, or numeric alignment: `better-typography`.
 - Palette, theme, semantic color tokens, or contrast: `better-colors`.
@@ -25,9 +30,10 @@ skill into every review. Select only the branches affected by the change:
   completed `review-animations` pass.
 
 These names refer to `emilkowalski/skills` and `jakubkrehel/skills`, as recorded by the lock. The
-previous user-supplied `emil-*` collection is not an alias for those public skill names. Vercel's
-framework/performance guidance remains in the frontend profile. Use the local checks below when an
-optional source is missing, disclosing any material coverage limit.
+user-supplied `emil-*` collection is a separate source, loaded where a branch explicitly names it.
+It is not an alias for those public skill names. Vercel's framework/performance guidance remains in
+the frontend profile. Use the local checks below when an optional source is missing, disclosing any
+material coverage limit.
 
 Anaphor owns review scope, dispatch, and the final finding disposition. Do not invoke Jakub's
 `better-interface` or `interface-review` wrappers as an additional orchestration layer. Supply a
@@ -38,6 +44,27 @@ return changes to the implementation owner.
 For changed visual hierarchy, spacing/grouping, typography, color emphasis, or data presentation,
 also read [Refactoring UI](refactoring-ui.md). A keyboard handler fix or invisible performance
 change does not need that visual-design section.
+
+## Deeper local specialists
+
+Load these when their concern changes or an unresolved finding needs detail, not merely because the
+UI method mentions their names:
+
+- Visual hierarchy, action priority, grouping, or density: `emil-design-foundations`. Load its
+  icon/illustration reference only when those assets or their presentation change.
+- Palette derivation, tonal ramps, conversion, gamut, or contrast: `emil-color`. Select its
+  conversion, scales, contrast, or gamut reference for that question. Check rendered pairs against
+  the project's accessibility standard; lightness heuristics alone are not proof.
+- Font capabilities, rhythm, wrapping, truncation, or text rendering: `emil-typography`. Select the
+  matching reference; load its Tailwind mapping only when the project uses Tailwind.
+- Rendering cost, large collections, asset loading, frame updates, layout shift, or off-screen work:
+  `emil-performance`. Require relevant workload evidence for performance claims; inspect generated
+  CSS and framework versions instead of assuming a utility's expansion.
+
+Reconcile overlap with Jakub and Vercel by root cause. Keep project tokens, browser support, and
+explicit product decisions ahead of source defaults. Review does not authorize palette migrations,
+new styling systems, or full-surface redesigns. Missing local sources follow the same disclosed
+coverage limits as the other optional guidance.
 
 ## Local checks and reporting adaptations
 

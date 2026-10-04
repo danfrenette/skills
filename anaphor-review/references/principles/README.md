@@ -33,6 +33,14 @@ Mark presentation-only work with no language concern accordingly; do not invent 
 
 ## Apply the checks
 
+When reviewing agent-written code, or when the diff contains redundant scaffolding, silent
+fallbacks, type escapes, or comments that obscure intent, read installed `emil-unslop-code` as a
+cross-language Principles reference. It is not gated on UI. Adapt its cleanup procedure to read-only
+findings: identify the concrete cost and recommend the smallest fix to the implementation owner.
+Preserve deliberate error recovery, compatibility contracts, and tests. Do not infer authorship from
+style or report "looks AI-generated" as the consequence. Route reachable defects to their owning
+pass without duplicate findings.
+
 1. Read the selected profile's local checks. They are the maintained review baseline, including
    Anaphor-specific examples and exceptions; a skill reference does not replace them.
 2. Load relevant installed skills at the profile's stated trigger. Read the particular supporting
