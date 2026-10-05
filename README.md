@@ -21,6 +21,9 @@ for a target agent (OpenCode supported).
 
 - **`morning`:** Follows a Markdown morning checklist using existing scripts and skills.
 
+- **`periodic-work`:** Runs daily, weekly, or monthly project instructions from an editable
+  registry, with one subagent per project.
+
 - **`slow-down`:** Keeps agent edits sequential and explains how each one advances the session goal.
 
 - **`sync-opencode-fork`:** Rebases the OpenCode `dan-dev` fork onto V2, then production after

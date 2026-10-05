@@ -1,0 +1,9 @@
+# Add projects using the shape below; replace the empty list when ready.
+# Cadences are a comma-separated string: daily, weekly, monthly.
+projects: []
+
+# projects:
+#   - directory: ~/code/project-a
+#     cadences: daily, weekly
+#   - directory: ~/code/project-b
+#     cadences: daily, monthly
