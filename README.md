@@ -156,6 +156,11 @@ The CLI installs into `.agents/skills/`, which is ignored by Git and Prettier. I
 excludes locked dependencies there, so they are not republished as this repository's own skills.
 Commit the generated lock; keep local adaptations in the Anaphor references and profiles.
 
+The repository also includes Matt Pocock's upstream `retro` and its `writing-for-agents` dependency
+for explicitly requested retrospectives on skill-development sessions. Supply session evidence and,
+when relevant, Anaphor's implementation brief and verification receipts. This is a repository
+development tool, not a required phase or transitive dependency of the Anaphor family.
+
 The lock records sources and content hashes. With floating upstream references, restore can fetch
 newer content; review resulting lock changes before adoption. It is not a frozen package restore,
 and installing Anaphor elsewhere does not automatically install these dependencies.
