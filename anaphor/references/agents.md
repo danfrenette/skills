@@ -14,6 +14,10 @@ Before dispatch, give each worker:
 - Required return: changes or findings, revision, commands/actions actually run, evidence locations,
   and unresolved gaps.
 
+Link shared specs, research notes, and evidence instead of copying their contents into every
+message. Keep the assigned role, write boundaries, and completion requirements explicit in the
+handoff, and confirm each worker can access the referenced artifacts.
+
 Fresh reviewers receive the requirements and source facts before the builder's rationale or another
 reviewer's verdict, to reduce anchoring. Reviewers can read files and run nonmutating checks; one
 verifier owns any shared app session or mutable test data.

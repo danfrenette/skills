@@ -26,6 +26,22 @@ adaptation, not an official distribution or endorsement of those sources.
   progressive disclosure from `writing-for-agents`.
 - Applicable license notice: [Matt Pocock MIT license](licenses/matt-pocock-MIT.txt).
 
+The slice executor additionally adapts `implement-spec` from this revision, inspected 2026-10-06:
+reuse of ticket dependencies, shared exploration pointers, worker branch provenance, serialized
+integration, and owned-worktree cleanup. Anaphor retains optional tickets and parallelism,
+verification before releasing dependents, and draft-only PR delivery. Integration checks the current
+tip because a worker's earlier synchronization cannot guarantee a later fast-forward merge.
+
+The explanation skill adapts the same revision's
+[`pr`](https://github.com/mattpocock/skills/blob/24fe0ef7737efae15c87225755e9f6f5965e4888/skills/engineering/pr/SKILL.md),
+inspected 2026-10-06, for content composition: question-led visuals, before/after evidence, and
+concrete reversibility and affected-scope explanations. Its visual vocabulary credits Dex Horthy's
+[`show-me`](https://github.com/humanlayer/skills/blob/main/plugins/show-me/skills/show-me/SKILL.md)
+at Humanlayer. Anaphor uses these ideas to organize detailed walkthroughs with multiple diagrams and
+measured graphs; the short PR body remains an entry point. Generated explanations retain Anaphor's
+revision-bound evidence and publishing requirements. `pr` is a design source, not a new runtime
+dependency.
+
 ## Writing guidance
 
 The workflow was written using **Emil Kowalski's `emil-writing-skills`** as supplied for this work,
