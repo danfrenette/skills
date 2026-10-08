@@ -26,7 +26,10 @@ provisioning; this skill owns execution and observed results.
    flow with agent-browser or Playwright; read the installed tool's instructions for current
    commands. For a CLI, service, or library, exercise its public command, request, or interface.
    Record a required unavailable tool as a prerequisite failure, not a reason to substitute a weaker
-   surface.
+   surface. Use an isolated browser/context for implementation checks and repeatable tests. Reserve
+   the user's browser session for references or flows that require its authentication or existing
+   state. If a shared session changes unexpectedly or a tool stalls, preserve evidence and move to
+   the isolated harness rather than repeatedly competing for the same browser.
 
 ## Execute and observe
 

@@ -16,7 +16,10 @@ Settle one implementation decision while preserving the accepted product behavio
 2. Define two or three alternatives that differ in a concrete constraint: where a decision belongs,
    what callers must know, or how failures propagate. Give every candidate the same requirements and
    standards. Read installed `codebase-design` and its `DESIGN-IT-TWICE.md` when interface or seam
-   placement is the question.
+   placement is the question. For library choices, inspect existing dependencies and compare an
+   explicit shortlist against the required behavior using current official documentation or source.
+   Include a user-mentioned candidate; distinguish wrappers from their underlying engines. State
+   which candidates were actually reviewed and separate adoption evidence from preference claims.
 3. Choose observable comparison criteria before generation: caller obligations, reachable failure
    cases, migration steps, and behavior-test results. Require standards and acceptance compliance
    from every candidate; alternatives cannot gain points by omitting requirements.
