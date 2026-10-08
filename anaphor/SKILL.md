@@ -18,6 +18,11 @@ feature-map entries. Record the spec source, observable criteria, confirmed test
 repositories, baseline commits, working paths, and setup/verification pointers in one brief.
 Preserve the spec's requirement identifiers, or assign stable identifiers when absent.
 
+Keep exploratory research and comparison notes in scratch files or linked workspace/project
+resources. Put useful rationale and source links in the PR description; commit research documents
+only when the user explicitly requests them. Durable product/API documentation, verification
+recipes, and the required delivery walkthrough retain their existing publication rules.
+
 Inspect local changes before choosing the working baseline. Reuse the supplied checkout and
 environment when they meet the task's needs. Provisioning belongs to the project's setup procedure;
 execution may run documented launch and readiness checks. Report unavailable prerequisites instead
@@ -31,6 +36,9 @@ Continue independent work while that answer is pending.
 test boundaries are known. Missing product decisions remain explicit dependencies.
 
 ## 2. Execute
+
+When implementation or prototyping uses a supplied visual reference, first follow
+[reference inspection](references/visual-references.md).
 
 Choose the smallest applicable path:
 
