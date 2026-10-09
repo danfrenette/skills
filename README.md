@@ -19,15 +19,10 @@ for a target agent (OpenCode supported).
 
 - **`commit-writer`:** Generates conventional git commit messages from staged or unstaged changes.
 
-- **`morning`:** Follows a Markdown morning checklist using existing scripts and skills.
-
 - **`periodic-work`:** Runs daily, weekly, or monthly project instructions from an editable
   registry, with one subagent per project.
 
 - **`slow-down`:** Keeps agent edits sequential and explains how each one advances the session goal.
-
-- **`sync-opencode-fork`:** Rebases the OpenCode `dan-dev` fork onto V2, then production after
-  release.
 
 - **`ticket-writer`:** Turns requirements, bugs, chores, or diffs into Linear tickets.
 
@@ -35,7 +30,8 @@ for a target agent (OpenCode supported).
 
 - **`today`:** Assembles an ephemeral daily plan of to-dos, goals, and starting prompts.
 
-Each skill lives at `<skill-name>/SKILL.md`.
+These standalone skills live at `<skill-name>/SKILL.md`. The Anaphor family lives under
+`skills/software-factory/`, with each skill at `skills/software-factory/<skill-name>/SKILL.md`.
 
 ## Anaphor
 
@@ -61,7 +57,8 @@ npx skills@latest add mattpocock/skills --skill tdd code-review handoff
 
 Choose your target agent and installation scope when prompted. The first command installs from the
 repository's default branch; to try unmerged work, install from that branch's GitHub URL instead.
-The [family guide](anaphor/README.md) explains source resolution and conditional dependencies.
+The [family guide](skills/software-factory/anaphor/README.md) explains source resolution and
+conditional dependencies.
 
 ### Start a run
 
@@ -96,21 +93,30 @@ recovery attempt, the run stops and reports the block before PR delivery.
 
 ### The skills
 
-- **[anaphor](anaphor/SKILL.md):** Own the accepted spec through verified delivery.
-- **[anaphor-compare-designs](anaphor-compare-designs/SKILL.md):** Explore alternatives with
+- **[anaphor][anaphor]:** Own the accepted spec through verified delivery.
+- **[anaphor-compare-designs][compare-designs]:** Explore alternatives with
   distinct goals and compare their constraints, callers, tradeoffs, and evidence.
-- **[anaphor-implement-slices](anaphor-implement-slices/SKILL.md):** Sequence dependent slices and
+- **[anaphor-implement-slices][implement-slices]:** Sequence dependent slices and
   verify the integrated result before dispatching dependent work.
-- **[anaphor-review](anaphor-review/SKILL.md):** Run separate review perspectives with sourced
+- **[anaphor-review][review]:** Run separate review perspectives with sourced
   language and interface guidance.
-- **[anaphor-verify](anaphor-verify/SKILL.md):** Execute tests and real flows, retain evidence, and
+- **[anaphor-verify][verify]:** Execute tests and real flows, retain evidence, and
   distinguish defects from unavailable prerequisites.
-- **[anaphor-create-feature-map](anaphor-create-feature-map/SKILL.md):** Add missing verification
+- **[anaphor-create-feature-map][create-feature-map]:** Add missing verification
   recipes for affected behavior and prove they work.
-- **[anaphor-audit-feature-map](anaphor-audit-feature-map/SKILL.md):** Audit an entire existing map
+- **[anaphor-audit-feature-map][audit-feature-map]:** Audit an entire existing map
   when broader coverage is explicitly needed.
-- **[anaphor-explain-change](anaphor-explain-change/SKILL.md):** Produce an evidence-linked reviewer
+- **[anaphor-explain-change][explain-change]:** Produce an evidence-linked reviewer
   walkthrough, using diagrams or other assets when they clarify the change.
+
+[anaphor]: skills/software-factory/anaphor/SKILL.md
+[compare-designs]: skills/software-factory/anaphor-compare-designs/SKILL.md
+[implement-slices]: skills/software-factory/anaphor-implement-slices/SKILL.md
+[review]: skills/software-factory/anaphor-review/SKILL.md
+[verify]: skills/software-factory/anaphor-verify/SKILL.md
+[create-feature-map]: skills/software-factory/anaphor-create-feature-map/SKILL.md
+[audit-feature-map]: skills/software-factory/anaphor-audit-feature-map/SKILL.md
+[explain-change]: skills/software-factory/anaphor-explain-change/SKILL.md
 
 ### Review guidance loads by concern
 
@@ -120,10 +126,12 @@ changes can add Vercel guidance. UI concerns select Emil Kowalski and Jakub Kreh
 Refactoring UI for visual hierarchy and layout. Motion reaches component recipes and interruption
 checks only when relevant. The local `emil-unslop-code` lens can also apply outside UI.
 
-The [Principles profiles](anaphor-review/references/principles/README.md) own these triggers and
+The [Principles profiles][principles-profiles] own these triggers and
 source-specific adaptations. Installed dependencies are available references, not instructions to
 load every skill into every review. Optional local Emil skills must be installed separately on each
 machine; the public dependency lock does not reproduce that collection.
+
+[principles-profiles]: skills/software-factory/anaphor-review/references/principles/README.md
 
 ### Project setup and ongoing use
 
@@ -138,7 +146,8 @@ installations need an explicit update or reinstall; the source checkout alone do
 External and user-supplied skills have their own installation lifecycle.
 
 Anaphor is inspired by **Lauren Tan's pstack** and **Matt Pocock's skills**.
-[Attribution](anaphor/ATTRIBUTION.md) records sources, deliberate adaptations, and license notices.
+[Attribution](skills/software-factory/anaphor/ATTRIBUTION.md) records sources, deliberate
+adaptations, and license notices.
 Structural checks have passed; end-to-end agent reliability has not yet been established through
 live implementation trials. Change-specific verification belongs in the PR that introduces it.
 
