@@ -10,7 +10,9 @@ description:
 
 Explain an existing implementation for a reviewer. Read the accepted spec, participating PRs or
 diffs, relevant surrounding code, and verification receipts. This operation explains evidence; it
-does not certify unrun checks.
+does not certify unrun checks. Before writing, read Matt Pocock's installed writing-for-agents
+skill. Use it to organize the explanation and links; use the project's glossary for domain terms.
+If that dependency is missing, report it before drafting rather than substitute a local style guide.
 
 1. Pin the implementation revisions and identify the participating repositories. Confirm ambiguous
    PR membership before including it. Distinguish accepted intent, observed implementation, supplied
