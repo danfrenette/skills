@@ -52,3 +52,7 @@ provisioning; this skill owns execution and observed results.
 recipes are current and executed, required checks pass, and evidence identifies the tested contents.
 Failed product checks return to implementation; unresolved required prerequisites stop the run.
 Full-map auditing is a separate [audit](../anaphor-audit-feature-map/SKILL.md).
+
+After integrated verification in an Anaphor run, the coordinator calls
+[anaphor-reconcile](../anaphor-reconcile/SKILL.md) for affected project records. Standalone
+verification returns evidence for that step; it does not silently publish product or tracker edits.

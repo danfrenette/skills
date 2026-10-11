@@ -11,7 +11,7 @@ notices.
 
 ## Install and use
 
-Select all eight Anaphor skills when installing from this repository. Their sibling links assume
+Select all nine Anaphor skills when installing from this repository. Their sibling links assume
 they are installed together:
 
 - **`anaphor`:** Coordinate an accepted spec through a draft PR and walkthrough
@@ -32,8 +32,11 @@ they are installed together:
 
 - **`anaphor-explain-change`:** Write an evidence-linked Markdown walkthrough
 
-Install Matt Pocock's `tdd` and `code-review` through your harness's skill installation flow;
-install `handoff` for user-requested session continuations. Resolve sibling skills relative to the
+- **`anaphor-reconcile`:** Update affected product, domain, setup, and tracker records
+
+Install Matt Pocock's `tdd`, `code-review`, and `writing-for-agents` through your harness's skill
+installation flow; add `domain-modeling` for terminology/decision reconciliation and `handoff` for
+user-requested session continuations. Resolve sibling skills relative to the
 installed family directory. If a required skill is missing, name it and its role and leave the
 dependent step incomplete. Installation is a separate action.
 

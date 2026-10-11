@@ -60,7 +60,17 @@ exact result may be reused with their provenance; rerun checks affected by fixes
 repository checks pass, and all triggered review passes are assessed with no unresolved blocking
 finding.
 
-## 4. Deliver
+## 4. Reconcile project records
+
+Use [anaphor-reconcile](../anaphor-reconcile/SKILL.md) after integrated verification to update
+affected product, domain, setup, and tracker records. Link the existing spec and receipts; keep
+accepted intent separate from verified and deployed behavior. Review the documentation diff.
+Changes to executable instructions or recipes return to affected review and verification.
+
+**Done:** each affected authoritative record is updated, unchanged with a reason, or explicitly
+blocked. A required unresolved record keeps delivery open.
+
+## 5. Deliver
 
 Push the verified branches and open draft PRs with the spec, scope, outcome, and verification
 evidence. Required blocked or unrun checks prevent this step. Link participating PRs and explain
@@ -71,7 +81,8 @@ and link it from each PR. Review its final diff and links. For explanation-only 
 the earlier test provenance and explain why it still applies; executable, configuration, or recipe
 changes return to affected review and verification. Confirm final heads and draft status. Report the
 PRs, walkthrough, implementation and final revisions, evidence, and limitations. Readiness, merge,
-and deployment remain separate user decisions.
+and deployment remain separate user decisions. Reconcile affected delivery links and status after
+publication; opening a draft PR does not establish deployed behavior.
 
 **Done:** the delivered revision is accounted for by review and verification, and every
 participating draft PR links the explanation. An unfinished required check or unpublished
