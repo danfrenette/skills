@@ -45,14 +45,15 @@ available and sequential review passes when capacity is limited.
 
 ### Install the family
 
-Install all eight skills together so their sibling references resolve:
+Install all nine skills together so their sibling references resolve:
 
 ```bash
 npx skills@latest add danfrenette/skills --skill \
   anaphor anaphor-compare-designs anaphor-implement-slices anaphor-review \
   anaphor-verify anaphor-create-feature-map anaphor-audit-feature-map \
-  anaphor-explain-change
-npx skills@latest add mattpocock/skills --skill tdd code-review handoff
+  anaphor-explain-change anaphor-reconcile
+npx skills@latest add mattpocock/skills --skill \
+  tdd code-review handoff writing-for-agents domain-modeling
 ```
 
 Choose your target agent and installation scope when prompted. The first command installs from the
@@ -84,7 +85,8 @@ affected work while independent work can continue.
    concurrency, migration, and performance passes when their triggers apply.
 4. Run repository checks and real user flows. Update affected feature-map recipes and execute them
    against the delivered behavior.
-5. Open draft PRs and publish a durable walkthrough connecting behavior, decisions, code, and
+5. Reconcile affected product, domain, setup, and tracker records against decisions and evidence.
+6. Open draft PRs and publish a durable walkthrough connecting behavior, decisions, code, and
    verification evidence. Ready-for-review, merge, and deployment remain user decisions.
 
 Required verification cannot be replaced with reviewer agreement. Product failures return to
@@ -109,6 +111,10 @@ recovery attempt, the run stops and reports the block before PR delivery.
 - **[anaphor-explain-change][explain-change]:** Produce an evidence-linked reviewer
   walkthrough, using diagrams or other assets when they clarify the change.
 
+- **[anaphor-reconcile][reconcile]:** Update affected project records after accepted decisions or
+  verification, using clear human-facing language and linked evidence.
+
+[reconcile]: skills/software-factory/anaphor-reconcile/SKILL.md
 [anaphor]: skills/software-factory/anaphor/SKILL.md
 [compare-designs]: skills/software-factory/anaphor-compare-designs/SKILL.md
 [implement-slices]: skills/software-factory/anaphor-implement-slices/SKILL.md
@@ -140,7 +146,7 @@ feature maps. Anaphor uses those procedures without requiring a particular track
 package manager, or model roster. Matt's `handoff` handles user-requested continuation in a fresh
 session; it does not replace the published PR walkthrough.
 
-For frequent development, keep a Git checkout on each machine and link the eight Anaphor directories
+For frequent development, keep a Git checkout on each machine and link the nine Anaphor directories
 into that harness's supported skill directory. Pulling the checkout then updates those links. Copy
 installations need an explicit update or reinstall; the source checkout alone does not update them.
 External and user-supplied skills have their own installation lifecycle.
