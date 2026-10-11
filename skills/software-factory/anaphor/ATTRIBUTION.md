@@ -104,3 +104,14 @@ The local collection additionally supplies `emil-ui-review`, `emil-design-founda
 `emil-color`, `emil-typography`, and `emil-performance` through UI-specific triggers.
 `emil-unslop-code` supplies a cross-language cleanup lens adapted to read-only findings. Resolve
 these user-provided sources through the host; they are not claimed as public lockfile entries.
+
+## Project-record reconciliation
+
+The reconciliation procedure uses Matt Pocock's `writing-for-agents` as its primary writing
+discipline and `domain-modeling` when terms or decisions change. Resolve installed dependencies
+through the host; this repository records their sources and content hashes in `skills-lock.json`.
+
+Lauren Tan's pstack
+[maintain-verification-skill](https://github.com/cursor/plugins/tree/main/pstack/skills/maintain-verification-skill)
+informs the distinction between documentation drift and product regression. It remains an authoring
+influence, not an additional runtime dependency. Existing MIT notices remain applicable.
