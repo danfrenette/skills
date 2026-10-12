@@ -11,8 +11,8 @@ notices.
 
 ## Install and use
 
-Select all nine Anaphor skills when installing from this repository. Their sibling links assume
-they are installed together:
+Select all nine Anaphor skills when installing from this repository. Their sibling links assume they
+are installed together:
 
 - **`anaphor`:** Coordinate an accepted spec through a draft PR and walkthrough
 
@@ -26,9 +26,11 @@ they are installed together:
 
 - **`anaphor-verify`:** Run tests and real flows; maintain affected feature recipes
 
-- **`anaphor-create-feature-map`:** Create missing project-local recipes and prove them
+- **`anaphor-create-feature-map`:** Create missing project-local recipes and prove them for affected
+  behavior or explicitly requested project bootstrap
 
-- **`anaphor-audit-feature-map`:** Check an entire existing map against source and live behavior
+- **`anaphor-audit-feature-map`:** Check an entire existing map against source and live behavior and
+  publish proven corrections when maintenance is requested
 
 - **`anaphor-explain-change`:** Write an evidence-linked Markdown walkthrough
 
@@ -36,9 +38,9 @@ they are installed together:
 
 Install Matt Pocock's `tdd`, `code-review`, and `writing-for-agents` through your harness's skill
 installation flow; add `domain-modeling` for terminology/decision reconciliation and `handoff` for
-user-requested session continuations. Resolve sibling skills relative to the
-installed family directory. If a required skill is missing, name it and its role and leave the
-dependent step incomplete. Installation is a separate action.
+user-requested session continuations. Resolve sibling skills relative to the installed family
+directory. If a required skill is missing, name it and its role and leave the dependent step
+incomplete. Installation is a separate action.
 
 Check authorship when another library exposes the same skill name. Record the installed source used
 for a run and surface material instruction conflicts. Integration adaptations live at their points
@@ -73,6 +75,13 @@ tracker, database, package manager, or directory topology.
 Keep feature maps in their owning repositories. Extend existing maps and harnesses. If a map is
 missing, create coverage for the affected feature and execute that recipe; whole-app audits are an
 explicit separate operation.
+
+For project onboarding, request the creation skill's
+[bootstrap branch](../anaphor-create-feature-map/references/bootstrap.md). For periodic upkeep,
+request the audit skill's
+[maintenance branch](../anaphor-audit-feature-map/references/maintenance.md) with its named target
+and publication authorization. Project periodic instructions and the host scheduler own recurrence
+and shared-resource overlap; these branches add no phase to ordinary spec delivery.
 
 Anaphor stops on unresolved required verification prerequisites after one safe documented recovery
 attempt. Product failures return to implementation. Successful delivery ends at draft PRs and a
