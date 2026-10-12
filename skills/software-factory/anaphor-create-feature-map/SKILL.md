@@ -2,7 +2,7 @@
 name: anaphor-create-feature-map
 description:
   Create or extend project-local verification recipes when changed behavior lacks a feature map or
-  repeatable coverage.
+  repeatable coverage, or bootstrap verification for an explicitly requested project onboarding.
 ---
 
 # Anaphor: create a feature map
@@ -11,9 +11,13 @@ Write a recipe a fresh agent can execute without the originating conversation. R
 [recipe format](references/recipe.md). Keep setup facts in project-owned instructions and map
 entries in the owning repository.
 
+For explicitly requested project onboarding, first select scope with
+[bootstrap](references/bootstrap.md), then execute the procedure below for those features. Ordinary
+delivery selects only affected behavior.
+
 1. Inspect the affected routes, commands, interfaces, tests, and documented launch procedure.
-   Identify the changed outcome, its entry points and roles, data prerequisites, and observable
-   effects. Scope automatic creation to the affected feature; whole-app discovery is separate work.
+   Identify each selected outcome, its entry points and roles, data prerequisites, and observable
+   effects.
 2. Find the existing project verification skill or map through repository instructions. Extend that
    location. If absent, use the repository's configured local-skill directory for
    `verify-<app>/SKILL.md`, `features/README.md`, and feature files. When no local-skill discovery
@@ -23,7 +27,7 @@ entries in the owning repository.
 3. Write launch, doctor, drive, evidence, and cleanup instructions from inspected commands and real
    handles. Link authoritative setup instructions instead of reproducing provisioning steps. For a
    generated local skill, include a name and description identifying its app, surface, and trigger.
-4. Write one recipe per affected feature using the shared format. Index the entries and coverage
+4. Write one recipe per selected feature using the shared format. Index the entries and coverage
    limits. A library feature can be an executable public-interface test; browser instructions are
    required only for browser behavior.
 5. Run every new or changed recipe through launch, doctor, drive, capture, and cleanup. Apply

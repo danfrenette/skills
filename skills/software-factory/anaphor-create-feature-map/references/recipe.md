@@ -29,6 +29,9 @@ The local guide supplies:
 4. **Evidence:** artifact location and links to receipts, retaining failed attempts.
 5. **Cleanup:** exact owned resources to stop/remove, preserving evidence.
 
+Owned harness helpers must be executable where required, with their invocation documented in the
+guide. Prove them through the recipes that use them.
+
 Discover commands and selectors from the project; ship no unresolved placeholders or
 machine-specific generated URLs. Prefer a pointer to maintained commands over a cached copy of
 package configuration. Keep the feature index linked to every recipe and label known coverage gaps.

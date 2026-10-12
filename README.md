@@ -96,20 +96,21 @@ recovery attempt, the run stops and reports the block before PR delivery.
 ### The skills
 
 - **[anaphor][anaphor]:** Own the accepted spec through verified delivery.
-- **[anaphor-compare-designs][compare-designs]:** Explore alternatives with
-  distinct goals and compare their constraints, callers, tradeoffs, and evidence.
-- **[anaphor-implement-slices][implement-slices]:** Sequence dependent slices and
-  verify the integrated result before dispatching dependent work.
-- **[anaphor-review][review]:** Run separate review perspectives with sourced
-  language and interface guidance.
-- **[anaphor-verify][verify]:** Execute tests and real flows, retain evidence, and
-  distinguish defects from unavailable prerequisites.
-- **[anaphor-create-feature-map][create-feature-map]:** Add missing verification
-  recipes for affected behavior and prove they work.
-- **[anaphor-audit-feature-map][audit-feature-map]:** Audit an entire existing map
-  when broader coverage is explicitly needed.
-- **[anaphor-explain-change][explain-change]:** Produce an evidence-linked reviewer
-  walkthrough, using diagrams or other assets when they clarify the change.
+- **[anaphor-compare-designs][compare-designs]:** Explore alternatives with distinct goals and
+  compare their constraints, callers, tradeoffs, and evidence.
+- **[anaphor-implement-slices][implement-slices]:** Sequence dependent slices and verify the
+  integrated result before dispatching dependent work.
+- **[anaphor-review][review]:** Run separate review perspectives with sourced language and interface
+  guidance.
+- **[anaphor-verify][verify]:** Execute tests and real flows, retain evidence, and distinguish
+  defects from unavailable prerequisites.
+- **[anaphor-create-feature-map][create-feature-map]:** Add missing verification recipes for
+  affected behavior, or bootstrap an explicitly requested project's initial coverage, and prove they
+  work.
+- **[anaphor-audit-feature-map][audit-feature-map]:** Audit an entire existing map when broader
+  coverage is explicitly needed; maintenance mode delivers proven corrections in one draft PR.
+- **[anaphor-explain-change][explain-change]:** Produce an evidence-linked reviewer walkthrough,
+  using diagrams or other assets when they clarify the change.
 
 - **[anaphor-reconcile][reconcile]:** Update affected project records after accepted decisions or
   verification, using clear human-facing language and linked evidence.
@@ -132,10 +133,10 @@ changes can add Vercel guidance. UI concerns select Emil Kowalski and Jakub Kreh
 Refactoring UI for visual hierarchy and layout. Motion reaches component recipes and interruption
 checks only when relevant. The local `emil-unslop-code` lens can also apply outside UI.
 
-The [Principles profiles][principles-profiles] own these triggers and
-source-specific adaptations. Installed dependencies are available references, not instructions to
-load every skill into every review. Optional local Emil skills must be installed separately on each
-machine; the public dependency lock does not reproduce that collection.
+The [Principles profiles][principles-profiles] own these triggers and source-specific adaptations.
+Installed dependencies are available references, not instructions to load every skill into every
+review. Optional local Emil skills must be installed separately on each machine; the public
+dependency lock does not reproduce that collection.
 
 [principles-profiles]: skills/software-factory/anaphor-review/references/principles/README.md
 
@@ -146,6 +147,13 @@ feature maps. Anaphor uses those procedures without requiring a particular track
 package manager, or model roster. Matt's `handoff` handles user-requested continuation in a fresh
 session; it does not replace the published PR walkthrough.
 
+For project onboarding, explicitly request `anaphor-create-feature-map` bootstrap with the owning
+repository and desired coverage. Between delivery runs, use `anaphor-audit-feature-map` maintenance
+mode. Its [maintenance contract][maintenance] defines run inputs, publication authorization, and
+project-owned periodic instructions. Ordinary spec delivery continues to verify affected behavior.
+
+[maintenance]: skills/software-factory/anaphor-audit-feature-map/references/maintenance.md
+
 For frequent development, keep a Git checkout on each machine and link the nine Anaphor directories
 into that harness's supported skill directory. Pulling the checkout then updates those links. Copy
 installations need an explicit update or reinstall; the source checkout alone does not update them.
@@ -153,9 +161,9 @@ External and user-supplied skills have their own installation lifecycle.
 
 Anaphor is inspired by **Lauren Tan's pstack** and **Matt Pocock's skills**.
 [Attribution](skills/software-factory/anaphor/ATTRIBUTION.md) records sources, deliberate
-adaptations, and license notices.
-Structural checks have passed; end-to-end agent reliability has not yet been established through
-live implementation trials. Change-specific verification belongs in the PR that introduces it.
+adaptations, and license notices. Structural checks have passed; end-to-end agent reliability has
+not yet been established through live implementation trials. Change-specific verification belongs in
+the PR that introduces it.
 
 ## Project dependencies
 
