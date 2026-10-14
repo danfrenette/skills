@@ -25,7 +25,10 @@ The local guide supplies:
 1. **Launch:** documented command and readiness signal, with the identity of the process started by
    this run. A one-shot command or library test needs no persistent server.
 2. **Doctor:** read-only confirmation of target revision/build, health, access, and required state.
-3. **Drive:** chosen harness and how feature entries use it.
+3. **Drive:** the project's designated harness and how feature entries use it. Keep the existing
+   browser tool; when none is designated, use agent-browser and its installed instructions. Link the
+   project's login preflight for flows requiring authentication, then prove each feature's own
+   outcome. Non-browser surfaces use their public interface.
 4. **Evidence:** artifact location and links to receipts, retaining failed attempts.
 5. **Cleanup:** exact owned resources to stop/remove, preserving evidence.
 

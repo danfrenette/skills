@@ -24,16 +24,25 @@ only when the user explicitly requests them. Durable product/API documentation, 
 recipes, and the required delivery walkthrough retain their existing publication rules.
 
 Inspect local changes before choosing the working baseline. Reuse the supplied checkout and
-environment when they meet the task's needs. Provisioning belongs to the project's setup procedure;
-execution may run documented launch and readiness checks. Report unavailable prerequisites instead
-of inventing infrastructure.
+environment when they meet the task's needs. Read the project's setup handoff and confirm its
+readiness evidence covers the accepted spec's required services, access, data, and test tools.
+Record working paths and revisions, runtime targets, resource ownership, observed checks, and
+evidence pointers in the brief. Reuse applicable evidence; run the documented launch and readiness
+checks for missing or changed prerequisites before starting implementation or dispatching workers.
+Readiness establishes a usable environment; criterion verification still follows implementation.
+
+Provisioning belongs to the project's setup procedure. Return missing infrastructure, credentials,
+or data provisioning to that owner and keep implementation blocked until the required readiness
+checks pass. Product decisions made after setup may introduce new prerequisites; check those against
+the accepted spec rather than treating an earlier setup result as sufficient for every task.
 
 Resolve code-level choices from the spec and repository evidence. When a choice changes product
 behavior beyond those decisions, pause the affected work and ask the user the concrete question.
 Continue independent work while that answer is pending.
 
 **Done:** every criterion has an owning surface and verification route; the baseline and confirmed
-test boundaries are known. Missing product decisions remain explicit dependencies.
+test boundaries are known, and required workspace readiness has observed evidence. Missing product
+decisions remain explicit dependencies.
 
 ## 2. Execute
 
@@ -72,8 +81,8 @@ finding.
 
 Use [anaphor-reconcile](../anaphor-reconcile/SKILL.md) after integrated verification to update
 affected product, domain, setup, and tracker records. Link the existing spec and receipts; keep
-accepted intent separate from verified and deployed behavior. Review the documentation diff.
-Changes to executable instructions or recipes return to affected review and verification.
+accepted intent separate from verified and deployed behavior. Review the documentation diff. Changes
+to executable instructions or recipes return to affected review and verification.
 
 **Done:** each affected authoritative record is updated, unchanged with a reason, or explicitly
 blocked. A required unresolved record keeps delivery open.
