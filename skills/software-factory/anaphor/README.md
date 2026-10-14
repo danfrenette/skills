@@ -69,8 +69,20 @@ Parallel capacity is optional; fresh contexts preserve role separation when work
 ## Project integration
 
 Project instructions should point to their own setup and verification procedures. Anaphor can use a
-supplied environment without knowing how it was provisioned. It does not require a particular issue
-tracker, database, package manager, or directory topology.
+supplied environment without knowing how it was provisioned. Its implementation brief checks the
+project's readiness evidence against the accepted spec before implementation begins. It does not
+require a particular issue tracker, database, package manager, or directory topology.
+
+Start with the project's setup procedure for workspace readiness, then use Matt Pocock's
+product-decision skills to establish the accepted spec and testing decisions. Hand that spec and the
+ready workspace to Anaphor. Any prerequisites introduced during product decisions return to the
+workspace setup owner before implementation.
+
+Anaphor reuses the project's authentication preflight and the owning app's verification map.
+Generated recipes retain the project's harness and link its authentication procedure; when no
+browser tool is designated, agent-browser is the default. Launch, doctor, drive, evidence, and
+cleanup remain the shared recipe structure, and every new or changed recipe must be executed
+successfully.
 
 Keep feature maps in their owning repositories. Extend existing maps and harnesses. If a map is
 missing, create coverage for the affected feature and execute that recipe; whole-app audits are an

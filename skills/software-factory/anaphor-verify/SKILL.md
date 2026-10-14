@@ -22,9 +22,12 @@ provisioning; this skill owns execution and observed results.
    changes when testing an uncommitted state. Check the target, health, identity/role, and required
    data using the documented read-only doctor procedure. Start only the services needed by these
    criteria.
-3. Choose the existing repository harness first. For browser-visible behavior, run its real browser
-   flow with agent-browser or Playwright; read the installed tool's instructions for current
-   commands. For a CLI, service, or library, exercise its public command, request, or interface.
+3. Use the project's verification skill and designated harness. Preserve its browser tool when
+   extending or executing recipes; use agent-browser for browser-visible behavior when the project
+   has not selected a tool. Read the installed tool's instructions for current commands. When a flow
+   requires authentication, reuse the project's login preflight rather than copying authentication
+   setup into feature recipes. Login readiness establishes access; drive the feature itself to prove
+   its criteria. For a CLI, service, or library, exercise its public command, request, or interface.
    Record a required unavailable tool as a prerequisite failure, not a reason to substitute a weaker
    surface. Use an isolated browser/context for implementation checks and repeatable tests. Reserve
    the user's browser session for references or flows that require its authentication or existing

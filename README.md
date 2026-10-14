@@ -78,7 +78,8 @@ affected work while independent work can continue.
 ### How work moves through the factory
 
 1. Establish observable acceptance criteria, repository baselines, testing boundaries, and
-   verification routes.
+   verification routes. Confirm project readiness evidence covers the accepted spec before
+   implementation begins.
 2. Implement the smallest verifiable change with TDD, or organize larger work into dependent slices.
    Compare alternatives when an implementation decision remains unresolved.
 3. Review the complete change through Standards, Spec, and Principles. Add execution, security,
