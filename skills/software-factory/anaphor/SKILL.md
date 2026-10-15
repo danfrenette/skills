@@ -1,7 +1,8 @@
 ---
 name: anaphor
 description:
-  Deliver an accepted product spec as verified implementation, a draft PR, and a linked walkthrough.
+  Deliver an accepted product spec as verified implementation, a draft PR, and an inspected local
+  tour.
 disable-model-invocation: true
 ---
 
@@ -20,8 +21,9 @@ Preserve the spec's requirement identifiers, or assign stable identifiers when a
 
 Keep exploratory research and comparison notes in scratch files or linked workspace/project
 resources. Put useful rationale and source links in the PR description; commit research documents
-only when the user explicitly requests them. Durable product/API documentation, verification
-recipes, and the required delivery walkthrough retain their existing publication rules.
+only when the user explicitly requests them. Durable product/API documentation and verification
+recipes retain their repository publication rules. Per-PR tours and evidence use persistent Anaphor
+storage outside product repositories.
 
 Inspect local changes before choosing the working baseline. Reuse the supplied checkout and
 environment when they meet the task's needs. Read the project's setup handoff and confirm its
@@ -93,17 +95,28 @@ Push the verified branches and open draft PRs with the spec, scope, outcome, and
 evidence. Required blocked or unrun checks prevent this step. Link participating PRs and explain
 their dependency order. Reuse existing PRs if publication is interrupted.
 
-Use [anaphor-explain-change](../anaphor-explain-change/SKILL.md) to publish a durable walkthrough
-and link it from each PR. Review its final diff and links. For explanation-only commits, preserve
-the earlier test provenance and explain why it still applies; executable, configuration, or recipe
-changes return to affected review and verification. Confirm final heads and draft status. Report the
-PRs, walkthrough, implementation and final revisions, evidence, and limitations. Readiness, merge,
-and deployment remain separate user decisions. Reconcile affected delivery links and status after
-publication; opening a draft PR does not establish deployed behavior.
+Use [anaphor-explain-change](../anaphor-explain-change/SKILL.md) to create or update the tour for
+every PR, including small and nonvisual changes. Open and inspect the local Anaphor reader and link
+its relevant section from each PR. A coordinated tour records every participating PR, dependency
+order, and source state. Label local links for the current machine; external readers need requested
+hosting and access. An inspected local preview satisfies tour delivery without authentication or
+publication. Publish the same content and media only when explicitly requested.
 
-**Done:** the delivered revision is accounted for by review and verification, and every
-participating draft PR links the explanation. An unfinished required check or unpublished
-walkthrough keeps delivery open.
+Keep recipes in their repositories and tours, captures, and receipts in persistent storage outside
+implementation worktrees. Preserve historical walkthroughs; new delivery requires no second Markdown
+narrative or explanation-only commit. Source changes after verification require an applicability
+assessment or rerun while retaining the original tested revisions; executable, configuration, or
+recipe changes return to affected review and verification.
+
+Confirm final heads and draft status. Report PRs, tour URL and revision, implementation and final
+source states, evidence, limitations, and how to resume the local reader. Reconcile affected
+delivery links and status. Opening a draft PR, inspecting a tour, declaring merge readiness,
+merging, and deploying remain distinct actions and user decisions.
+
+**Done:** the delivered source states are accounted for by review and verification, and every
+participating draft PR links an inspected tour. Broken previews, invalid provenance, or missing,
+failed, blocked, unrun, stale, or unknown required evidence leave delivery incomplete. Hosting is
+required only when requested.
 
 ## Continue in a fresh session
 
@@ -111,4 +124,4 @@ When the user requests a session handoff, read Matt Pocock's installed `handoff`
 prepare the continuation document. Follow its temporary-file location and artifact-reference rules;
 point to the implementation brief, current revisions, verification receipts, remaining work, and the
 next applicable Anaphor skill. The continuation document does not satisfy draft-PR delivery or
-replace the published walkthrough.
+replace the inspected PR tour.

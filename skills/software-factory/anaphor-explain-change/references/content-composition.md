@@ -2,8 +2,9 @@
 
 Organize the explanation around what the reader needs to understand and assess. Matt Pocock's `pr`
 informs the summary, before/after evidence, and reversibility questions; this procedure extends
-those ideas to detailed walkthroughs. A short PR body introduces the document. The document can
-develop multiple scenarios, diagrams, and graphs without inheriting the PR template's brevity.
+those ideas to detailed walkthroughs. A short PR body introduces the tour. The tour can develop
+multiple vertical slices, scenarios, diagrams, and graphs without inheriting the PR template's
+brevity.
 
 ## Plan the explanation
 
@@ -17,15 +18,16 @@ and available evidence. Reuse the implementation brief and receipts. Missing evi
 explicit limit; route a new verification need to `anaphor-verify` when authorized. An explanation
 cannot manufacture the observation it needs.
 
-Lead with the changed experience and a map of the explanation. Develop scenarios in reader order:
-entry point, important responsibilities, state changes, observable outcome, then relevant failure
-paths. Explain domain terms before implementation details. Add cross-repository and design detail
-where it answers a question, with links to pinned source and recorded decisions.
+Lead with the problem, affected user, changed experience, and value. Map the primary vertical
+slices, then develop their scenarios in reader order: entry point, important responsibilities, state
+changes, observable outcome, then relevant failure paths. Explain domain terms before implementation
+details. Add cross-repository and design detail where it answers a question, with links to pinned
+source and recorded decisions.
 
 ## Select visuals by the question
 
 Use the smallest useful visual for each question. Several focused visuals can support a detailed
-document; one crowded diagram should not have to explain the entire change.
+tour; one crowded diagram should not have to explain the entire change.
 
 - **Who owns what?** Use a component or dependency diagram, or a shallow file tree with
   responsibilities. Show boundaries and label relationships.
@@ -41,10 +43,10 @@ document; one crowded diagram should not have to explain the entire change.
   Identify axes, units, workload, collection method, and tested revision. Label hypothetical
   examples as illustrative and keep them separate from verification evidence.
 
-Prefer Mermaid for static software diagrams supported by the publishing surface. For measured
-graphs, retain the data and generation method with an accessible rendered artifact. Use an
-interactive format only when requested or supported by the delivery contract; the durable document
-must remain understandable without a local development server.
+Use diagrams supported by the reader, or import an accessible rendered artifact alongside its
+source. For measured graphs, retain the data and generation method. Use the shared Anaphor reader
+for local and hosted delivery; keep its content and assets in persistent storage so they survive
+implementation-server and worktree cleanup.
 
 Place each visual beside the explanation it supports. Caption what it shows, its scope, and the
 source or receipt behind it. Use readable labels and provide a textual account of the important
@@ -64,7 +66,7 @@ authorization, or other unobserved effects. Link the relevant runtime or test ev
 claims. Explain what each result establishes and its limits, preserving revisions and provenance
 under the parent skill's evidence rules.
 
-## Explain consequences and publish
+## Explain consequences and hand off
 
 Describe affected users, consumers, stored data, and cross-repository dependencies where relevant.
 Explain whether reverting the code restores the previous behavior, or whether data changes, external
@@ -73,4 +75,6 @@ record and evidence; a one-word risk label is insufficient.
 
 Check that the overview leads to the detailed scenarios, each visual answers a reader question, and
 each verification claim has an accessible receipt. The PR body should summarize the changed
-behavior, link decisive evidence, identify concrete risks, and point to the full walkthrough.
+behavior, link decisive evidence, identify concrete risks, and point to the relevant tour section.
+Local preview links are explicitly for the current machine; share hosted links with external readers
+when publication is requested.

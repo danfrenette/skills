@@ -1,7 +1,8 @@
 # Anaphor
 
 Anaphor is a software-delivery workflow: take an accepted spec, implement it in verifiable
-increments, review it from separate perspectives, and deliver a draft PR with a linked explanation.
+increments, review it from separate perspectives, and deliver a draft PR with an inspected local
+tour.
 
 It is inspired by **Lauren Tan's pstack** and **Matt Pocock's skills**. Pstack informs
 orchestration, competing designs, real-surface verification, and feature maps. Matt's work supplies
@@ -14,7 +15,7 @@ notices.
 Select all nine Anaphor skills when installing from this repository. Their sibling links assume they
 are installed together:
 
-- **`anaphor`:** Coordinate an accepted spec through a draft PR and walkthrough
+- **`anaphor`:** Coordinate an accepted spec through draft PRs and inspected tours
 
 - **`anaphor-compare-designs`:** Settle an unresolved implementation choice with comparable
   alternatives
@@ -32,7 +33,7 @@ are installed together:
 - **`anaphor-audit-feature-map`:** Check an entire existing map against source and live behavior and
   publish proven corrections when maintenance is requested
 
-- **`anaphor-explain-change`:** Write an evidence-linked Markdown walkthrough
+- **`anaphor-explain-change`:** Create or update an evidence-linked local Anaphor tour
 
 - **`anaphor-reconcile`:** Update affected product, domain, setup, and tracker records
 
@@ -97,7 +98,13 @@ and shared-resource overlap; these branches add no phase to ordinary spec delive
 
 Anaphor stops on unresolved required verification prerequisites after one safe documented recovery
 attempt. Product failures return to implementation. Successful delivery ends at draft PRs and a
-linked walkthrough; readiness, merge, and deployment remain subsequent decisions.
+linked, inspected tour for every PR; readiness, merge, and deployment remain subsequent decisions.
+The local Anaphor app uses the hosted reader without authentication or publication. Persistent
+tours, captures, and receipts live outside product repositories; recipes stay alongside code. Local
+URLs serve review on the current machine. Publish the same tour only when requested for sharing,
+with appropriate owner access. See the explanation skill's
+[integration reference](../anaphor-explain-change/references/anaphor-integration.md) for
+preparation, revision freshness, local inspection, and requested hosting.
 
 ## Validation scope
 
