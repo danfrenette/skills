@@ -24,10 +24,11 @@ verification receipts. Identify each repository's delivered base/head and actual
 state. For uncommitted runs, retain the patch and relevant untracked contents or hashes; HEAD alone
 cannot describe what ran. Confirm ambiguous PR membership before including it.
 
-Plan a problem/value opening and the primary vertical slices. Follow each slice from its entry point
-through consequential responsibilities and decisions to its observable outcome and failure behavior.
-Link source at pinned revisions and explain why each selected location matters. Cover
-cross-repository dependencies and rollback constraints where relevant.
+Plan a short business case, define only unfamiliar terms needed for this change, then order the
+primary vertical slices as one linear journey. Lead each slice with captured, pinned code and
+concise annotations in simplified technical English. Keep source links, criteria, decisions, and
+execution receipts available on demand. The composition reference owns the narrative and disclosure
+rules.
 
 Keep verification beside the slice it supports: spec criterion, action, expected and observed
 outcomes, recorded result, target/build, role/data context, tested source state, and limits. Use
@@ -40,8 +41,9 @@ supplied results as supplied, with their provenance. Standalone explanation of i
 show failed, blocked, unrun, or unavailable evidence; required gaps prevent completed factory
 delivery and a merge-ready claim.
 
-**Done:** each primary slice has a narrative and linked criteria, source, decisions, and evidence;
-missing observations and rationale remain explicit.
+**Done:** the main path moves from the business case into code-led slices without prerequisite link
+navigation or repeated explanatory paragraphs. Each slice has concise annotations and accessible
+supporting criteria, source, decisions, and evidence; missing observations remain explicit.
 
 ## 2. Prepare or update the tour
 

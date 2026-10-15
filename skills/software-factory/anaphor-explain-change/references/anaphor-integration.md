@@ -38,12 +38,15 @@ same configured workspace as the CLI. Local preview requires no OAuth, device lo
 secure-store entry, hosted media provider, or publication. Use the URL returned by the CLI; do not
 substitute a standalone HTML or Markdown reader.
 
-Inspect the delivered revision in a browser: navigation/anchors, the problem and slice narrative,
-pinned source and spec links, evidence details, images and videos, accessible alternatives, and
-freshness warnings. Explicitly refresh after an update and verify the expected new revision; a
-running reader retains its selected revision until then. Confirm imported evidence remains usable
-independently of implementation scratch. Record browser actions and observed results in a durable
-inspection receipt, separately from application test receipts.
+Inspect the delivered revision in a browser: the short business case, necessary terms, linear
+code-led slices and concise annotations, navigation/anchors, pinned source and spec links, evidence
+details, images and videos, accessible alternatives, and freshness warnings. Check both themes and
+narrow reflow. Follow an annotation and expand source context: code must stay in its bounded window.
+Verify icon controls have accessible names, image enlargement fits the window, and closing restores
+focus. Explicitly refresh after an update and verify the expected new revision; a running reader
+retains its selected revision until then. Confirm imported evidence remains usable independently of
+implementation scratch. Record browser actions and observed results in a durable inspection receipt,
+separately from application test receipts.
 
 Keep the local app available for the owner's review and include the launch/resume instructions in
 the handoff. Label its URL as local to this machine in every PR. One coordinated tour can serve
