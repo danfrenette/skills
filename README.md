@@ -37,7 +37,7 @@ These standalone skills live at `<skill-name>/SKILL.md`. The Anaphor family live
 
 Anaphor is a software-delivery workflow for agents. Give it an accepted product spec and a working
 repository; it implements the change, reviews it from separate perspectives, verifies real behavior,
-and delivers a draft PR with a linked explanation.
+and delivers a draft PR with an inspected local Anaphor tour.
 
 Product decisions stay in the accepted spec. Workspace provisioning stays in the project's own
 instructions. The workflow uses the host's tools and selected model, with parallel workers where
@@ -87,8 +87,10 @@ affected work while independent work can continue.
 4. Run repository checks and real user flows. Update affected feature-map recipes and execute them
    against the delivered behavior.
 5. Reconcile affected product, domain, setup, and tracker records against decisions and evidence.
-6. Open draft PRs and publish a durable walkthrough connecting behavior, decisions, code, and
-   verification evidence. Ready-for-review, merge, and deployment remain user decisions.
+6. Open draft PRs and link an inspected tour for every PR, connecting problem/value, vertical
+   implementation slices, and verification evidence. Use the local Anaphor app without
+   authentication or publication; host the same content only when requested. Ready-for-review,
+   merge, and deployment remain user decisions.
 
 Required verification cannot be replaced with reviewer agreement. Product failures return to
 implementation. If a required browser or environment prerequisite remains unavailable after one safe
@@ -110,8 +112,8 @@ recovery attempt, the run stops and reports the block before PR delivery.
   work.
 - **[anaphor-audit-feature-map][audit-feature-map]:** Audit an entire existing map when broader
   coverage is explicitly needed; maintenance mode delivers proven corrections in one draft PR.
-- **[anaphor-explain-change][explain-change]:** Produce an evidence-linked reviewer walkthrough,
-  using diagrams or other assets when they clarify the change.
+- **[anaphor-explain-change][explain-change]:** Create or update an evidence-linked PR tour, using
+  the same local and hosted reader with captures where they help prove behavior.
 
 - **[anaphor-reconcile][reconcile]:** Update affected project records after accepted decisions or
   verification, using clear human-facing language and linked evidence.
@@ -146,7 +148,10 @@ dependency lock does not reproduce that collection.
 Point project instructions to the existing environment setup, test commands, browser access, and
 feature maps. Anaphor uses those procedures without requiring a particular tracker, database,
 package manager, or model roster. Matt's `handoff` handles user-requested continuation in a fresh
-session; it does not replace the published PR walkthrough.
+session; it does not replace the inspected PR tour. Keep reusable recipes in repositories and
+persistent tours, captures, and receipts outside implementation worktrees. Local links serve review
+on the current machine; external readers need requested hosting and appropriate owner access. Retain
+original tested revisions as PRs evolve and flag stale evidence before claiming readiness.
 
 For project onboarding, explicitly request `anaphor-create-feature-map` bootstrap with the owning
 repository and desired coverage. Between delivery runs, use `anaphor-audit-feature-map` maintenance
