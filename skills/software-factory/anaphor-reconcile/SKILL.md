@@ -1,9 +1,9 @@
 ---
 name: anaphor-reconcile
 description:
-  Update affected project records after accepted planning decisions or verified implementation.
-  Use when product, domain, setup, or tracker documentation must reflect a changed decision or
-  proven behavior.
+  Update affected project records after accepted planning decisions or verified implementation. Use
+  when product, domain, setup, or tracker documentation must reflect a changed decision or proven
+  behavior.
 ---
 
 # Anaphor: reconcile project records
@@ -22,8 +22,8 @@ For each changed claim, choose the supported state:
 - Passing receipt: identify the tested revision, surface, and environment.
 - Deployment evidence: identify the deployed revision and environment separately.
 
-If behavior contradicts accepted intent, preserve the requirement and report the implementation
-gap. Rewriting the requirement would hide a regression. Continue independent supported updates.
+If behavior contradicts accepted intent, preserve the requirement and report the implementation gap.
+Rewriting the requirement would hide a regression. Continue independent supported updates.
 
 ## 2. Find the owner
 
@@ -32,16 +32,16 @@ map, and tracker. In the existing brief or temporary notes, pair each changed cl
 record and evidence. Use the existing canonical home; creating another summary makes future drift
 more likely. If ownership is ambiguous, resolve it before editing that claim.
 
-Limit this pass to the change. Empty documents and unrelated historical cleanup do not help
-prove it.
+Limit this pass to the change. Empty documents and unrelated historical cleanup do not help prove
+it.
 
 ## 3. Update by record type
 
 - Product record: replace stale current-state prose in place. Keep accepted future scope distinct
   from verified behavior, and link useful history rather than appending contradictory instructions.
 - Glossary or ADR: when a resolved term or consequential decision changes, read Matt Pocock's
-  installed domain-modeling skill and follow the project's locations and conventions. Preserve
-  prior rationale when linking a successor; leave missing decisions open rather than inventing them.
+  installed domain-modeling skill and follow the project's locations and conventions. Preserve prior
+  rationale when linking a successor; leave missing decisions open rather than inventing them.
 - Development or navigation: check affected commands, paths, and prerequisites against the owning
   repository. Label an unexecuted procedure as unverified; inspection is not proof that it runs.
 - Feature map: link the receipts maintained by anaphor-verify. Return stale recipes or missing
@@ -50,7 +50,7 @@ prove it.
   relationships and parent-issue restrictions. An open draft PR does not mean deployed behavior.
 
 Each affected record must be updated, unchanged with a reason, or blocked by a named prerequisite.
-Link existing specs and walkthroughs instead of copying their narrative into these records.
+Link existing specs and tours instead of copying their narrative into these records.
 
 ## 4. Check the result
 
@@ -59,8 +59,11 @@ duplication and repair navigation. Use the project glossary and enough context f
 not read the conversation. If no record needs a change, report that result without creating files.
 
 Documentation-only changes can retain prior code-test evidence with its revision and limits.
-Executable, configuration, or recipe changes return to affected review and verification. After
-publication, update affected delivery links from actual PRs and walkthroughs.
+Executable, configuration, or recipe changes return to affected review and verification. After PR
+creation and tour inspection, update affected delivery links from actual PRs and tours. Label local
+preview URLs for the current machine; an inspected local tour needs no hosted publication. Record
+tour revision separately from tested source states and preserve stale/unknown evidence limits.
+Reusable recipes stay in the owning repository; tour evidence survives worktree cleanup.
 
 Report changed records and concrete blockers through the existing brief or final response.
 Standalone use publishes or closes tracker items only when authorized. During Anaphor delivery,

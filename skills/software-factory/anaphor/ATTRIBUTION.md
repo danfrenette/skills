@@ -37,10 +37,10 @@ The explanation skill adapts the same revision's
 inspected 2026-10-06, for content composition: question-led visuals, before/after evidence, and
 concrete reversibility and affected-scope explanations. Its visual vocabulary credits Dex Horthy's
 [`show-me`](https://github.com/humanlayer/skills/blob/main/plugins/show-me/skills/show-me/SKILL.md)
-at Humanlayer. Anaphor uses these ideas to organize detailed walkthroughs with multiple diagrams and
+at Humanlayer. Anaphor uses these ideas to organize detailed tours with multiple diagrams and
 measured graphs; the short PR body remains an entry point. Generated explanations retain Anaphor's
-revision-bound evidence and publishing requirements. `pr` is a design source, not a new runtime
-dependency.
+revision-bound evidence, inspected local preview, and explicitly requested hosting requirements.
+`pr` is a design source, not a new runtime dependency.
 
 ## Writing guidance
 
@@ -87,7 +87,8 @@ sources are guidance, not bundled copies or independent delivery approvals.
 - Require affected feature-map updates and execution of every changed recipe.
 - Create minimal affected-feature coverage when the map is absent.
 - Separate product failure from unavailable verification prerequisites and documentation drift.
-- Deliver draft PRs and durable Markdown walkthroughs; hosted Tours are optional.
+- Deliver draft PRs with inspected local tours; publish the same tours only when requested. Keep
+  reusable recipes in repositories and persistent tour evidence outside implementation worktrees.
 
 Upstream research is pinned so the rationale is inspectable. Installed discipline versions may
 differ: identify them when running and assess material differences explicitly. Future source updates
@@ -98,7 +99,7 @@ should be deliberate reviews, not silent replacements of these policies.
 Matt Pocock's [handoff](https://github.com/mattpocock/skills/tree/main/skills/productivity/handoff)
 owns user-requested continuation documents. Inspected 2026-10-04 and installed through the project
 lock. Its temporary document references existing artifacts; Anaphor retains draft-PR delivery and
-the durable reviewer walkthrough as distinct outputs.
+the inspected reviewer tour as distinct outputs.
 
 The local collection additionally supplies `emil-ui-review`, `emil-design-foundations`,
 `emil-color`, `emil-typography`, and `emil-performance` through UI-specific triggers.
