@@ -52,8 +52,8 @@ dependency order are recorded, and required stale or unknown checks remain expli
 ## 3. Inspect and hand off
 
 Follow [launch and inspect locally](references/anaphor-integration.md#launch-and-inspect-locally) in
-the actual Anaphor reader. Repair and recheck inspection failures. Keep the final inspection receipt
-outside the tour when embedding it would create another revision requiring inspection.
+the actual Anaphor reader. For authored content, check that content, pinned code links, and assets
+load. Repair and recheck loading failures.
 
 Return the local URL labelled for this machine, tour revision, participating PRs and source states,
 key evidence, limitations, and launch/resume instructions. During factory delivery, link each PR to
@@ -61,6 +61,7 @@ its inspected tour section. When hosting is requested, follow
 [publish when requested](references/anaphor-integration.md#publish-when-requested) and inspect the
 hosted result before claiming delivery.
 
-**Done:** the reader and evidence links pass inspection; during factory delivery, every PR has its
-tour link. Required evidence must be passing, current, and attributable before claiming merge
-readiness. Required hosting must also pass inspection. The owner makes the merge decision.
+**Done:** the local preview's content, pinned code links, and assets load; during factory delivery,
+every PR has its tour link. Required evidence must be passing, current, and attributable before
+claiming merge readiness. Required hosting must also pass inspection. The owner makes the merge
+decision.
