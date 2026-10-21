@@ -96,8 +96,8 @@ record and evidence; a one-word risk label is insufficient.
 
 Check that the business case leads directly into the code-led slices, each annotation adds needed
 understanding, each visual answers a reader question, and each verification claim has an accessible
-receipt. For a local content preview, use the loading checks in the integration reference.
-Accessibility and interaction verification belongs to changes to the tour reader itself. The PR body
-should summarize the changed behavior, link decisive evidence, identify concrete risks, and point to
-the relevant tour section. Local preview links are explicitly for the current machine; share hosted
+receipt. For local preview checks, follow
+[launch and inspect locally](anaphor-integration.md#launch-and-inspect-locally). The PR body should
+summarize the changed behavior, link decisive evidence, identify concrete risks, and point to the
+relevant tour section. Local preview links are explicitly for the current machine; share hosted
 links with external readers when publication is requested.

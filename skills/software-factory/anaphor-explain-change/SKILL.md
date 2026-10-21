@@ -52,8 +52,8 @@ dependency order are recorded, and required stale or unknown checks remain expli
 ## 3. Inspect and hand off
 
 Follow [launch and inspect locally](references/anaphor-integration.md#launch-and-inspect-locally) in
-the actual Anaphor reader. For authored content, check that content, pinned code links, and assets
-load. Repair and recheck loading failures.
+the actual Anaphor reader. That procedure owns the content-loading checks and the boundary with
+reader verification. Repair and recheck loading failures.
 
 Return the local URL labelled for this machine, tour revision, participating PRs and source states,
 key evidence, limitations, and launch/resume instructions. During factory delivery, link each PR to
