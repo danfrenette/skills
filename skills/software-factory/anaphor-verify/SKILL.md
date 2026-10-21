@@ -11,6 +11,12 @@ Prove the accepted outcomes on the surface where they occur. Read
 [evidence and blockers](references/evidence.md) before running checks. Project setup owns
 provisioning; this skill owns execution and observed results.
 
+Different environments may require different verification processes, tools, access, and evidence.
+Follow the procedures established for the target environment or supplied by the user, and record
+which apply to this run. Adapt execution to those requirements while preserving criterion coverage,
+observed outcomes, and source provenance; passing checks in one environment does not establish a
+result in another.
+
 ## Select and prepare
 
 1. Read the criteria, changed paths, project verification instructions, and relevant feature map.
