@@ -9,10 +9,6 @@ syntax, and workspace defaults. From an Anaphor checkout, discover the local ope
 pnpm --filter @anaphor/demo tour local help
 ```
 
-The local workspace override is `ANAPHOR_TOUR_WORKSPACE`; pass the same workspace to the CLI and
-reader process. Start the reader with the app's documented loopback launch command and explicit
-`ANAPHOR_LOCAL_PREVIEW=1`. Record the app revision and executed commands with the receipt.
-
 ## Prepare and persist
 
 1. Locate the persistent local workspace in the user's application data directory, or use the
@@ -33,25 +29,25 @@ receipts and captures. Keep required stale or unknown checks visible in the tour
 
 ## Launch and inspect locally
 
-Use the app's documented local-only launch mode, explicitly enabled and bound to loopback, with the
-same configured workspace as the CLI. Local preview requires no OAuth, device login, database,
-secure-store entry, hosted media provider, or publication. Use the URL returned by the CLI; do not
-substitute a standalone HTML or Markdown reader.
+Start the reader with the app's documented loopback launch command and explicit
+`ANAPHOR_LOCAL_PREVIEW=1`. Pass the same `ANAPHOR_TOUR_WORKSPACE` override to the CLI and reader
+when configured. Local preview requires no authentication, hosted services, or publication. Open the
+Anaphor reader at the URL returned by the CLI.
 
 For authored tour content, open the returned URL and check only that:
 
-- The intended content loads, including the selected revision after an update.
+- The intended content loads. After an update, refresh and confirm the new revision; the running
+  reader retains its selected revision until refreshed.
 - Code links resolve to the intended pinned source.
 - Referenced assets load, including images, recordings and receipts when present.
 
-Accessibility checks belong to changes to the tour reader itself. Follow the app's reader
-verification recipe when changing reader behavior; authoring a local tour does not require theme,
-responsive, keyboard/focus, accessible-name, scrolling or enlargement checks. A separate inspection
-receipt is not required for these local content checks.
+When reader behavior changes, follow the app's reader verification recipe for accessibility and
+interaction checks. Content authoring uses only the loading checks above; no separate inspection
+receipt is required. Product verification receipts retain their evidence requirements.
 
-Keep the local app available for the owner's review and include the launch/resume instructions in
-the handoff. Label its URL as local to this machine in every PR. One coordinated tour can serve
-multiple PRs; link the section relevant to each one.
+Keep the local app available for review. Include the app revision, executed launch commands, and
+resume instructions in the handoff. Label its URL as local to this machine in every PR. One
+coordinated tour can serve multiple PRs; link the section relevant to each one.
 
 ## Publish when requested
 
@@ -61,6 +57,6 @@ is known. Retry an uncertain response using unchanged inputs and the same key; r
 against the current hosted revision. Local review remains usable if hosting fails.
 
 Inspect the authenticated hosted tour and media before returning it as a shared result. Hosted
-content remains owner-only. Separate local inspection, isolated hosted checks, and real-provider or
-deployed acceptance in the receipt; one does not establish the others. Publish only within the
-user's requested scope.
+content remains owner-only. In the hosted inspection receipt, distinguish hosted checks from local
+loading checks and real-provider or deployed acceptance; one does not establish the others. Publish
+only within the user's requested scope.
