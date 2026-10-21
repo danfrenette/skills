@@ -23,9 +23,16 @@ Record what was run, not what a script name suggests. Screenshots illustrate a s
 the action and assertions supporting the claim. Mocks and test modes require disclosed coverage
 limits at the substituted boundary.
 
-After changes, identify which evidence no longer applies and rerun affected checks. Integrated
-changes require integration evidence. For documentation-only follow-up, inspect the diff and record
-why prior application evidence remains applicable, retaining its original tested revision and date.
+## Evidence applicability
+
+A new source state makes prior evidence stale until assessed. Inspect the delta for each affected
+check: rerun it, or record why its original result still applies. Preserve the original tested
+revision, date, and result; a rerun creates a new record. Tour revisions and tested source revisions
+are separate facts. Required stale or unknown evidence prevents a merge-ready claim.
+
+Integrated changes require integration evidence. Documentation-only follow-up may retain prior
+application evidence with an inspected-delta rationale. Executable, configuration, or recipe changes
+return to affected review and verification.
 
 ## Triage a failed attempt
 

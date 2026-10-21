@@ -66,9 +66,7 @@ tour; one crowded diagram should not have to explain the entire change.
   examples as illustrative and keep them separate from verification evidence.
 
 Use diagrams supported by the reader, or import an accessible rendered artifact alongside its
-source. For measured graphs, retain the data and generation method. Use the shared Anaphor reader
-for local and hosted delivery; keep its content and assets in persistent storage so they survive
-implementation-server and worktree cleanup.
+source. For measured graphs, retain the data and generation method.
 
 Place each visual beside the code or claim it supports. Use a short caption for the observed state
 or action and result; keep its source, scope, and receipt available in supporting details. Use

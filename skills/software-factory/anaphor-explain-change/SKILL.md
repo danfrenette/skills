@@ -19,64 +19,48 @@ and requested hosting. The app's schema and CLI help own exact fields and comman
 
 ## 1. Establish the explanation and evidence
 
-Read the accepted spec, participating PRs and pinned changes, surrounding code, decisions, and
-verification receipts. Identify each repository's delivered base/head and actual tested source
-state. For uncommitted runs, retain the patch and relevant untracked contents or hashes; HEAD alone
-cannot describe what ran. Confirm ambiguous PR membership before including it.
+Read the accepted spec, participating PRs, pinned changes, surrounding code, decisions, and
+receipts. Confirm ambiguous PR membership before including it. Record each repository's base/head
+and actual tested contents using [evidence records](../anaphor-verify/references/evidence.md),
+including its rules for uncommitted source and evidence applicability.
 
-Plan a short business case, define only unfamiliar terms needed for this change, then order the
-primary vertical slices as one linear journey. Lead each slice with captured, pinned code and
-concise annotations in simplified technical English. Keep source links, criteria, decisions, and
-execution receipts available on demand. The composition reference owns the narrative and disclosure
-rules.
+Follow [content composition](references/content-composition.md) to outline the business case and
+code-led vertical slices. Pair each behavioral claim with its criterion and receipt; preserve
+supplied results as supplied, with provenance. Select captures by the claim they prove using the
+project's harness. Obtain required missing observations through
+[anaphor-verify](../anaphor-verify/SKILL.md). A standalone tour may explain incomplete work, with
+failed, blocked, unrun, or unavailable evidence visible; those gaps prevent completed factory
+delivery.
 
-Keep verification beside the slice it supports: spec criterion, action, expected and observed
-outcomes, recorded result, target/build, role/data context, tested source state, and limits. Use
-screenshots for useful visible states, videos for behavior involving interaction or time, and
-command/API evidence for nonvisual changes. Follow the project's capture harness; agent-browser is
-the default when none is designated. Captures and illustrative diagrams have distinct purposes.
-
-Obtain required missing verification through [anaphor-verify](../anaphor-verify/SKILL.md). Preserve
-supplied results as supplied, with their provenance. Standalone explanation of incomplete work may
-show failed, blocked, unrun, or unavailable evidence; required gaps prevent completed factory
-delivery and a merge-ready claim.
-
-**Done:** the main path moves from the business case into code-led slices without prerequisite link
-navigation or repeated explanatory paragraphs. Each slice has concise annotations and accessible
-supporting criteria, source, decisions, and evidence; missing observations remain explicit.
+**Done:** every primary slice has pinned source or an observed artifact, concise annotations, and
+supporting criteria, decisions, and evidence. The main path is readable with supporting details
+closed, and missing observations remain explicit.
 
 ## 2. Prepare or update the tour
 
-Use the integration reference to create or update a validated bundle in the persistent Anaphor
-workspace outside product repositories. Import captures, receipts, and source-state evidence before
-scratch/worktree cleanup. Keep reusable recipes in their owning repositories and historical
-walkthroughs readable. The tour replaces the generated Markdown narrative and its explanation-only
-commit.
+Follow [prepare and persist](references/anaphor-integration.md#prepare-and-persist) to validate and
+save the bundle, importing evidence before scratch/worktree cleanup. That procedure owns tour
+identity, updates, storage, and revision conflicts. The tour replaces the generated Markdown
+narrative and its explanation-only commit; reusable recipes stay in their owning repositories.
 
-Reuse the logical tour and stable section/evidence identifiers. A shared tour records every PR and
-dependency order; each PR links its relevant section. Preserve old results with their original
-tested revisions and dates. A new PR head makes older evidence stale by default. Retaining
-applicability requires an inspected-delta rationale while preserving the original run; a rerun
-creates a new record. Tour revision, tested source revision, and applicability are separate facts.
+Keep tour revision, tested source revision, and evidence applicability separate. Preserve historical
+results with their original revisions and dates; reassess them when a PR head changes.
 
-**Done:** the valid tour and referenced evidence survive implementation worktree cleanup, revisions
-are accounted for, and stale or unknown required checks are explicit.
+**Done:** the valid tour and imported evidence survive worktree cleanup, participating PRs and their
+dependency order are recorded, and required stale or unknown checks remain explicit.
 
 ## 3. Inspect and hand off
 
-Open the actual local Anaphor preview. Check section navigation and anchors, text, pinned source
-links, media playback/accessibility, receipt access, and evidence freshness against every delivered
-source state. Repair and recheck failures. Preserve the final inspection receipt outside the tour
-when embedding it would require inspecting another new revision.
+Follow [launch and inspect locally](references/anaphor-integration.md#launch-and-inspect-locally) in
+the actual Anaphor reader. Repair and recheck inspection failures. Keep the final inspection receipt
+outside the tour when embedding it would create another revision requiring inspection.
 
-Return the local preview URL labelled for this machine, tour revision, participating PRs and source
-states, key evidence, and remaining limitations. Link the tour from every participating PR during
-factory delivery. A local URL serves solo review; external readers need a hosted URL and access.
-When hosting is requested, publish the same content and assets, preserve recovery metadata, and
-inspect authenticated hosted reading before claiming hosted delivery.
+Return the local URL labelled for this machine, tour revision, participating PRs and source states,
+key evidence, limitations, and launch/resume instructions. During factory delivery, link each PR to
+its inspected tour section. When hosting is requested, follow
+[publish when requested](references/anaphor-integration.md#publish-when-requested) and inspect the
+hosted result before claiming delivery.
 
-**Done:** the real reader and evidence links have been inspected and every participating PR has its
-tour link. Broken previews, invalid provenance, and unresolved required evidence leave factory
-delivery incomplete. Missing, failed, blocked, unrun, stale, or unknown required evidence prevents a
-merge-ready claim. The owner makes the merge decision; publication, merge, and deployment remain
-separate actions.
+**Done:** the reader and evidence links pass inspection; during factory delivery, every PR has its
+tour link. Required evidence must be passing, current, and attributable before claiming merge
+readiness. Required hosting must also pass inspection. The owner makes the merge decision.

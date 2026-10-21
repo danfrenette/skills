@@ -27,9 +27,9 @@ reader process. Start the reader with the app's documented loopback launch comma
    revision conflict by loading and reconciling the current tour. An invalid or interrupted update
    must leave the previous readable revision available; retain inputs for recovery.
 
-A PR head change requires reassessing evidence, including captures made before later edits. Keep
-historical results and tested source states intact. Record an unaffected-delta assessment explicitly
-or run a new check. Required stale or unknown checks remain visible and prevent a merge-ready claim.
+When a PR head changes, apply
+[evidence applicability](../../anaphor-verify/references/evidence.md#evidence-applicability) to
+receipts and captures. Keep required stale or unknown checks visible in the tour.
 
 ## Launch and inspect locally
 

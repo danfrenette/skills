@@ -14,33 +14,27 @@ synthesis and ticket-publication workflow stays upstream.
 
 ## 1. Establish the implementation brief
 
-Read the accepted spec, testing decisions, applicable repository instructions, and affected
-feature-map entries. Record the spec source, observable criteria, confirmed test boundaries, owning
-repositories, baseline commits, working paths, and setup/verification pointers in one brief.
-Preserve the spec's requirement identifiers, or assign stable identifiers when absent.
+Read the accepted spec, testing decisions, repository instructions, and affected feature-map
+entries. Inspect local changes before choosing the baseline, then create one brief containing:
 
-Record any environment-specific verification and tour procedures and their completion requirements
-in the brief.
+- Spec source and observable criteria, preserving requirement identifiers or assigning stable ones.
+- Confirmed test boundaries and each criterion's owning surface and verification route.
+- Owning repositories, original baseline commits, working paths, and local changes to preserve.
+- Setup and verification pointers, runtime targets, resource ownership, and readiness evidence.
+- User- or project-supplied verification and tour procedures, including their completion
+  requirements.
 
-Keep exploratory research and comparison notes in scratch files or linked workspace/project
-resources. Put useful rationale and source links in the PR description; commit research documents
-only when the user explicitly requests them. Durable product/API documentation and verification
-recipes retain their repository publication rules. Per-PR tours and evidence follow the selected
-procedure's storage requirements; the default uses persistent Anaphor storage outside product
-repositories.
+Reuse the supplied checkout and environment when they meet the task's needs. Compare the project's
+setup handoff with the spec's required services, access, data, and tools. Reuse applicable readiness
+evidence; run documented launch and readiness checks for missing or changed prerequisites before
+implementation or worker dispatch. Product decisions may add prerequisites after setup. Return
+missing provisioning to the setup owner and keep dependent implementation blocked until readiness
+passes. Readiness proves access to the environment; verification proves the criteria.
 
-Inspect local changes before choosing the working baseline. Reuse the supplied checkout and
-environment when they meet the task's needs. Read the project's setup handoff and confirm its
-readiness evidence covers the accepted spec's required services, access, data, and test tools.
-Record working paths and revisions, runtime targets, resource ownership, observed checks, and
-evidence pointers in the brief. Reuse applicable evidence; run the documented launch and readiness
-checks for missing or changed prerequisites before starting implementation or dispatching workers.
-Readiness establishes a usable environment; criterion verification still follows implementation.
-
-Provisioning belongs to the project's setup procedure. Return missing infrastructure, credentials,
-or data provisioning to that owner and keep implementation blocked until the required readiness
-checks pass. Product decisions made after setup may introduce new prerequisites; check those against
-the accepted spec rather than treating an earlier setup result as sufficient for every task.
+Keep exploratory research in scratch files or linked workspace resources; put useful rationale and
+source links in the PR description. Commit research documents only when explicitly requested.
+Durable product/API documentation and recipes follow their repository publication rules. Tour
+storage follows the selected delivery procedure.
 
 Resolve code-level choices from the spec and repository evidence. When a choice changes product
 behavior beyond those decisions, pause the affected work and ask the user the concrete question.
@@ -85,13 +79,12 @@ finding.
 
 ## 4. Reconcile project records
 
-Use [anaphor-reconcile](../anaphor-reconcile/SKILL.md) after integrated verification to update
-affected product, domain, setup, and tracker records. Link the existing spec and receipts; keep
-accepted intent separate from verified and deployed behavior. Review the documentation diff. Changes
-to executable instructions or recipes return to affected review and verification.
+Use [anaphor-reconcile](../anaphor-reconcile/SKILL.md) after integrated verification. It owns record
+selection, evidence classification, and documentation checks. Return executable, configuration, or
+recipe changes to affected review and verification.
 
-**Done:** each affected authoritative record is updated, unchanged with a reason, or explicitly
-blocked. A required unresolved record keeps delivery open.
+**Done:** every affected authoritative record is updated or unchanged with a reason; required
+blocked records keep delivery open.
 
 ## 5. Deliver
 
@@ -108,25 +101,20 @@ Create or update the tour for every PR, including small and nonvisual changes:
   satisfies tour delivery without authentication or publication. Publish the same content and media
   only when explicitly requested.
 
-A coordinated tour records every participating PR, dependency order, and source state. Label local
-links for the current machine; external readers need hosting and access.
+For the default tour, the explanation skill owns storage, provenance, inspection, PR links, and
+requested hosting. Apply the selected procedure's corresponding requirements for a supplied tour.
+Source changes after verification follow
+[evidence applicability](../anaphor-verify/references/evidence.md#evidence-applicability). Return
+executable, configuration, or recipe changes to affected review and verification.
 
-Keep recipes in their repositories and tours, captures, and receipts in persistent storage outside
-implementation worktrees. Preserve historical walkthroughs; new delivery requires no second Markdown
-narrative or explanation-only commit. Source changes after verification require an applicability
-assessment or rerun while retaining the original tested revisions; executable, configuration, or
-recipe changes return to affected review and verification.
+Confirm final heads and draft status, then reconcile affected delivery links and status. Report PRs,
+tour URL and revision, delivered and tested source states, evidence, limitations, and tour access or
+resume instructions. Merge and deployment remain separate user decisions.
 
-Confirm final heads and draft status. Report PRs, tour URL and revision, implementation and final
-source states, evidence, limitations, and how to access or resume the selected tour. Reconcile
-affected delivery links and status. Opening a draft PR, inspecting a tour, declaring merge
-readiness, merging, and deploying remain distinct actions and user decisions.
-
-**Done:** the delivered source states are accounted for by review and verification, and every
-participating draft PR links an inspected tour. Broken previews, invalid provenance, or missing,
-failed, blocked, unrun, stale, or unknown required evidence leave delivery incomplete. Hosting is
-required when requested or required by the selected procedure; pending required publication or
-approval leaves tour delivery incomplete.
+**Done:** every participating draft PR links an inspected tour, review and verification cover its
+final source state, and the selected tour procedure is complete. Missing, failed, blocked, unrun,
+stale, or unknown required evidence keeps delivery incomplete, as does required publication or
+approval still pending.
 
 ## Continue in a fresh session
 

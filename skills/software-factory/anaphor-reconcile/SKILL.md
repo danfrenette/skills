@@ -58,12 +58,11 @@ Review the documentation diff and links against the evidence. Apply writing-for-
 duplication and repair navigation. Use the project glossary and enough context for a person who has
 not read the conversation. If no record needs a change, report that result without creating files.
 
-Documentation-only changes can retain prior code-test evidence with its revision and limits.
-Executable, configuration, or recipe changes return to affected review and verification. After PR
-creation and tour inspection, update affected delivery links from actual PRs and tours. Label local
-preview URLs for the current machine; an inspected local tour needs no hosted publication. Record
-tour revision separately from tested source states and preserve stale/unknown evidence limits.
-Reusable recipes stay in the owning repository; tour evidence survives worktree cleanup.
+Apply [evidence applicability](../anaphor-verify/references/evidence.md#evidence-applicability)
+after edits: retain justified prior evidence or return affected checks to review and verification.
+After PR creation and tour inspection, update delivery links from the actual PRs and tour, retaining
+its revision, source states, access limits, and evidence status. Tour storage and inspection belong
+to the selected explanation procedure.
 
 Report changed records and concrete blockers through the existing brief or final response.
 Standalone use publishes or closes tracker items only when authorized. During Anaphor delivery,
