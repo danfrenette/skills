@@ -24,17 +24,17 @@ provisioning; this skill owns execution and observed results.
    criteria.
 3. Use the verification procedure and harness supplied by the user or established for the target
    environment. Record the selected procedure with the verification evidence. Preserve its browser
-   tool when extending or executing recipes; use agent-browser for browser-visible behavior when
-   the project
-   has not selected a tool. Read the installed tool's instructions for current commands. When a flow
-   requires authentication, reuse the project's login preflight rather than copying authentication
-   setup into feature recipes. Login readiness establishes access; drive the feature itself to prove
-   its criteria. For a CLI, service, or library, exercise its public command, request, or interface.
-   Record a required unavailable tool as a prerequisite failure, not a reason to substitute a weaker
-   surface. Use an isolated browser/context for implementation checks and repeatable tests. Reserve
-   the user's browser session for references or flows that require its authentication or existing
-   state. If a shared session changes unexpectedly or a tool stalls, preserve evidence and move to
-   the isolated harness rather than repeatedly competing for the same browser.
+   tool when extending or executing recipes; use agent-browser for browser-visible behavior when the
+   project has not selected a tool. Read the installed tool's instructions for current commands.
+   When a flow requires authentication, reuse the project's login preflight rather than copying
+   authentication setup into feature recipes. Login readiness establishes access; drive the feature
+   itself to prove its criteria. For a CLI, service, or library, exercise its public command,
+   request, or interface. Record a required unavailable tool as a prerequisite failure, not a reason
+   to substitute a weaker surface. Use an isolated browser/context for implementation checks and
+   repeatable tests. Reserve the user's browser session for references or flows that require its
+   authentication or existing state. If a shared session changes unexpectedly or a tool stalls,
+   preserve evidence and move to the isolated harness rather than repeatedly competing for the same
+   browser.
 
 ## Execute and observe
 
