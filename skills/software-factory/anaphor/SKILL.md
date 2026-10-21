@@ -19,11 +19,18 @@ feature-map entries. Record the spec source, observable criteria, confirmed test
 repositories, baseline commits, working paths, and setup/verification pointers in one brief.
 Preserve the spec's requirement identifiers, or assign stable identifiers when absent.
 
+Different environments may require different verification and review-tour procedures. Use the
+procedures established for the environment or supplied by the user, and record their evidence and
+delivery requirements in the brief. Anaphor coordinates those procedures and checks their results;
+its own tour procedure is the default when no environment-specific procedure applies. A tour
+explains verified work and does not replace behavior verification.
+
 Keep exploratory research and comparison notes in scratch files or linked workspace/project
 resources. Put useful rationale and source links in the PR description; commit research documents
 only when the user explicitly requests them. Durable product/API documentation and verification
-recipes retain their repository publication rules. Per-PR tours and evidence use persistent Anaphor
-storage outside product repositories.
+recipes retain their repository publication rules. Per-PR tours and evidence follow the selected
+procedure's storage requirements; the default uses persistent Anaphor storage outside product
+repositories.
 
 Inspect local changes before choosing the working baseline. Reuse the supplied checkout and
 environment when they meet the task's needs. Read the project's setup handoff and confirm its
@@ -95,6 +102,9 @@ Push the verified branches and open draft PRs with the spec, scope, outcome, and
 evidence. Required blocked or unrun checks prevent this step. Link participating PRs and explain
 their dependency order. Reuse existing PRs if publication is interrupted.
 
+Follow the selected environment-specific tour procedure, including its inspection, publication,
+approval, and completion requirements. When none applies, use the default flow below.
+
 Use [anaphor-explain-change](../anaphor-explain-change/SKILL.md) to create or update the tour for
 every PR, including small and nonvisual changes. Open and inspect the local Anaphor reader and link
 its relevant section from each PR. A coordinated tour records every participating PR, dependency
@@ -109,14 +119,15 @@ assessment or rerun while retaining the original tested revisions; executable, c
 recipe changes return to affected review and verification.
 
 Confirm final heads and draft status. Report PRs, tour URL and revision, implementation and final
-source states, evidence, limitations, and how to resume the local reader. Reconcile affected
-delivery links and status. Opening a draft PR, inspecting a tour, declaring merge readiness,
+source states, evidence, limitations, and how to access or resume the selected tour. Reconcile
+affected delivery links and status. Opening a draft PR, inspecting a tour, declaring merge readiness,
 merging, and deploying remain distinct actions and user decisions.
 
 **Done:** the delivered source states are accounted for by review and verification, and every
 participating draft PR links an inspected tour. Broken previews, invalid provenance, or missing,
 failed, blocked, unrun, stale, or unknown required evidence leave delivery incomplete. Hosting is
-required only when requested.
+required when requested or required by the selected procedure; pending required publication or
+approval leaves tour delivery incomplete.
 
 ## Continue in a fresh session
 
