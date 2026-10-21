@@ -19,11 +19,8 @@ feature-map entries. Record the spec source, observable criteria, confirmed test
 repositories, baseline commits, working paths, and setup/verification pointers in one brief.
 Preserve the spec's requirement identifiers, or assign stable identifiers when absent.
 
-Different environments may require different verification and review-tour procedures. Use the
-procedures established for the environment or supplied by the user, and record their evidence and
-delivery requirements in the brief. Anaphor coordinates those procedures and checks their results;
-its own tour procedure is the default when no environment-specific procedure applies. A tour
-explains verified work and does not replace behavior verification.
+Record any environment-specific verification and tour procedures and their completion requirements
+in the brief.
 
 Keep exploratory research and comparison notes in scratch files or linked workspace/project
 resources. Put useful rationale and source links in the PR description; commit research documents
@@ -102,15 +99,17 @@ Push the verified branches and open draft PRs with the spec, scope, outcome, and
 evidence. Required blocked or unrun checks prevent this step. Link participating PRs and explain
 their dependency order. Reuse existing PRs if publication is interrupted.
 
-Follow the selected environment-specific tour procedure, including its inspection, publication,
-approval, and completion requirements. When none applies, use the default flow below.
+Create or update the tour for every PR, including small and nonvisual changes:
 
-Use [anaphor-explain-change](../anaphor-explain-change/SKILL.md) to create or update the tour for
-every PR, including small and nonvisual changes. Open and inspect the local Anaphor reader and link
-its relevant section from each PR. A coordinated tour records every participating PR, dependency
-order, and source state. Label local links for the current machine; external readers need requested
-hosting and access. An inspected local preview satisfies tour delivery without authentication or
-publication. Publish the same content and media only when explicitly requested.
+- If the user or project supplies a tour procedure, follow it through inspection and its required
+  delivery steps, including publication approvals.
+- Otherwise, use [anaphor-explain-change](../anaphor-explain-change/SKILL.md). Open and inspect the
+  local Anaphor reader and link its relevant section from each PR. An inspected local preview
+  satisfies tour delivery without authentication or publication. Publish the same content and media
+  only when explicitly requested.
+
+A coordinated tour records every participating PR, dependency order, and source state. Label local
+links for the current machine; external readers need hosting and access.
 
 Keep recipes in their repositories and tours, captures, and receipts in persistent storage outside
 implementation worktrees. Preserve historical walkthroughs; new delivery requires no second Markdown
@@ -120,8 +119,8 @@ recipe changes return to affected review and verification.
 
 Confirm final heads and draft status. Report PRs, tour URL and revision, implementation and final
 source states, evidence, limitations, and how to access or resume the selected tour. Reconcile
-affected delivery links and status. Opening a draft PR, inspecting a tour, declaring merge readiness,
-merging, and deploying remain distinct actions and user decisions.
+affected delivery links and status. Opening a draft PR, inspecting a tour, declaring merge
+readiness, merging, and deploying remain distinct actions and user decisions.
 
 **Done:** the delivered source states are accounted for by review and verification, and every
 participating draft PR links an inspected tour. Broken previews, invalid provenance, or missing,
