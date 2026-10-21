@@ -11,12 +11,6 @@ Prove the accepted outcomes on the surface where they occur. Read
 [evidence and blockers](references/evidence.md) before running checks. Project setup owns
 provisioning; this skill owns execution and observed results.
 
-Different environments may require different verification processes, tools, access, and evidence.
-Follow the procedures established for the target environment or supplied by the user, and record
-which apply to this run. Adapt execution to those requirements while preserving criterion coverage,
-observed outcomes, and source provenance; passing checks in one environment does not establish a
-result in another.
-
 ## Select and prepare
 
 1. Read the criteria, changed paths, project verification instructions, and relevant feature map.
@@ -28,8 +22,10 @@ result in another.
    changes when testing an uncommitted state. Check the target, health, identity/role, and required
    data using the documented read-only doctor procedure. Start only the services needed by these
    criteria.
-3. Use the project's verification skill and designated harness. Preserve its browser tool when
-   extending or executing recipes; use agent-browser for browser-visible behavior when the project
+3. Use the verification procedure and harness supplied by the user or established for the target
+   environment. Record the selected procedure with the verification evidence. Preserve its browser
+   tool when extending or executing recipes; use agent-browser for browser-visible behavior when
+   the project
    has not selected a tool. Read the installed tool's instructions for current commands. When a flow
    requires authentication, reuse the project's login preflight rather than copying authentication
    setup into feature recipes. Login readiness establishes access; drive the feature itself to prove
