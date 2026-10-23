@@ -31,6 +31,9 @@ or two short sentences per annotation to explain the consequential behavior or d
 important failure paths. Preserve full source context for inspection inside bounded scroll windows;
 following an annotation must not expand the whole file into the page.
 
+When choosing inline explanations, short popovers, or external code links, follow
+[Diff annotation disclosure](diff-annotations.md).
+
 Write annotations and captions in simplified technical English: use a clear subject, an active verb,
 and familiar project terms. State one main idea at a time. Explain why the selected code matters;
 let the code show the mechanics. Use STE-informed writing without claiming formal ASD-STE100
