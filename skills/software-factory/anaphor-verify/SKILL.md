@@ -52,9 +52,11 @@ provisioning; this skill owns execution and observed results.
 4. After a surprising result, run doctor again. Distinguish broken product behavior from a stale
    recipe or unavailable prerequisite under the blocker procedure. Fix recipe drift only against the
    accepted behavior, then execute the corrected recipe.
-5. Capture the result before cleanup. Stop only owned processes/sessions and remove only owned
-   scratch state when safe. Confirm evidence survives teardown. If the documented run deliberately
-   retains a service, report its owner and location.
+5. Capture the result in the run bundle under
+   [evidence ownership and retention](references/evidence.md#evidence-ownership-and-retention).
+   Hand off its location and retention limits for tour import during delivery. Stop only owned
+   processes/sessions and remove only owned scratch state when safe. Confirm evidence survives
+   teardown. If the documented run deliberately retains a service, report its owner and location.
 
 **Done:** every selected criterion has a passing observed result on the matching surface, affected
 recipes are current and executed, required checks pass, and evidence identifies the tested contents.

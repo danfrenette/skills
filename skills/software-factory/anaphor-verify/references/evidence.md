@@ -1,5 +1,33 @@
 # Evidence and blockers
 
+## Evidence ownership and retention
+
+Choose the evidence home before cleanup. Reusable checks help the next change; observations from
+one run establish what happened on that revision. Mixing them makes every run expand product source.
+
+1. **Classify each artifact.** Keep maintained recipes, executable checks, and their required
+   fixtures or regression baselines in the repository. For a one-off probe, identify the recurring
+   failure it would catch and check existing coverage. If that failure is uncovered, integrate the
+   assertion into the existing harness and show it fails on the regression and passes on the fix.
+   Otherwise keep the probe with this run's evidence; another permanent check would duplicate
+   coverage.
+2. **Capture the run bundle.** Keep the receipt, logs, traces, measurements, captures, and source
+   patches or snapshots together outside tracked source. Preserve failed attempts and provenance.
+   Follow an explicit project requirement for committed evidence when one exists. Record the
+   location, access scope, and retention policy or known expiry; label unknown retention explicitly.
+3. **Select the handoff.** During Anaphor delivery, hand the bundle to
+   [anaphor-explain-change](../../anaphor-explain-change/SKILL.md) for managed tour import outside the
+   product repository. Standalone verification returns the retained bundle without requiring a tour.
+   A receipt supplies the evidence fields below; it does not require a separate Markdown document.
+4. **Confirm retention before removal.** Open the retained copy, check that its referenced artifacts
+   are readable, and repair links before removing originals. If storage or import fails, keep the
+   original bundle and report the incomplete handoff. Temporary paths establish neither permanent
+   retention nor access for another reader. Discard scratch notes only when no evidence claim relies
+   on them, so cleanup cannot erase the basis of a reported result.
+
+**Done:** reusable checks have a maintained home, and run evidence has a readable location with
+explicit access and retention limits. Required tour import remains open until confirmed.
+
 ## Evidence record
 
 Use a short Markdown table or the project's existing report format. For each criterion record:

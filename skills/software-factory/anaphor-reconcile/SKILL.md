@@ -44,8 +44,10 @@ it.
   rationale when linking a successor; leave missing decisions open rather than inventing them.
 - Development or navigation: check affected commands, paths, and prerequisites against the owning
   repository. Label an unexecuted procedure as unverified; inspection is not proof that it runs.
-- Feature map: link the receipts maintained by anaphor-verify. Return stale recipes or missing
-  execution evidence to verification, which owns their live proof.
+- Feature map: update affected procedures and coverage limits. Keep per-run receipts in their
+  [evidence home](../anaphor-verify/references/evidence.md#evidence-ownership-and-retention), linking
+  from delivery records or the tour instead of appending a run history to the map. Return stale
+  recipes or missing execution evidence to verification, which owns their live proof.
 - Tracker: update evidence links and blockers only within the authorized scope. Preserve unrelated
   relationships and parent-issue restrictions. An open draft PR does not mean deployed behavior.
 
