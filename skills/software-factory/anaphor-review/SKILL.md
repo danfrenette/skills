@@ -59,6 +59,12 @@ Check the recorded reviewer isolation and Standards coverage before accepting th
 Return missing applicable rule assessments to the assigned reviewer; treat them as unassessed
 until evidence is supplied. Report reduced context separation independently of finding counts.
 
+The coordinator reconciles findings using the accepted requirements, surrounding code, and decision
+history. Investigate disputed claims through source or a targeted experiment. A deliberate design
+choice does not by itself rebut a finding; acceptance or dismissal needs evidence against the
+applicable contract or rule. Return accepted fixes to the implementation owner and request affected
+re-review after correction.
+
 Trace each proposed finding through the changed path. A reproduced failure, reachable correctness
 defect, applicable standards violation, unmet criterion, or exposed security issue blocks
 completion. A design preference needs a concrete cost and remains a labelled judgment.
