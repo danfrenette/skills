@@ -1,8 +1,8 @@
 ---
 name: anaphor-explain-change
 description:
-  Create or update an evidence-linked Anaphor tour explaining a PR's value, vertical implementation
-  slices, and verification. Use for standalone PR explanations or Anaphor delivery.
+  Create or update an evidence-linked Anaphor tour explaining a PR's business cases, implementation,
+  and verification. Use for standalone PR explanations or Anaphor delivery.
 ---
 
 # Anaphor: explain a change
@@ -24,17 +24,18 @@ receipts. Confirm ambiguous PR membership before including it. Record each repos
 and actual tested contents using [evidence records](../anaphor-verify/references/evidence.md),
 including its rules for uncommitted source and evidence applicability.
 
-Follow [content composition](references/content-composition.md) to outline the business case and
-code-led vertical slices. Pair each behavioral claim with its criterion and receipt; preserve
-supplied results as supplied, with provenance. Select captures by the claim they prove using the
-project's harness. Obtain required missing observations through
+Follow [content composition](references/content-composition.md) to outline linked business cases and
+the implementation slices and evidence supporting each case. Pair each behavioral claim with its
+criterion and receipt; preserve supplied results as supplied, with provenance. Select captures by
+the claim they prove using the project's harness. Obtain required missing observations through
 [anaphor-verify](../anaphor-verify/SKILL.md). A standalone tour may explain incomplete work, with
 failed, blocked, unrun, or unavailable evidence visible; those gaps prevent completed factory
 delivery.
 
-**Done:** every primary slice has pinned source or an observed artifact, concise annotations, and
-supporting criteria, decisions, and evidence. The main path is readable with supporting details
-closed, and missing observations remain explicit.
+**Done:** the opening lists the business cases and links each to its detailed section. Each case
+connects its changed behavior to implementation slices, concise annotations, and supporting
+evidence. The main path is readable with supporting details closed, and missing observations remain
+explicit.
 
 ## 2. Prepare or update the tour
 
