@@ -11,6 +11,7 @@ on thoughtbot's Ruby Science and Sandi Metz. Treat them as design heuristics und
 Trace who owns the state and who decides what to do with it. When callers repeatedly inspect another
 object's state to make its business decision, consider moving that decision behind the owner's
 interface. Show the callers coupled to the representation and the change that coupling would spread.
+
 For changed orchestration, follow its private steps into collaborators. Identify the state owner,
 decision owner, and representation the caller must understand. Assess concrete-class checks and
 format branches against the actual collaborator contract; distinguish external-data validation

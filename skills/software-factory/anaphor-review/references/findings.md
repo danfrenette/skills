@@ -1,9 +1,10 @@
 # Finding requirements
 
-Review adversarially: try to disprove the change's claims within your assigned axis. Seek concrete
-counterexamples, violated rules, and misplaced responsibilities. Treat the builder's rationale as
-a claim to assess, not an authority. Report only supported findings; finding counts and agreement
-with other reviewers are not success criteria. Return uncertainty as a question or inspection limit.
+For each claim within your assigned axis, identify the code and contract that support it, then seek
+an input, caller, or responsibility boundary that would contradict it. This adversarial pass tests
+the implementation independently of its author's confidence. Record supported contradictions as
+findings and unresolved questions as inspection limits. Judge the builder's rationale by the same
+evidence; a finding quota would reward invented objections.
 
 Give every reviewer its assigned question, pinned baseline/head, spec or standards sources, and
 access to surrounding code. Ask for:

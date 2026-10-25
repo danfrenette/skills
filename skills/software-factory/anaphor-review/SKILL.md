@@ -62,8 +62,8 @@ until evidence is supplied. Report reduced context separation independently of f
 The coordinator reconciles findings using the accepted requirements, surrounding code, and decision
 history. Investigate disputed claims through source or a targeted experiment. A deliberate design
 choice does not by itself rebut a finding; acceptance or dismissal needs evidence against the
-applicable contract or rule. Return accepted fixes to the implementation owner and request affected
-re-review after correction.
+applicable contract or rule. Route fixes and affected re-review through the
+[handoff procedure](../anaphor/references/agents.md).
 
 Trace each proposed finding through the changed path. A reproduced failure, reachable correctness
 defect, applicable standards violation, unmet criterion, or exposed security issue blocks

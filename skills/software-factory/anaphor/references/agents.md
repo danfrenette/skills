@@ -19,7 +19,8 @@ Link shared specs, research notes, and evidence instead of copying their content
 message. Keep the assigned role, write boundaries, and completion requirements explicit in the
 handoff, and confirm each worker can access the referenced artifacts.
 
-Create reviewers with conversation-history inheritance disabled. With Codex's
+Disable conversation-history inheritance so reviewers assess source before the builder's defense.
+With Codex's
 `collaboration.spawn_agent`, set `fork_turns: "none"` explicitly; on other hosts, use the
 corresponding supported isolation option. A new agent identifier alone does not establish a fresh
 context. Record the dispatch option used. If isolation is unavailable, disclose reduced separation.
