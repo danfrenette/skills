@@ -55,6 +55,10 @@ pass.
 
 ## Judge and report
 
+Check the recorded reviewer isolation and Standards coverage before accepting the reports.
+Return missing applicable rule assessments to the assigned reviewer; treat them as unassessed
+until evidence is supplied. Report reduced context separation independently of finding counts.
+
 Trace each proposed finding through the changed path. A reproduced failure, reachable correctness
 defect, applicable standards violation, unmet criterion, or exposed security issue blocks
 completion. A design preference needs a concrete cost and remains a labelled judgment.

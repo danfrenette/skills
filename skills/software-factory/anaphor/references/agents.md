@@ -19,9 +19,17 @@ Link shared specs, research notes, and evidence instead of copying their content
 message. Keep the assigned role, write boundaries, and completion requirements explicit in the
 handoff, and confirm each worker can access the referenced artifacts.
 
-Fresh reviewers receive the requirements and source facts before the builder's rationale or another
-reviewer's verdict, to reduce anchoring. Reviewers can read files and run nonmutating checks; one
-verifier owns any shared app session or mutable test data.
+Create reviewers with conversation-history inheritance disabled. With Codex's
+`collaboration.spawn_agent`, set `fork_turns: "none"` explicitly; on other hosts, use the
+corresponding supported isolation option. A new agent identifier alone does not establish a fresh
+context. Record the dispatch option used. If isolation is unavailable, disclose reduced separation.
+
+Give reviewers accepted requirements, pinned source, applicable standards, and verification
+provenance. Keep the initial brief separate from the builder's design defense and other reviewers'
+verdicts. After recording initial findings, reviewers may consult that rationale and explain any
+resulting changes. Isolation removes inherited conversation, not access to relevant source or docs.
+Reviewers can read files and run nonmutating checks; one verifier owns any shared app session or
+mutable test data.
 
 Each shared checkout, process, browser session, or data set has one writer. Parallel implementation
 requires isolated resources and an integration owner. Keep dependent work sequential; a dependency
