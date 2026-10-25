@@ -21,6 +21,12 @@ correctness cost and a proportionate alternative. Explain when the recommendatio
 Check the relevant caller and framework version before recommending a language idiom. An author's
 name, class length, or a formatter preference is insufficient evidence.
 
+For Standards, return a compact coverage record: applicable rule, inspected paths or symbols, and
+conclusion (satisfied, violation, justified exception, or unassessed). Group related rules when they
+share evidence. Explain applicability limits and cite the authority for exceptions. A finding count
+alone does not establish coverage. Identify mechanical rules already enforced by repository checks;
+report their actual coverage and whether results were supplied or observed.
+
 Report verification evidence as supplied or independently observed. Code inspection can identify a
 defect without executing it, but it cannot claim a test or browser flow ran. Return a concrete
 inspection limit when required source is unavailable.
