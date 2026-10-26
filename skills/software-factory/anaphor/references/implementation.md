@@ -9,6 +9,8 @@
    the agreed public boundary, implement enough to pass, and repeat. For a bug, reproduce the
    reported symptom and retain a regression that fails for that cause. A failure caused only by
    missing setup is not the regression proof.
+   Before adding robustness mechanisms, apply [robustness scope](robustness-scope.md), including to
+   review-driven fixes. Establish the failure's applicability before expanding the implementation.
 3. Update affected feature recipes as the behavior changes. If coverage is missing, use
    [anaphor-create-feature-map](../../anaphor-create-feature-map/SKILL.md) for the affected
    behavior. Preserve accepted outcomes when repairing selectors or harness instructions.

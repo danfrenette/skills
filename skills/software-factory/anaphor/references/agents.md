@@ -11,6 +11,8 @@ Before dispatch, give each worker:
 - Working paths, baseline/revision, and applicable project instructions.
 - For implementation, the project's readiness evidence and ownership of the supplied environment.
 - Scope of permitted writes and shared resources it must leave to their owner.
+- For implementation and review, [robustness scope](robustness-scope.md) and existing user decisions
+  on hardening, so delegation preserves the authorized complexity budget.
 - Relevant source references, feature recipes, and verification expectations.
 - Required return: changes or findings, revision, commands/actions actually run, evidence locations,
   and unresolved gaps.

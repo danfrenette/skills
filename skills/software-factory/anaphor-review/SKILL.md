@@ -69,6 +69,12 @@ Trace each proposed finding through the changed path. A reproduced failure, reac
 defect, applicable standards violation, unmet criterion, or exposed security issue blocks
 completion. A design preference needs a concrete cost and remains a labelled judgment.
 
+Classify robustness findings under
+[robustness scope](../anaphor/references/robustness-scope.md) before assigning a blocking
+disposition.
+Optional hardening remains nonblocking pending a scope decision; unresolved required evidence keeps
+its existing gate. Reviewer agreement alone does not authorize additional complexity.
+
 For each finding, record act on, consider, noted, or dismissed, with its evidence and owner. Explain
 dismissals against the actual path or rule. Report **Standards**, **Spec**, and **Principles** as
 three separate axes, each with its findings, count, and evidence limits. Within Principles, group
