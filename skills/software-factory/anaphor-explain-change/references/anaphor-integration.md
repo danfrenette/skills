@@ -27,6 +27,20 @@ When a PR head changes, apply
 [evidence applicability](../../anaphor-verify/references/evidence.md#evidence-applicability) to
 receipts and captures. Keep required stale or unknown checks visible in the tour.
 
+## Compose with Anaphor
+
+When designing or changing the reader, including Paper mockups, read the app's `DESIGN.md` and
+`docs/component-prop-contracts.md`. They own heading treatment and the choice of Collapsible, Menu,
+Select, Popover, and MediaViewer. Check that every heading-font use renders in uppercase and every
+disclosure uses the shared Anaphor control rather than native details/summary.
+
+Use as many business cases as the change needs. Keep their numbers, titles, and anchors consistent
+between the contents cards and sidebar. Add implementation-step subsections under the active case
+when useful. Label counts as "X steps". Evidence icons may open named popovers; keep required gaps
+visible as text in the affected case. Place useful screenshot or recording previews in the main
+reading path with a visible viewer action for supported media. Receipts and provenance remain
+supporting content. A mockup depicts these states; it does not establish working interactions.
+
 ## Launch and inspect locally
 
 Start the reader with the app's documented loopback launch command and explicit
