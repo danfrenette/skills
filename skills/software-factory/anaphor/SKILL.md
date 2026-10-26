@@ -40,6 +40,11 @@ Resolve code-level choices from the spec and repository evidence. When a choice 
 behavior beyond those decisions, pause the affected work and ask the user the concrete question.
 Continue independent work while that answer is pending.
 
+For robustness proposals during implementation or review, apply
+[robustness scope](references/robustness-scope.md). Record accepted expansions and deferrals in the
+brief; carry them through slice criteria and worker handoffs so speculative protection does not
+become an implicit delivery requirement.
+
 **Done:** every criterion has an owning surface and verification route; the baseline and confirmed
 test boundaries are known, and required workspace readiness has observed evidence. Missing product
 decisions remain explicit dependencies.

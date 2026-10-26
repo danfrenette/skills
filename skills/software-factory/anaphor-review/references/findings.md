@@ -20,6 +20,12 @@ outcomes. Check the actual caller before proposing a guard, retry, abstraction, 
 Reviewers may request a targeted experiment from the verifier; a speculative failure remains
 unconfirmed until traced or observed.
 
+For robustness recommendations, apply
+[robustness scope](../../anaphor/references/robustness-scope.md). Return the classification,
+evidence for applicability and likelihood, and the proposed correction's complexity cost. Keep
+optional hardening separate from required corrections so the implementation owner can request a
+scope decision instead of treating every recommendation as mandatory work.
+
 For design concerns, identify the responsibility or caller obligation that creates the cost.
 Existing legacy style does not waive a documented rule; an unrecorded preference does not become
 one. Principles findings must name a concrete maintenance, testing, performance, accessibility, or
