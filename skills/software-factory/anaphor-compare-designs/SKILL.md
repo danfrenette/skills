@@ -12,7 +12,8 @@ Settle one implementation decision while preserving the accepted product behavio
 
 1. State the decision, accepted criteria, applicable standards, behavior to preserve, and baseline.
    If the disagreement is a product requirement, return that question to the user before comparing
-   implementations.
+   implementations. Resolve [coding standards](../anaphor/references/coding-standards/README.md)
+   before generating candidates; give each the same authority and triggered references.
 2. Define two or three alternatives that differ in a concrete constraint: where a decision belongs,
    what callers must know, or how failures propagate. Give every candidate the same requirements and
    standards. Read installed `codebase-design` and its `DESIGN-IT-TWICE.md` when interface or seam

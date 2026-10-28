@@ -69,6 +69,13 @@ Parallel capacity is optional; fresh contexts preserve role separation when work
 
 ## Project integration
 
+Resolve [coding standards](references/coding-standards/README.md) before implementation or review.
+Repository standards take precedence. When absent, Anaphor selects Rails API, Ruby-library, React,
+Next.js, and TypeScript samples by the actual stack. Frontend layers compose: Next.js adds route and
+server rules to React; typed code adds TypeScript. Concern-specific references load only when
+triggered. Selection is recorded in the brief and does not write files into the repository;
+unsupported surfaces retain an explicit coverage limit.
+
 Project instructions should point to their own setup and verification procedures. Anaphor can use a
 supplied environment without knowing how it was provisioned. Its implementation brief checks the
 project's readiness evidence against the accepted spec before implementation begins. It does not

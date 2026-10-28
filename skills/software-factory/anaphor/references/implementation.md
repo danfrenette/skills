@@ -2,15 +2,17 @@
 
 1. Read the slice's criteria, confirmed test boundaries, and affected feature recipes. Trace the
    current path through callers, data, and owning modules. Use the project's setup pointer for
-   missing prerequisites; keep provisioning outside this procedure.
+   missing prerequisites; keep provisioning outside this procedure. Resolve
+   [coding standards](coding-standards/README.md) for the affected paths and read the triggered
+   references before editing, including when this procedure is invoked without the coordinator.
 2. Read Matt Pocock's installed `tdd`. Carry forward the spec's confirmed testing decisions; ask
    only about missing or materially changed boundaries. TDD owns test quality and the implementation
    loop; refactoring follows in the review/fix stage. For each behavior, observe a failing test at
    the agreed public boundary, implement enough to pass, and repeat. For a bug, reproduce the
    reported symptom and retain a regression that fails for that cause. A failure caused only by
-   missing setup is not the regression proof.
-   Before adding robustness mechanisms, apply [robustness scope](robustness-scope.md), including to
-   review-driven fixes. Establish the failure's applicability before expanding the implementation.
+   missing setup is not the regression proof. Before adding robustness mechanisms, apply
+   [robustness scope](robustness-scope.md), including to review-driven fixes. Establish the
+   failure's applicability before expanding the implementation.
 3. Update affected feature recipes as the behavior changes. If coverage is missing, use
    [anaphor-create-feature-map](../../anaphor-create-feature-map/SKILL.md) for the affected
    behavior. Preserve accepted outcomes when repairing selectors or harness instructions.

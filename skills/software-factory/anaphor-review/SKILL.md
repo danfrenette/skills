@@ -20,9 +20,11 @@ merge-base; record both revisions and the commits covered. For a remote PR, capt
 head and retrieve surrounding source and standards at that head. Recheck the head before reporting;
 changed contents require affected review again.
 
-Include the accepted spec, testing decisions, applicable repository standards, and evidence
-references. An empty change has nothing to review. If requirements or a valid baseline are missing,
-name that limit; an unassessed Spec axis cannot satisfy Anaphor's delivery gate.
+Resolve [coding standards](../anaphor/references/coding-standards/README.md) at the reviewed head
+for each repository. Use repository standards when present; otherwise record the matching fallback
+and its applicable references. Include that authority, the accepted spec, testing decisions, and
+evidence references. An empty change has nothing to review. If requirements or a valid baseline are
+missing, name that limit; an unassessed Spec axis cannot satisfy Anaphor's delivery gate.
 
 ## Select the passes
 
@@ -55,9 +57,9 @@ pass.
 
 ## Judge and report
 
-Check the recorded reviewer isolation and Standards coverage before accepting the reports.
-Return missing applicable rule assessments to the assigned reviewer; treat them as unassessed
-until evidence is supplied. Report reduced context separation independently of finding counts.
+Check the recorded reviewer isolation and Standards coverage before accepting the reports. Return
+missing applicable rule assessments to the assigned reviewer; treat them as unassessed until
+evidence is supplied. Report reduced context separation independently of finding counts.
 
 The coordinator reconciles findings using the accepted requirements, surrounding code, and decision
 history. Investigate disputed claims through source or a targeted experiment. A deliberate design
@@ -69,11 +71,10 @@ Trace each proposed finding through the changed path. A reproduced failure, reac
 defect, applicable standards violation, unmet criterion, or exposed security issue blocks
 completion. A design preference needs a concrete cost and remains a labelled judgment.
 
-Classify robustness findings under
-[robustness scope](../anaphor/references/robustness-scope.md) before assigning a blocking
-disposition.
-Optional hardening remains nonblocking pending a scope decision; unresolved required evidence keeps
-its existing gate. Reviewer agreement alone does not authorize additional complexity.
+Classify robustness findings under [robustness scope](../anaphor/references/robustness-scope.md)
+before assigning a blocking disposition. Optional hardening remains nonblocking pending a scope
+decision; unresolved required evidence keeps its existing gate. Reviewer agreement alone does not
+authorize additional complexity.
 
 For each finding, record act on, consider, noted, or dismissed, with its evidence and owner. Explain
 dismissals against the actual path or rule. Report **Standards**, **Spec**, and **Principles** as
