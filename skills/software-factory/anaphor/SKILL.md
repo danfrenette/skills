@@ -15,7 +15,9 @@ synthesis and ticket-publication workflow stays upstream.
 ## 1. Establish the implementation brief
 
 Read the accepted spec, testing decisions, repository instructions, and affected feature-map
-entries. Inspect local changes before choosing the baseline, then create one brief containing:
+entries. Resolve [coding standards](references/coding-standards/README.md) for each owning
+repository before implementation; record the selected authority and applicable references in the
+brief. Inspect local changes before choosing the baseline, then create one brief containing:
 
 - Spec source and observable criteria, preserving requirement identifiers or assigning stable ones.
 - Confirmed test boundaries and each criterion's owning surface and verification route.
