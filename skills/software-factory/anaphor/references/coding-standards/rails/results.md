@@ -1,31 +1,32 @@
 # Rails results and failures
 
-## Establish the result contract
+## Define the caller's outcomes
 
-Inspect the existing service base, result API, and callers before changing them. Preserve supported
-contracts; the sample below describes Autodidact's custom API, not a Rails built-in. Where the
-project already uses a different result mechanism, retain its public contract and apply named
-outcomes, explicit sequencing, safe failures, and ownership through that mechanism.
+Inspect the existing service base, result API, and callers before changing them. Retain the shared
+infrastructure and supported public contracts. For each changed operation:
 
-For a new application adopting this sample contract:
+1. List the decisions its callers must make after execution. Creation, updating an existing record,
+   and rejection may need distinct outcomes even when two are successful.
+2. Give each outcome explicit semantics and named data. Use the existing result mechanism to expose
+   an outcome code or predicates; define which combinations are valid so callers cannot observe
+   contradictory states. Keep user-safe errors explicit.
+3. Return enough information for those decisions without requiring callers to infer the business
+   outcome from a bare boolean, Active Record state, or error-message text. A record can be a named
+   payload; the operation's result owns the outcome contract.
+4. Share a feature result only when operations have the same payload and outcome meanings. Keep
+   common success/failure mechanics in the shared base and feature-specific policy with the feature.
+   Add result fields for an actual caller requirement, not hypothetical future consumers.
 
-- `ApplicationResult` owns common `success`, `errors`, and `error_code` fields and status
-  predicates. Use `ApplicationResult.define(:source)` or another named business payload. Operations
-  may share a named feature result only when payload and outcome meanings match. Generic `value`
-  payloads or unrelated fields in one result hide the caller's contract.
-- Feature results used by endpoints own `http_status`; the common base stays free of feature status
-  policy. Keep requests, rendering, and persistence out of results. Pass semantic codes using
-  `error_code:` and expose deliberate user-safe errors.
-- Supply named payload keywords on success and failure, usually `nil` on failure. In the original
-  custom implementation, payload readers are not Ruby `Data` members: inherited `to_h` and equality
-  include only common fields. Read payloads explicitly at serialization boundaries and preserve the
-  chosen behavior in compatibility tests.
-- The application service base owns common `NotFound` and `InvalidInput` exception types. Use cases
-  own their user-scoped lookups and required-value checks; feature exceptions name additional
-  business failures.
+Feature results used by endpoints own `http_status`; controllers retain template/body selection.
+Keep Rails request objects, rendering, and persistence out of results. A semantic code describes an
+outcome independently of the user-facing message. Test each distinction through the public service
+and the caller's decision using [verification](../ruby/verification.md).
 
-Implement and test the base API before building callers that assume it exists. Preserve established
-helpers rather than adding a result/monad dependency solely to restate the same contract.
+When adopting, extending, or checking compatibility with Autodidact's `ApplicationService` and
+`ApplicationResult`, read the [sample base contract](result-compatibility.md). That reference owns
+its custom keywords, exception classes, payload readers, and Ruby `Data` behavior. Those mechanics
+are not assumed for another result implementation. Preserve established helpers rather than adding a
+result/monad dependency solely to restate the same contract.
 
 ## Separate expected failure from defects
 

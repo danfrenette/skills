@@ -14,12 +14,19 @@ Select coverage from the changed risk:
 - A provider is involved: use controlled fixtures for ordinary tests and opt-in live checks for
   actual compatibility. Record fixture provenance and limits; a simulated process does not prove an
   installed runtime works.
+- An operation gains a controller/job/task caller: test its business outcome through the common
+  public service and the changed adapter's mapping. Keep framework retry or rendering policy in its
+  adapter; shared business sequencing stays in the use case.
+- Callers distinguish business outcomes: exercise each supported outcome and its required payload.
+  At an adapter seam, prefer real result instances with verified service doubles when isolation is
+  needed, so changed result requirements expose a stale caller contract.
 - A base service/result API is introduced or changed: test compatibility at its public boundary,
   including supported omission/`nil` behavior, payload access, and wrapper semantics.
 - Rails HTTP or writes change: request tests cover mapping, authentication, ownership, extra-field
   rejection, and expected failures. Use real database behavior for persistence and rollback after a
   failed child. Test nested report-once behavior, re-raising the original exception, and reporter
-  failure when the application uses the reporting policy.
+  failure when the application uses the reporting policy. For changed persisted invariants, follow
+  the constraint checks in [persistence](../rails/persistence.md).
 
 Reuse the repository's harness and run its required checks. RSpec is the source Rails convention; a
 fallback alone does not authorize replacing an existing test framework. Keep live dependencies out
