@@ -22,6 +22,9 @@ Select coverage from the changed risk:
   needed, so changed result requirements expose a stale caller contract.
 - A base service/result API is introduced or changed: test compatibility at its public boundary,
   including supported omission/`nil` behavior, payload access, and wrapper semantics.
+- Rails read selection or loading changes: apply the
+  [query execution checks](../rails/query-execution.md) with a real database, including authorized
+  filter combinations and data-query-free consumption after the service returns.
 - Rails HTTP or writes change: request tests cover mapping, authentication, ownership, extra-field
   rejection, and expected failures. Use real database behavior for persistence and rollback after a
   failed child. Test nested report-once behavior, re-raising the original exception, and reporter
