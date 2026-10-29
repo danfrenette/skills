@@ -3,9 +3,11 @@
 ## Define the operation
 
 Expose one public instance operation, `call`, through the project's class-level `.call` dispatcher.
-Initializers store explicit dependencies and inputs; run business work, process launches, network
-requests, and environment discovery during the operation so construction has no external effects.
-Required preconditions stay required inputs; [arguments](arguments.md) owns optionality decisions.
+Each class dispatch constructs a fresh instance for that operation. Initializers store operation
+inputs and selected collaborators; run business work, process launches, network requests, and
+environment discovery during the operation so construction has no external effects. Required
+preconditions stay required inputs; [arguments](arguments.md) owns optionality decisions. Rails
+entry points also follow the [application boundary](../rails/service-boundary.md).
 
 Keep business steps private and name them for the operation they perform. A simple use case stays in
 one service. Extract a focused service only when it owns a separate responsibility; a parent then
@@ -28,6 +30,31 @@ meaningful exception handled by the service or existing command boundary when a 
 Inspect child-command results inside the owning step before dependent work. Keep resource
 acquisition/use/cleanup in one private scope; adding instance state just to divide that scope loses
 its lifetime guarantee.
+
+## Reveal the complete behavior
+
+When changing orchestration, trace from the public entry through private steps and collaborators.
+Account for each decision, write, external effect, failure exit, and transaction/resource boundary.
+A short entry point passes this check only when those effects can be located and their order and
+failure consequences explained. Extraction must improve that trace; a business-sounding method name
+alone does not establish clarity. Keep resource lifetime rules in the owning scope as described
+above.
+
+## Select collaborators
+
+For each dependency, inspect the actual callers before changing its construction:
+
+1. The operation requires a fixed implementation and callers have no configuration choice: refer to
+   it directly. In Rails, established models, mailers, and jobs can remain explicit dependencies.
+2. A caller must select or configure the implementation: accept that collaborator explicitly and
+   define the interface the operation uses. Preserve an existing supported injection contract.
+3. A test needs control over an external effect: use the project's established test seam first.
+   Introduce injection when it supplies a concrete boundary; a test convenience alone does not make
+   every fixed collaborator a public option.
+
+This keeps genuine variation visible without making every caller assemble a hypothetical generic
+application. Repositories and provider interfaces need an actual responsibility or supported
+variation; using a concrete Rails dependency is not itself a design defect.
 
 ## Assign behavior to its owner
 

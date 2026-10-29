@@ -26,6 +26,8 @@ explicit duplication when sharing would introduce behavior flags or optional pre
 Before editing or reviewing each affected boundary, read all matching references:
 
 - **Controllers, routes, JSON views, request input:** [HTTP](http.md).
+- **Use cases, controller/job/task adapters, public service inputs:**
+  [application boundary](service-boundary.md).
 - **Services or collaborators:** [Ruby services](../ruby/services.md) and
   [arguments and defaults](../ruby/arguments.md). Rails `call` methods use roughly five business
   steps with necessary control flow and rescue clauses; the Ruby-library bareword rule is not a

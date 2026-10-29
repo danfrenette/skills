@@ -66,9 +66,9 @@ specific to that gem; Rails' reporting/re-raise policy remains separate.
 
 Project names, framework version snapshots, deployment vendors, telemetry provisioning, legacy-copy
 authorization, audio installation options, and historical delivery evidence are excluded from the
-Ruby/Rails samples. Frontend conventions have their own entries. The Rails result reference
-describes the source's custom base as a sample contract; it does not claim Rails provides that API
-or require copying it into an existing application.
+Ruby/Rails samples. Frontend conventions have their own entries. The disclosed Rails result
+compatibility reference describes the source's custom base; it does not claim Rails provides that
+API or require copying it into an existing application.
 
 These are local conventions informed by the source documents, not universal Rails/Ruby rules. The
 service-size and parameter thresholds remain review heuristics, distinct from mandatory
@@ -82,3 +82,10 @@ TypeScript references Matt Pocock's Total TypeScript and scoped adaptations from
 `quality-code`; each entry links its sources and applicability limits. External sources were
 inspected October 28, 2026. Framework-specific examples must match the destination's pinned
 versions.
+
+The supplied _Sustainable Rails_ excerpt, chapter 15 (pages 219–230) and section 16.1 (page 231),
+informs the Rails application boundary, collaborator selection, caller-oriented outcomes, and the
+distinction between validation feedback and database integrity. The adaptation retains `.call` with
+fresh instances and existing shared result infrastructure; the
+[boundary reference](rails/service-boundary.md) records those departures. The excerpt is reference
+material, not a repository artifact or an instruction to change accepted invocation contracts.
