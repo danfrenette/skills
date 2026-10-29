@@ -9,7 +9,9 @@ routes/actions instead of adding custom actions to a broad controller.
 
 Each action calls one fixed, named use case, passes authenticated context and plain request data,
 and maps its result to HTTP. Middleware and filters can reject unauthenticated requests, but the use
-case still enforces user-scoped access. Controllers neither query nor mutate Active Record.
+case still enforces user-scoped access. Controllers neither query nor mutate Active Record. Read
+results follow the [query execution boundary](query-execution.md), including view association
+access.
 
 ## Accept input
 

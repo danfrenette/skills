@@ -33,6 +33,9 @@ Before editing or reviewing each affected boundary, read all matching references
   steps with necessary control flow and rescue clauses; the Ruby-library bareword rule is not a
   Rails requirement.
 - **Results, error handling, reporting:** [results and failures](results.md).
+- **Model scopes, read use cases, domain filters, query objects:** [query ownership](queries.md).
+- **Query execution, pagination/counts, association loading, rendering reads:**
+  [execution boundary](query-execution.md).
 - **Models, writes, transactions, concurrent invariants:** [persistence](persistence.md).
 - **Providers, subprocesses, files, temporary resources:**
   [resource boundaries](../ruby/resources.md).
