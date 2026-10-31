@@ -23,6 +23,13 @@ pnpm --filter @anaphor/demo tour local help
    revision conflict by loading and reconciling the current tour. An invalid or interrupted update
    must leave the previous readable revision available; retain inputs for recovery.
 
+When importing a verification run, follow
+[evidence ownership and retention](../../anaphor-verify/references/evidence.md#evidence-ownership-and-retention)
+before removing originals. If the reader cannot import an artifact format, retain it in a named
+external evidence location and disclose access and retention limits; a summary cannot substitute
+for inspectable proof. Use [content composition](content-composition.md#connect-claims-to-observations)
+to place results beside the code and supporting detail behind disclosures.
+
 When a PR head changes, apply
 [evidence applicability](../../anaphor-verify/references/evidence.md#evidence-applicability) to
 receipts and captures. Keep required stale or unknown checks visible in the tour.

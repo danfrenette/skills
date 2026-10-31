@@ -15,8 +15,9 @@ Each feature entry contains:
   Reference an existing behavior test rather than duplicating its implementation.
 - **Assertions:** success, meaningful failure states, and how persisted effects are read back.
   Expected results come from requirements, not the current possibly broken output.
-- **Evidence:** what to capture and where it survives cleanup. Keep per-run receipts separate from
-  the durable procedure.
+- **Evidence:** what to capture and where it survives cleanup. Follow
+  [evidence ownership and retention](../../anaphor-verify/references/evidence.md#evidence-ownership-and-retention)
+  for run bundles and tour handoff; keep the recipe focused on the reusable procedure.
 - **Cleanup and gotchas:** owned resources, reset procedure, known limitations, and external effects
   requiring isolation.
 
