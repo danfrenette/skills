@@ -50,7 +50,7 @@ the coordinator's continuation branch. Optional source triggers live in the affe
 Principles profiles; load them only when that branch is reached.
 
 For development in this source repository, the root
-[dependency setup](../../../README.md#project-dependencies) restores the external skills from the
+[dependency setup](../../README.md#project-dependencies) restores the external skills from the
 generated project lock. That lock does not create transitive installs for users of the family.
 
 The [Principles profiles](../anaphor-review/references/principles/README.md) cover Ruby/Rails
@@ -117,5 +117,5 @@ preparation, revision freshness, local inspection, and requested hosting.
 
 Structural checks have passed; end-to-end reliability has not yet been established through live
 implementation trials. Each change's verification evidence belongs in its PR. The root
-[usage guide](../../../README.md#anaphor) describes installation, invocation, and the delivery
+[usage guide](../../README.md#anaphor) describes installation, invocation, and the delivery
 lifecycle.
