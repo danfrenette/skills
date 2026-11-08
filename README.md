@@ -33,6 +33,12 @@ skills. The installer lets you choose which skills to install and select a targe
 These standalone skills live at `<skill-name>/SKILL.md`. The Anaphor family lives together at the
 repository root under `software-factory/<skill-name>/`.
 
+Invoke `anaphor`, `slow-down`, `ticket-writer`, `today`, and `yesterday` by name. These workflows
+use
+[explicit-invocation frontmatter](https://code.claude.com/docs/en/skills#control-who-invokes-a-skill)
+and the [Codex invocation policy](https://learn.chatgpt.com/docs/build-skills). Scheduled work and
+Anaphor's supporting skills remain discoverable so their callers can load them.
+
 ## Anaphor
 
 Anaphor is a software-delivery workflow for agents. Give it an accepted product spec and a working
