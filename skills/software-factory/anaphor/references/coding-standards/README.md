@@ -89,3 +89,8 @@ distinction between validation feedback and database integrity. The adaptation r
 fresh instances and existing shared result infrastructure; the
 [boundary reference](rails/service-boundary.md) records those departures. The excerpt is reference
 material, not a repository artifact or an instruction to change accepted invocation contracts.
+
+Rails read ownership was revised October 30, 2026: [facades](rails/facades.md) coordinate read-only
+use cases, mutation services retain state-changing workflows, and query objects encapsulate cohesive
+selection logic, usually for filtered index lists. The facade reference owns the thoughtbot example
+and its local adaptations; earlier read-service terminology is superseded for this fallback.

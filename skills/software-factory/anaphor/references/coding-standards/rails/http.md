@@ -8,10 +8,11 @@ have one action. Name the resource for its state; keep distinct operation contra
 routes/actions instead of adding custom actions to a broad controller.
 
 Each action calls one fixed, named use case, passes authenticated context and plain request data,
-and maps its result to HTTP. Middleware and filters can reject unauthenticated requests, but the use
-case still enforces user-scoped access. Controllers neither query nor mutate Active Record. Read
-results follow the [query execution boundary](query-execution.md), including view association
-access.
+and maps its result to HTTP. Read-only actions call a [facade](facades.md); state-changing actions
+call a mutation service. Query objects remain behind that application boundary. Middleware and
+filters can reject unauthenticated requests, but the use case still enforces user-scoped access.
+Controllers neither query nor mutate Active Record. Read results follow the
+[query execution boundary](query-execution.md), including view association access.
 
 ## Accept input
 
