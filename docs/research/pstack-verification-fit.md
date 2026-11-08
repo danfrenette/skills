@@ -19,8 +19,8 @@ The inspected upstream revision is `ea32d9562a1c9f077d7cdd3be53d07383eb18866`, w
 [pstack manifest](https://github.com/cursor/plugins/blob/ea32d9562a1c9f077d7cdd3be53d07383eb18866/pstack/.cursor-plugin/plugin.json)
 reports version 0.15.18. Both skill files are byte-identical to revision
 `e43c7ee26e0038c6c1fa8380dd34ce86ff94cb2a`, already recorded in Anaphor's
-[attribution](../../skills/software-factory/anaphor/ATTRIBUTION.md). These are existing design
-sources, not newly introduced upstream capabilities.
+[attribution](../../software-factory/anaphor/ATTRIBUTION.md). These are existing design sources, not
+newly introduced upstream capabilities.
 
 ## What the upstream skills do
 
@@ -54,34 +54,34 @@ the recipe persists as infrastructure; a receipt establishes what actually ran o
 | Scheduled maintenance delivery | Project periodic instructions | Not defined    |
 
 **Creation overlaps with a narrower Anaphor operation.**
-[anaphor-create-feature-map](../../skills/software-factory/anaphor-create-feature-map/SKILL.md)
-already generates an app guide, index, and recipes when needed. It respects the project's discovery
+[anaphor-create-feature-map](../../software-factory/anaphor-create-feature-map/SKILL.md) already
+generates an app guide, index, and recipes when needed. It respects the project's discovery
 convention and falls back to `docs/verification/`, rather than requiring Cursor. Automatic creation
 covers only the affected feature and executes every new or changed recipe. Upstream's initial
 feature sample and one-feature smoke proof are useful bootstrap behavior, but insufficient to
 certify all those recipes under Anaphor's existing contract.
 
 **Maintenance substantially overlaps with the existing audit.**
-[anaphor-audit-feature-map](../../skills/software-factory/anaphor-audit-feature-map/SKILL.md)
-already compares the index and all recipes against source, checks recent changes, drives the map,
-repairs drift, reports regressions, and preserves evidence through cleanup. It permits read-only
-source workers and keeps a single owner for shared app state. It does not prescribe one worker per
-feature, a scheduler contract, or clean/changed/blocked PR publication behavior. Those are concrete
+[anaphor-audit-feature-map](../../software-factory/anaphor-audit-feature-map/SKILL.md) already
+compares the index and all recipes against source, checks recent changes, drives the map, repairs
+drift, reports regressions, and preserves evidence through cleanup. It permits read-only source
+workers and keeps a single owner for shared app state. It does not prescribe one worker per feature,
+a scheduler contract, or clean/changed/blocked PR publication behavior. Those are concrete
 integration choices, not reasons to duplicate the audit engine.
 
 **Verification remains a delivery gate.**
-[anaphor-verify](../../skills/software-factory/anaphor-verify/SKILL.md) selects affected criteria,
-routes, and roles; proves visible and persisted effects; and binds results to tested contents. Its
-[blocker procedure](../../skills/software-factory/anaphor-verify/references/evidence.md) stops
-delivery after one documented safe recovery fails. A maintenance report can be complete with
-coverage gaps. Anaphor delivery still requires every required criterion to pass. Upstream's
-unreachable-feature label must never become a functional pass.
+[anaphor-verify](../../software-factory/anaphor-verify/SKILL.md) selects affected criteria, routes,
+and roles; proves visible and persisted effects; and binds results to tested contents. Its
+[blocker procedure](../../software-factory/anaphor-verify/references/evidence.md) stops delivery
+after one documented safe recovery fails. A maintenance report can be complete with coverage gaps.
+Anaphor delivery still requires every required criterion to pass. Upstream's unreachable-feature
+label must never become a functional pass.
 
 **Reconciliation has a different owner.**
-[anaphor-reconcile](../../skills/software-factory/anaphor-reconcile/SKILL.md) updates authoritative
-project records from decisions and receipts. Verification owns live recipe proof. A periodic map
-audit should invoke reconciliation only when an affected record needs it, rather than absorbing
-general documentation upkeep into verification maintenance.
+[anaphor-reconcile](../../software-factory/anaphor-reconcile/SKILL.md) updates authoritative project
+records from decisions and receipts. Verification owns live recipe proof. A periodic map audit
+should invoke reconciliation only when an affected record needs it, rather than absorbing general
+documentation upkeep into verification maintenance.
 
 ## Recommended integration
 

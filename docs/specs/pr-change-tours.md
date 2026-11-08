@@ -30,7 +30,7 @@ existing contract does not support local unauthenticated loading, embedded evide
 updates to existing tours.
 
 The skills repository currently requires durable Markdown walkthroughs in
-`skills/software-factory/anaphor-explain-change/SKILL.md`. Its composition reference already covers
+`software-factory/anaphor-explain-change/SKILL.md`. Its composition reference already covers
 scenarios, decisions, source anchors, screenshots, recordings, and evidence limits. Verification
 receipts are a separate evidence record whose format can follow the project; feature recipes are
 reusable instructions rather than per-run reports.
