@@ -1,8 +1,7 @@
 ---
 name: slow-down
-description: >-
-  Slows agent execution so file changes remain easy to follow. Use when the user asks the agent to
-  slow down, pace its edits, explain each edit before making it, or change files one at a time.
+description: Pace edits and explain each step before changing one file at a time.
+disable-model-invocation: true
 ---
 
 # Slow Down

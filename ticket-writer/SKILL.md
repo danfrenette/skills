@@ -1,8 +1,7 @@
 ---
 name: ticket-writer
-description:
-  Creates Linear tickets from requirements or code changes. Use when asked to turn requirements,
-  bugs, chores, or diffs into Linear tickets.
+description: Create a Linear ticket from requirements, bugs, chores, or code changes.
+disable-model-invocation: true
 ---
 
 # Ticket Writer
