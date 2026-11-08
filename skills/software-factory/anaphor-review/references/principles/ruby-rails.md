@@ -14,11 +14,11 @@ interface. Show the callers coupled to the representation and the change that co
 
 For changed orchestration, follow its private steps into collaborators. Identify the state owner,
 decision owner, and representation the caller must understand. Assess concrete-class checks and
-format branches against the actual collaborator contract; distinguish external-data validation
-from inspecting known collaborators. A readable entry point or a single workflow name does not
-establish cohesive ownership. Report the coupling found, or the inspected boundary that justifies
-keeping the decision in place. Existing result protocols can legitimately require success/failure
-checks; assess the operation they guard rather than treating every query as a violation.
+format branches against the actual collaborator contract; distinguish external-data validation from
+inspecting known collaborators. A readable entry point or a single workflow name does not establish
+cohesive ownership. Report the coupling found, or the inspected boundary that justifies keeping the
+decision in place. Existing result protocols can legitimately require success/failure checks; assess
+the operation they guard rather than treating every query as a violation.
 
 Keep Rails presentation decisions in their presentation layer; moving rendering into a model merely
 to eliminate a query increases coupling. Sources: thoughtbot's [Tell, Don't Ask][tell] and [Single
@@ -45,6 +45,29 @@ those obligations. A small cohesive concern using established Rails conventions 
 replacement merely because it is a mixin. Source: thoughtbot's [Replace Mixin with
 Composition][mixin].
 
+## Rails reads and query composition
+
+**Trigger:** a facade, read service being replaced, query object, or relation extension changes.
+
+Resolve the applicable coding standards first. When the Anaphor Rails fallback applies, check the
+[required query convention](../../../anaphor/references/coding-standards/rails/queries.md) and the
+[facade boundary](../../../anaphor/references/coding-standards/rails/facades.md), and report
+breaches through Standards. A named module extending an `ActiveRecord::Relation` has an explicit
+framework interface; preserve that convention when considering mixin alternatives.
+
+Trace the authorized input through filters, joins, and subqueries, then follow execution into the
+facade loading entry. Check that omitted filters preserve the selection and that presentation
+receives completed data. Distinguish a relation-returning query from a documented
+aggregate/data-returning query before applying the extension requirement. Assess the ownership and
+scope contract rather than treating the module's presence alone as evidence of good composition.
+Sources: thoughtbot's [A Case for Query Objects in Rails][queries] and Active Record's [`extending`
+API][extending].
+
+A facade coordinates read-only data; a service owns a mutation workflow, including its necessary
+reads. Check facade readers for hidden I/O or writes and keep index query composition below the
+facade. The service/facade division is an adopted convention, not a universal restriction of the
+Facade design pattern. thoughtbot's [open-source page example][facades] illustrates a read facade.
+
 ## Rails workflow visibility
 
 **Trigger:** callbacks start or expand a business workflow or external side effect.
@@ -70,3 +93,12 @@ Primary sources checked 2026-10-04:
 [abstraction]: https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction
 [mixin]: https://thoughtbot.com/ruby-science/replace-mixin-with-composition.html
 [callback]: https://thoughtbot.com/ruby-science/replace-callback-with-method.html
+
+Query sources checked 2026-10-28:
+
+[queries]: https://thoughtbot.com/blog/a-case-for-query-objects-in-rails
+[extending]: https://api.rubyonrails.org/classes/ActiveRecord/QueryMethods.html#method-i-extending
+
+Facade source checked 2026-10-30:
+
+[facades]: https://thoughtbot.com/blog/a-peek-behind-the-curtain-of-our-new-open-source-page

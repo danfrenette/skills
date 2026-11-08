@@ -4,10 +4,10 @@ The coordinating use case owns authorization scope and transaction boundaries. S
 acting user before reading or changing owned resources. Supporting services can use Active Record;
 controllers and result objects cannot own persistence work.
 
-Models own associations, persistence constraints, and reusable simple scopes. Put business policies,
-external calls, and workflow execution in services. Use [query ownership](queries.md) to choose
-between model scopes, read services, and extracted query objects; their
-[execution boundary](query-execution.md) keeps database work out of presentation.
+Models own associations, persistence constraints, and reusable simple scopes. Put mutation policies,
+external writes, and state-changing workflows in services. Facades coordinate read-only data. Use
+[query ownership](queries.md) to choose between model scopes, facades, and extracted query objects;
+their [execution boundary](query-execution.md) keeps database work out of presentation.
 
 For each persisted invariant, distinguish user feedback from data integrity. Application validations
 produce useful feedback; enforce invariants that the database can express with constraints such as

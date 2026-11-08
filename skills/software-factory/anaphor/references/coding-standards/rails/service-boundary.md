@@ -1,13 +1,15 @@
 # The application boundary
 
-Read when adding or changing a Rails use case, a controller/job/task caller, or the operation's
-public inputs. The service exposes one business operation that callers can understand without
-rebuilding its workflow from persistence calls.
+Read when adding or changing a Rails mutation service, its controller/job/task callers, or its
+public inputs. Read-only use cases follow [facades](facades.md). The mutation service exposes one
+business operation that callers can understand without rebuilding its workflow from persistence
+calls.
 
 ## Separate adapters from operations
 
-1. Identify the business process and name its service for that operation in the domain. Inserting a
-   database row is one implementation step; it is not necessarily the whole business process.
+1. Identify the state-changing business process and name its service for that operation in the
+   domain. Inserting a database row is one implementation step; it is not necessarily the whole
+   business process.
 2. Keep HTTP requests/rendering in controllers, job serialization/retry scheduling in jobs, and task
    argument parsing in tasks. Pass explicit actor/context and business data into the use case. Scope
    authorization inside the operation wherever a caller could otherwise bypass it.

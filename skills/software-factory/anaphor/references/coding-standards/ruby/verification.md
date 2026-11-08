@@ -15,16 +15,17 @@ Select coverage from the changed risk:
   actual compatibility. Record fixture provenance and limits; a simulated process does not prove an
   installed runtime works.
 - An operation gains a controller/job/task caller: test its business outcome through the common
-  public service and the changed adapter's mapping. Keep framework retry or rendering policy in its
-  adapter; shared business sequencing stays in the use case.
+  public operation and the changed adapter's mapping. Keep framework retry or rendering policy in
+  its adapter; shared business sequencing stays in the use case.
 - Callers distinguish business outcomes: exercise each supported outcome and its required payload.
-  At an adapter seam, prefer real result instances with verified service doubles when isolation is
+  At an adapter seam, prefer real result instances with verified operation doubles when isolation is
   needed, so changed result requirements expose a stale caller contract.
 - A base service/result API is introduced or changed: test compatibility at its public boundary,
   including supported omission/`nil` behavior, payload access, and wrapper semantics.
 - Rails read selection or loading changes: apply the
   [query execution checks](../rails/query-execution.md) with a real database, including authorized
-  filter combinations and data-query-free consumption after the service returns.
+  filter combinations and data-query-free consumption after the facade returns. For facade reads,
+  also apply the [read-only contract checks](../rails/facades.md#verify-the-read-contract).
 - Rails HTTP or writes change: request tests cover mapping, authentication, ownership, extra-field
   rejection, and expected failures. Use real database behavior for persistence and rollback after a
   failed child. Test nested report-once behavior, re-raising the original exception, and reporter
