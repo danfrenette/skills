@@ -17,16 +17,16 @@ are installed together:
 
 - **`anaphor`:** Coordinate an accepted spec through draft PRs and inspected tours
 
-- **`anaphor-review`:** Run Standards, Spec, and language-specific Principles agents, plus triggered
+- **`cross-examine`:** Run Standards, Spec, and language-specific Principles agents, plus triggered
   Execution and risk passes
 
-- **`anaphor-explain-change`:** Create or update an evidence-linked local Anaphor tour
+- **`walkthrough`:** Create or update an evidence-linked local Anaphor tour
 
-- **`anaphor-create-feature-map`:** Create missing project-local recipes and prove them for affected
+- **`create-feature-map`:** Create missing project-local recipes and prove them for affected
   behavior or explicitly requested project bootstrap
 
-- **`anaphor-audit-feature-map`:** Check an entire existing map against source and live behavior and
-  publish proven corrections when maintenance is requested
+- **`audit-feature-map`:** Check an entire existing map against source and live behavior and publish
+  proven corrections when maintenance is requested
 
 Procedures that only run inside a delivery live under `anaphor/references/` and load when the
 workflow reaches them:
@@ -51,18 +51,18 @@ incomplete. Installation is a separate action.
 
 Check authorship when another library exposes the same skill name. Record the installed source used
 for a run and surface material instruction conflicts. Integration adaptations live at their points
-of use: [implementation](references/implementation.md), [review](../anaphor-review/SKILL.md), and
-the coordinator's continuation branch. Optional source triggers live in the affected procedure and
+of use: [implementation](references/implementation.md), [review](../cross-examine/SKILL.md), and the
+coordinator's continuation branch. Optional source triggers live in the affected procedure and
 Principles profiles; load them only when that branch is reached.
 
 For development in this source repository, the root
 [dependency setup](../README.md#project-dependencies) restores the external skills from the
 generated project lock. That lock does not create transitive installs for users of the family.
 
-The [Principles profiles](../anaphor-review/references/principles/README.md) cover Ruby/Rails
-through thoughtbot and Sandi Metz, JavaScript/TypeScript through Kent C. Dodds and Matt Pocock, and
-frontend concerns through Vercel. Add concrete checks, examples, exceptions, and sources within
-those profiles; the coordinator does not need another phase for each language.
+The [Principles profiles](../cross-examine/references/principles/README.md) cover Ruby/Rails through
+thoughtbot and Sandi Metz, JavaScript/TypeScript through Kent C. Dodds and Matt Pocock, and frontend
+concerns through Vercel. Add concrete checks, examples, exceptions, and sources within those
+profiles; the coordinator does not need another phase for each language.
 
 Invoke `anaphor` with the accepted spec and working repository or repositories. Include the testing
 decisions already confirmed during `to-spec`. The coordinator is intended for explicit invocation;
@@ -103,11 +103,10 @@ missing, create coverage for the affected feature and execute that recipe; whole
 explicit separate operation.
 
 For project onboarding, request the creation skill's
-[bootstrap branch](../anaphor-create-feature-map/references/bootstrap.md). For periodic upkeep,
-request the audit skill's
-[maintenance branch](../anaphor-audit-feature-map/references/maintenance.md) with its named target
-and publication authorization. Project periodic instructions and the host scheduler own recurrence
-and shared-resource overlap; these branches add no phase to ordinary spec delivery.
+[bootstrap branch](../create-feature-map/references/bootstrap.md). For periodic upkeep, request the
+audit skill's [maintenance branch](../audit-feature-map/references/maintenance.md) with its named
+target and publication authorization. Project periodic instructions and the host scheduler own
+recurrence and shared-resource overlap; these branches add no phase to ordinary spec delivery.
 
 Anaphor stops on unresolved required verification prerequisites after one safe documented recovery
 attempt. Product failures return to implementation. Successful delivery ends at draft PRs and a
@@ -116,8 +115,8 @@ The local Anaphor app uses the hosted reader without authentication or publicati
 tours, captures, and receipts live outside product repositories; recipes stay alongside code. Local
 URLs serve review on the current machine. Publish the same tour only when requested for sharing,
 with appropriate owner access. See the explanation skill's
-[integration reference](../anaphor-explain-change/references/anaphor-integration.md) for
-preparation, revision freshness, local inspection, and requested hosting.
+[integration reference](../walkthrough/references/anaphor-integration.md) for preparation, revision
+freshness, local inspection, and requested hosting.
 
 ## Validation scope
 
