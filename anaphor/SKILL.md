@@ -59,26 +59,27 @@ When implementation or prototyping uses a supplied visual reference, first follo
 Choose the smallest applicable path:
 
 - One verifiable change: follow [implementation](references/implementation.md).
-- Multiple independently verifiable changes: use
-  [anaphor-implement-slices](../anaphor-implement-slices/SKILL.md).
+- Multiple independently verifiable changes: use the
+  [slice implementation procedure](references/implement-slices/README.md).
 - An unresolved implementation choice has competing interfaces, ownership models, or failure
-  behavior: use [anaphor-compare-designs](../anaphor-compare-designs/SKILL.md) for that choice, then
-  resume implementation. Keep accepted product decisions fixed.
+  behavior: use the [design comparison procedure](references/compare-designs/README.md) for that
+  choice, then resume implementation. Keep accepted product decisions fixed.
 
 For delegated work, read [agent handoffs](references/agents.md). Keep ownership, dependencies, and
 observed results in the brief. A worker's completion message is a pointer to inspect its changes and
 evidence.
 
 **Done:** every criterion is implemented, and each changed behavior has a passing executed
-verification recipe. A required verification blocker stops the run under
-[anaphor-verify](../anaphor-verify/SKILL.md).
+verification recipe. A required verification blocker stops the run under the
+[verification procedure](references/verify/README.md).
 
 ## 3. Integrate and review
 
 Inspect the complete change from the original baseline in every owning repository with
-[anaphor-review](../anaphor-review/SKILL.md). Resolve actionable findings, then use
-[anaphor-verify](../anaphor-verify/SKILL.md) on the integrated result. Checks already run on that
-exact result may be reused with their provenance; rerun checks affected by fixes or integration.
+[anaphor-review](../anaphor-review/SKILL.md). Resolve actionable findings, then use the
+[verification procedure](references/verify/README.md) on the integrated result. Checks already run
+on that exact result may be reused with their provenance; rerun checks affected by fixes or
+integration.
 
 **Done:** every criterion passes, affected feature maps are current and live-proven, required
 repository checks pass, and all triggered review passes are assessed with no unresolved blocking
@@ -86,9 +87,9 @@ finding.
 
 ## 4. Reconcile project records
 
-Use [anaphor-reconcile](../anaphor-reconcile/SKILL.md) after integrated verification. It owns record
-selection, evidence classification, and documentation checks. Return executable, configuration, or
-recipe changes to affected review and verification.
+Use the [reconciliation procedure](references/reconcile/README.md) after integrated verification. It
+owns record selection, evidence classification, and documentation checks. Return executable,
+configuration, or recipe changes to affected review and verification.
 
 **Done:** every affected authoritative record is updated or unchanged with a reason; required
 blocked records keep delivery open.
@@ -111,8 +112,8 @@ Create or update the tour for every PR, including small and nonvisual changes:
 For the default tour, the explanation skill owns storage, provenance, inspection, PR links, and
 requested hosting. Apply the selected procedure's corresponding requirements for a supplied tour.
 Source changes after verification follow
-[evidence applicability](../anaphor-verify/references/evidence.md#evidence-applicability). Return
-executable, configuration, or recipe changes to affected review and verification.
+[evidence applicability](references/verify/evidence.md#evidence-applicability). Return executable,
+configuration, or recipe changes to affected review and verification.
 
 Confirm final heads and draft status, then reconcile affected delivery links and status. Report PRs,
 tour URL and revision, delivered and tested source states, evidence, limitations, and tour access or

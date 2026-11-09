@@ -15,8 +15,8 @@ constraint would materially change the artifact.
 
 Make a working outline that pairs each important question with its scenario, source/code pointers,
 and available evidence. Reuse the implementation brief and receipts. Missing evidence remains an
-explicit limit; route a new verification need to `anaphor-verify` when authorized. An explanation
-cannot manufacture the observation it needs.
+explicit limit; route a new verification need to the Anaphor verification procedure when authorized.
+An explanation cannot manufacture the observation it needs.
 
 ## Compose the main reading path
 

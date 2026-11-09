@@ -31,7 +31,7 @@ delivery selects only affected behavior.
    limits. A library feature can be an executable public-interface test; browser instructions are
    required only for browser behavior.
 5. Run every new or changed recipe through launch, doctor, drive, capture, and cleanup. Apply
-   [evidence and blockers](../anaphor-verify/references/evidence.md) directly; do not recursively
+   [evidence and blockers](../anaphor/references/verify/evidence.md) directly; do not recursively
    invoke map creation. Confirm artifacts survive cleanup and repair instructions that fail.
 
 **Done:** each generated recipe was executed successfully against the intended behavior and can be

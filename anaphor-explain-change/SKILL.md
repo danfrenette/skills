@@ -21,16 +21,16 @@ and requested hosting. The app's schema and CLI help own exact fields and comman
 
 Read the accepted spec, participating PRs, pinned changes, surrounding code, decisions, and
 receipts. Confirm ambiguous PR membership before including it. Record each repository's base/head
-and actual tested contents using [evidence records](../anaphor-verify/references/evidence.md),
+and actual tested contents using [evidence records](../anaphor/references/verify/evidence.md),
 including its rules for uncommitted source and evidence applicability.
 
 Follow [content composition](references/content-composition.md) to outline the business case and
 code-led vertical slices. Pair each behavioral claim with its criterion and receipt; preserve
 supplied results as supplied, with provenance. Select captures by the claim they prove using the
-project's harness. Obtain required missing observations through
-[anaphor-verify](../anaphor-verify/SKILL.md). A standalone tour may explain incomplete work, with
-failed, blocked, unrun, or unavailable evidence visible; those gaps prevent completed factory
-delivery.
+project's harness. Obtain required missing observations through the
+[verification procedure](../anaphor/references/verify/README.md). A standalone tour may explain
+incomplete work, with failed, blocked, unrun, or unavailable evidence visible; those gaps prevent
+completed factory delivery.
 
 **Done:** every primary slice has pinned source or an observed artifact, concise annotations, and
 supporting criteria, decisions, and evidence. The main path is readable with supporting details
