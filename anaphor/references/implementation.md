@@ -19,7 +19,7 @@
 4. Create a scoped commit using repository conventions, retaining the slice baseline. Use
    [anaphor-review](../../anaphor-review/SKILL.md) on the slice. Address findings and perform
    review-driven refactoring under behavior tests. Repeat the checks affected by those changes.
-5. Run [anaphor-verify](../../anaphor-verify/SKILL.md) against the resulting revision, including the
+5. Run the [verification procedure](verify/README.md) against the resulting revision, including the
    changed feature recipes. If browser behavior is part of a criterion, a unit test alone cannot
    discharge it.
 6. Return the commits, criterion results, feature-map changes, review findings and dispositions, and
@@ -27,7 +27,7 @@
 
 **Done:** the slice's criteria pass on its recorded revision, the relevant recipes are executed, and
 blocking review findings are resolved. A failed product check returns to step 2; a required
-verification blocker follows `anaphor-verify` and stops the run.
+verification blocker follows the verification procedure and stops the run.
 
 When a reproduced defect remains unexplained after tracing its path, read installed
 `diagnosing-bugs`. When conflicting domain terms or relationships obstruct implementation, read

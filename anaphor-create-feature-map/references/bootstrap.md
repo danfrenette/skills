@@ -14,7 +14,7 @@ map; bootstrap extends their coverage rather than creating a competing location.
 3. Identify documented startup, existing interaction harnesses, observable effects, and isolation
    constraints. Confirm the target starts and doctor can identify its build, access, and required
    state using project-owned setup. Missing provisioning follows the setup owner and
-   [blocker procedure](../../anaphor-verify/references/evidence.md).
+   [blocker procedure](../../anaphor/references/verify/evidence.md).
 4. Return the selected scope to the creation procedure. Its recipe format, location selection, and
    execution requirements apply to every seeded recipe. Record gaps separately from proven entries;
    a single successful feature cannot certify the rest.

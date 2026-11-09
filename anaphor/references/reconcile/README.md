@@ -1,11 +1,3 @@
----
-name: anaphor-reconcile
-description:
-  Update affected project records after accepted planning decisions or verified implementation. Use
-  when product, domain, setup, or tracker documentation must reflect a changed decision or proven
-  behavior.
----
-
 # Anaphor: reconcile project records
 
 Read Matt Pocock's installed writing-for-agents skill before editing. It governs these records,
@@ -44,8 +36,8 @@ it.
   rationale when linking a successor; leave missing decisions open rather than inventing them.
 - Development or navigation: check affected commands, paths, and prerequisites against the owning
   repository. Label an unexecuted procedure as unverified; inspection is not proof that it runs.
-- Feature map: link the receipts maintained by anaphor-verify. Return stale recipes or missing
-  execution evidence to verification, which owns their live proof.
+- Feature map: link the receipts maintained by the verification procedure. Return stale recipes or
+  missing execution evidence to verification, which owns their live proof.
 - Tracker: update evidence links and blockers only within the authorized scope. Preserve unrelated
   relationships and parent-issue restrictions. An open draft PR does not mean deployed behavior.
 
@@ -58,11 +50,11 @@ Review the documentation diff and links against the evidence. Apply writing-for-
 duplication and repair navigation. Use the project glossary and enough context for a person who has
 not read the conversation. If no record needs a change, report that result without creating files.
 
-Apply [evidence applicability](../anaphor-verify/references/evidence.md#evidence-applicability)
-after edits: retain justified prior evidence or return affected checks to review and verification.
-After PR creation and tour inspection, update delivery links from the actual PRs and tour, retaining
-its revision, source states, access limits, and evidence status. Tour storage and inspection belong
-to the selected explanation procedure.
+Apply [evidence applicability](../verify/evidence.md#evidence-applicability) after edits: retain
+justified prior evidence or return affected checks to review and verification. After PR creation and
+tour inspection, update delivery links from the actual PRs and tour, retaining its revision, source
+states, access limits, and evidence status. Tour storage and inspection belong to the selected
+explanation procedure.
 
 Report changed records and concrete blockers through the existing brief or final response.
 Standalone use publishes or closes tracker items only when authorized. During Anaphor delivery,
