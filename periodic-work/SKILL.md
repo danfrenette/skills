@@ -16,9 +16,9 @@ invoke.
 ## 1. Select the cadence and registry
 
 Require one cadence: `daily`, `weekly`, or `monthly`, case-insensitive. Read
-[projects.yaml](projects.yaml) beside this skill unless the invocation supplies another registry
-path. Resolve the default relative to this skill's directory, regardless of the current working
-directory.
+`~/.config/periodic-work/projects.yaml` unless the invocation supplies another registry path. The
+registry lives outside this skill so reinstalling the skill leaves it intact. A missing registry
+ends the run with an error naming the expected path and the shape below.
 
 The registry has a `projects` list. Each entry has a `directory` and a `cadences` string containing
 comma-separated values, for example:
@@ -105,9 +105,9 @@ been collected or explicitly marked incomplete.
 
 ## Scheduling
 
-Install this skill in a harness with subagents and access to the listed projects. Edit the
-neighboring registry to add, remove, or change project cadences. Use separate schedules with prompts
-such as:
+Install this skill in a harness with subagents and access to the listed projects. Edit
+`~/.config/periodic-work/projects.yaml` to add, remove, or change project cadences. Use separate
+schedules with prompts such as:
 
 ```text
 Use $periodic-work with cadence daily.
