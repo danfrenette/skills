@@ -12,20 +12,15 @@ notices.
 
 ## Install and use
 
-Select all nine Anaphor skills when installing from this repository. Their sibling links assume they
+Select all five Anaphor skills when installing from this repository. Their sibling links assume they
 are installed together:
 
 - **`anaphor`:** Coordinate an accepted spec through draft PRs and inspected tours
 
-- **`anaphor-compare-designs`:** Settle an unresolved implementation choice with comparable
-  alternatives
-
-- **`anaphor-implement-slices`:** Execute dependent slices and verify their integration
-
 - **`anaphor-review`:** Run Standards, Spec, and language-specific Principles agents, plus triggered
   Execution and risk passes
 
-- **`anaphor-verify`:** Run tests and real flows; maintain affected feature recipes
+- **`anaphor-explain-change`:** Create or update an evidence-linked local Anaphor tour
 
 - **`anaphor-create-feature-map`:** Create missing project-local recipes and prove them for affected
   behavior or explicitly requested project bootstrap
@@ -33,9 +28,20 @@ are installed together:
 - **`anaphor-audit-feature-map`:** Check an entire existing map against source and live behavior and
   publish proven corrections when maintenance is requested
 
-- **`anaphor-explain-change`:** Create or update an evidence-linked local Anaphor tour
+Procedures that only run inside a delivery live under `anaphor/references/` and load when the
+workflow reaches them:
 
-- **`anaphor-reconcile`:** Update affected product, domain, setup, and tracker records
+- **[Compare designs](references/compare-designs/README.md):** Settle an unresolved implementation
+  choice with comparable alternatives
+
+- **[Implement slices](references/implement-slices/README.md):** Execute dependent slices and verify
+  their integration
+
+- **[Verify](references/verify/README.md):** Run tests and real flows; maintain affected feature
+  recipes
+
+- **[Reconcile](references/reconcile/README.md):** Update affected product, domain, setup, and
+  tracker records
 
 Install Matt Pocock's `tdd`, `code-review`, and `writing-for-agents` through your harness's skill
 installation flow; add `domain-modeling` for terminology/decision reconciliation and `handoff` for
@@ -50,7 +56,7 @@ the coordinator's continuation branch. Optional source triggers live in the affe
 Principles profiles; load them only when that branch is reached.
 
 For development in this source repository, the root
-[dependency setup](../../README.md#project-dependencies) restores the external skills from the
+[dependency setup](../README.md#project-dependencies) restores the external skills from the
 generated project lock. That lock does not create transitive installs for users of the family.
 
 The [Principles profiles](../anaphor-review/references/principles/README.md) cover Ruby/Rails
@@ -117,5 +123,4 @@ preparation, revision freshness, local inspection, and requested hosting.
 
 Structural checks have passed; end-to-end reliability has not yet been established through live
 implementation trials. Each change's verification evidence belongs in its PR. The root
-[usage guide](../../README.md#anaphor) describes installation, invocation, and the delivery
-lifecycle.
+[usage guide](../README.md#anaphor) describes installation, invocation, and the delivery lifecycle.

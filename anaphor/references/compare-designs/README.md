@@ -1,19 +1,12 @@
----
-name: anaphor-compare-designs
-description:
-  Compare implementation alternatives when an accepted spec leaves competing interfaces, ownership
-  models, or failure behavior unresolved.
----
-
 # Anaphor: compare designs
 
 Settle one implementation decision while preserving the accepted product behavior. Use
-[agent handoffs](../anaphor/references/agents.md) for isolated contexts and ownership.
+[agent handoffs](../agents.md) for isolated contexts and ownership.
 
 1. State the decision, accepted criteria, applicable standards, behavior to preserve, and baseline.
    If the disagreement is a product requirement, return that question to the user before comparing
-   implementations. Resolve [coding standards](../anaphor/references/coding-standards/README.md)
-   before generating candidates; give each the same authority and triggered references.
+   implementations. Resolve [coding standards](../coding-standards/README.md) before generating
+   candidates; give each the same authority and triggered references.
 2. Define two or three alternatives that differ in a concrete constraint: where a decision belongs,
    what callers must know, or how failures propagate. Give every candidate the same requirements and
    standards. Read installed `codebase-design` and its `DESIGN-IT-TWICE.md` when interface or seam
@@ -35,8 +28,8 @@ Settle one implementation decision while preserving the accepted product behavio
    test or source trace. Agreement alone does not select a winner.
 6. Select one coherent design and record the decision, rejected tradeoffs, and evidence in the
    brief. Integrate useful parts deliberately. Return production implementation to Anaphor's
-   [implementation procedure](../anaphor/references/implementation.md); experiment code has not
-   passed its delivery gates.
+   [implementation procedure](../implementation.md); experiment code has not passed its delivery
+   gates.
 
 **Done:** the implementation decision is supported by observed or traced evidence, the selected
 design satisfies the shared constraints, and candidate changes are accounted for. Preserve

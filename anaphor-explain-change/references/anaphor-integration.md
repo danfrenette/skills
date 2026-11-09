@@ -24,7 +24,7 @@ pnpm --filter @anaphor/demo tour local help
    must leave the previous readable revision available; retain inputs for recovery.
 
 When a PR head changes, apply
-[evidence applicability](../../anaphor-verify/references/evidence.md#evidence-applicability) to
+[evidence applicability](../../anaphor/references/verify/evidence.md#evidence-applicability) to
 receipts and captures. Keep required stale or unknown checks visible in the tour.
 
 ## Launch and inspect locally
