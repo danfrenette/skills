@@ -1,11 +1,12 @@
 ---
-name: anaphor-explain-change
+name: walkthrough
 description:
-  Create or update an evidence-linked Anaphor tour explaining a PR's value, vertical implementation
-  slices, and verification. Use for standalone PR explanations or Anaphor delivery.
+  Create or update an evidence-linked walkthrough of a PR, as an Anaphor tour explaining its value,
+  vertical implementation slices, and verification. Use for standalone PR explanations or Anaphor
+  delivery.
 ---
 
-# Anaphor: explain a change
+# Walkthrough
 
 Help the owner decide whether a PR is ready to merge. Every PR delivered through Anaphor gets a
 proportionate tour, including documentation and nonvisual changes. Use the same reader locally and

@@ -1,11 +1,11 @@
 ---
-name: anaphor-create-feature-map
+name: create-feature-map
 description:
   Create or extend project-local verification recipes when changed behavior lacks a feature map or
   repeatable coverage, or bootstrap verification for an explicitly requested project onboarding.
 ---
 
-# Anaphor: create a feature map
+# Create a feature map
 
 Write a recipe a fresh agent can execute without the originating conversation. Read the
 [recipe format](references/recipe.md). Keep setup facts in project-owned instructions and map

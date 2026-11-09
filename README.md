@@ -53,8 +53,8 @@ Install all five skills together so their sibling references resolve:
 
 ```bash
 npx skills@latest add danfrenette/skills --skill \
-  anaphor anaphor-review anaphor-explain-change \
-  anaphor-create-feature-map anaphor-audit-feature-map
+  anaphor cross-examine walkthrough \
+  create-feature-map audit-feature-map
 npx skills@latest add mattpocock/skills --skill \
   tdd code-review handoff writing-for-agents domain-modeling
 ```
@@ -101,15 +101,14 @@ recovery attempt, the run stops and reports the block before PR delivery.
 ### The skills
 
 - **[anaphor][anaphor]:** Own the accepted spec through verified delivery.
-- **[anaphor-review][review]:** Run separate review perspectives with sourced language and interface
-  guidance.
-- **[anaphor-create-feature-map][create-feature-map]:** Add missing verification recipes for
-  affected behavior, or bootstrap an explicitly requested project's initial coverage, and prove they
-  work.
-- **[anaphor-audit-feature-map][audit-feature-map]:** Audit an entire existing map when broader
-  coverage is explicitly needed; maintenance mode delivers proven corrections in one draft PR.
-- **[anaphor-explain-change][explain-change]:** Create or update an evidence-linked PR tour, using
-  the same local and hosted reader with captures where they help prove behavior.
+- **[cross-examine][cross-examine]:** Run separate review perspectives with sourced language and
+  interface guidance.
+- **[create-feature-map][create-feature-map]:** Add missing verification recipes for affected
+  behavior, or bootstrap an explicitly requested project's initial coverage, and prove they work.
+- **[audit-feature-map][audit-feature-map]:** Audit an entire existing map when broader coverage is
+  explicitly needed; maintenance mode delivers proven corrections in one draft PR.
+- **[walkthrough][walkthrough]:** Create or update an evidence-linked PR tour, using the same local
+  and hosted reader with captures where they help prove behavior.
 
 `anaphor` loads its delivery-only procedures from `anaphor/references/` when a run reaches them:
 
@@ -126,11 +125,11 @@ recovery attempt, the run stops and reports the block before PR delivery.
 [anaphor]: anaphor/SKILL.md
 [compare-designs]: anaphor/references/compare-designs/README.md
 [implement-slices]: anaphor/references/implement-slices/README.md
-[review]: anaphor-review/SKILL.md
+[cross-examine]: cross-examine/SKILL.md
 [verify]: anaphor/references/verify/README.md
-[create-feature-map]: anaphor-create-feature-map/SKILL.md
-[audit-feature-map]: anaphor-audit-feature-map/SKILL.md
-[explain-change]: anaphor-explain-change/SKILL.md
+[create-feature-map]: create-feature-map/SKILL.md
+[audit-feature-map]: audit-feature-map/SKILL.md
+[walkthrough]: walkthrough/SKILL.md
 
 ### Review guidance loads by concern
 
@@ -145,7 +144,7 @@ Installed dependencies are available references, not instructions to load every 
 review. Optional local Emil skills must be installed separately on each machine; the public
 dependency lock does not reproduce that collection.
 
-[principles-profiles]: anaphor-review/references/principles/README.md
+[principles-profiles]: cross-examine/references/principles/README.md
 
 ### Project setup and ongoing use
 
@@ -157,12 +156,12 @@ persistent tours, captures, and receipts outside implementation worktrees. Local
 on the current machine; external readers need requested hosting and appropriate owner access. Retain
 original tested revisions as PRs evolve and flag stale evidence before claiming readiness.
 
-For project onboarding, explicitly request `anaphor-create-feature-map` bootstrap with the owning
-repository and desired coverage. Between delivery runs, use `anaphor-audit-feature-map` maintenance
-mode. Its [maintenance contract][maintenance] defines run inputs, publication authorization, and
-project-owned periodic instructions. Ordinary spec delivery continues to verify affected behavior.
+For project onboarding, explicitly request `create-feature-map` bootstrap with the owning repository
+and desired coverage. Between delivery runs, use `audit-feature-map` maintenance mode. Its
+[maintenance contract][maintenance] defines run inputs, publication authorization, and project-owned
+periodic instructions. Ordinary spec delivery continues to verify affected behavior.
 
-[maintenance]: anaphor-audit-feature-map/references/maintenance.md
+[maintenance]: audit-feature-map/references/maintenance.md
 
 For frequent development, keep a Git checkout on each machine and link the five Anaphor directories
 into that harness's supported skill directory. Pulling the checkout then updates those links. Copy

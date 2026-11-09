@@ -14,10 +14,10 @@
    [robustness scope](robustness-scope.md), including to review-driven fixes. Establish the
    failure's applicability before expanding the implementation.
 3. Update affected feature recipes as the behavior changes. If coverage is missing, use
-   [anaphor-create-feature-map](../../anaphor-create-feature-map/SKILL.md) for the affected
-   behavior. Preserve accepted outcomes when repairing selectors or harness instructions.
+   [create-feature-map](../../create-feature-map/SKILL.md) for the affected behavior. Preserve
+   accepted outcomes when repairing selectors or harness instructions.
 4. Create a scoped commit using repository conventions, retaining the slice baseline. Use
-   [anaphor-review](../../anaphor-review/SKILL.md) on the slice. Address findings and perform
+   [cross-examine](../../cross-examine/SKILL.md) on the slice. Address findings and perform
    review-driven refactoring under behavior tests. Repeat the checks affected by those changes.
 5. Run the [verification procedure](verify/README.md) against the resulting revision, including the
    changed feature recipes. If browser behavior is part of a criterion, a unit test alone cannot

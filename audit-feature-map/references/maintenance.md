@@ -26,7 +26,7 @@ and blockers.
   needed. Return the receipt without creating a branch or PR.
 - **Changed:** every mapped recipe passes, and corrections have been re-driven. Review all changed
   documents and helper code; helper changes also need applicable repository checks and
-  [Anaphor review](../../anaphor-review/SKILL.md), supplied with the intended correction, baseline,
+  [Anaphor review](../../cross-examine/SKILL.md), supplied with the intended correction, baseline,
   testing decisions, and receipts. Within publication authorization, push one scoped branch and open
   or update at most one draft PR linking the corrections, tested revision, and proof. Verify its
   final head and draft status. Readiness, merge, and deployment remain user decisions.
@@ -56,9 +56,9 @@ target, or maintenance PR; serialize against delivery work using those same writ
 When using the separately installed `periodic-work`, resolve it through the host's skill catalog.
 Put the maintenance invocation and the run inputs above in the project's selected `DAILY.md`,
 `WEEKLY.md`, or `MONTHLY.md`, then include that project and cadence in its registry. The
-instructions should name `anaphor-audit-feature-map` in maintenance mode and explicitly authorize
-draft-PR publication if desired. Keep project-specific paths and access procedures there rather than
-in this reusable skill.
+instructions should name `audit-feature-map` in maintenance mode and explicitly authorize draft-PR
+publication if desired. Keep project-specific paths and access procedures there rather than in this
+reusable skill.
 
 Remain quiet for unchanged successful runs unless periodic status was requested. Notify on proven
 corrections, product failures, blocked prerequisites, or required user action through the host's
