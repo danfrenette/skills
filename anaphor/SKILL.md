@@ -76,7 +76,7 @@ verification recipe. A required verification blocker stops the run under the
 ## 3. Integrate and review
 
 Inspect the complete change from the original baseline in every owning repository with
-[anaphor-review](../anaphor-review/SKILL.md). Resolve actionable findings, then use the
+[cross-examine](../cross-examine/SKILL.md). Resolve actionable findings, then use the
 [verification procedure](references/verify/README.md) on the integrated result. Checks already run
 on that exact result may be reused with their provenance; rerun checks affected by fixes or
 integration.
@@ -104,10 +104,10 @@ Create or update the tour for every PR, including small and nonvisual changes:
 
 - If the user or project supplies a tour procedure, follow it through inspection and its required
   delivery steps, including publication approvals.
-- Otherwise, use [anaphor-explain-change](../anaphor-explain-change/SKILL.md). Open and inspect the
-  local Anaphor reader and link its relevant section from each PR. An inspected local preview
-  satisfies tour delivery without authentication or publication. Publish the same content and media
-  only when explicitly requested.
+- Otherwise, use [walkthrough](../walkthrough/SKILL.md). Open and inspect the local Anaphor reader
+  and link its relevant section from each PR. An inspected local preview satisfies tour delivery
+  without authentication or publication. Publish the same content and media only when explicitly
+  requested.
 
 For the default tour, the explanation skill owns storage, provenance, inspection, PR links, and
 requested hosting. Apply the selected procedure's corresponding requirements for a supplied tour.

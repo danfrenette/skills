@@ -47,27 +47,27 @@ the recipe persists as infrastructure; a receipt establishes what actually ran o
 | Responsibility                 | Anaphor owner                 | Fit            |
 | ------------------------------ | ----------------------------- | -------------- |
 | Project bootstrap              | Project setup; map creation   | Partial        |
-| Changed-feature recipes        | `anaphor-create-feature-map`  | Covered        |
+| Changed-feature recipes        | `create-feature-map`          | Covered        |
 | Acceptance flows               | `anaphor-verify`              | Covered        |
-| Full-map audit                 | `anaphor-audit-feature-map`   | Mostly covered |
+| Full-map audit                 | `audit-feature-map`           | Mostly covered |
 | Project records                | `anaphor-reconcile`           | Adjacent       |
 | Scheduled maintenance delivery | Project periodic instructions | Not defined    |
 
 **Creation overlaps with a narrower Anaphor operation.**
-[anaphor-create-feature-map](../../anaphor-create-feature-map/SKILL.md) already generates an app
-guide, index, and recipes when needed. It respects the project's discovery convention and falls back
-to `docs/verification/`, rather than requiring Cursor. Automatic creation covers only the affected
+[create-feature-map](../../create-feature-map/SKILL.md) already generates an app guide, index, and
+recipes when needed. It respects the project's discovery convention and falls back to
+`docs/verification/`, rather than requiring Cursor. Automatic creation covers only the affected
 feature and executes every new or changed recipe. Upstream's initial feature sample and one-feature
 smoke proof are useful bootstrap behavior, but insufficient to certify all those recipes under
 Anaphor's existing contract.
 
 **Maintenance substantially overlaps with the existing audit.**
-[anaphor-audit-feature-map](../../anaphor-audit-feature-map/SKILL.md) already compares the index and
-all recipes against source, checks recent changes, drives the map, repairs drift, reports
-regressions, and preserves evidence through cleanup. It permits read-only source workers and keeps a
-single owner for shared app state. It does not prescribe one worker per feature, a scheduler
-contract, or clean/changed/blocked PR publication behavior. Those are concrete integration choices,
-not reasons to duplicate the audit engine.
+[audit-feature-map](../../audit-feature-map/SKILL.md) already compares the index and all recipes
+against source, checks recent changes, drives the map, repairs drift, reports regressions, and
+preserves evidence through cleanup. It permits read-only source workers and keeps a single owner for
+shared app state. It does not prescribe one worker per feature, a scheduler contract, or
+clean/changed/blocked PR publication behavior. Those are concrete integration choices, not reasons
+to duplicate the audit engine.
 
 **Verification remains a delivery gate.**
 [anaphor-verify](../../anaphor/references/verify/README.md) selects affected criteria, routes, and
@@ -87,8 +87,8 @@ documentation upkeep into verification maintenance.
 
 ### 1. Add an explicit onboarding path
 
-Extend `anaphor-create-feature-map` with an explicitly requested project-bootstrap branch, disclosed
-in a reference if needed. Keep ordinary spec-driven creation scoped to affected behavior.
+Extend `create-feature-map` with an explicitly requested project-bootstrap branch, disclosed in a
+reference if needed. Keep ordinary spec-driven creation scoped to affected behavior.
 
 Bootstrap should discover the primary surfaces, reuse project-owned setup, generate a small useful
 initial map, label its coverage limits, and execute every recipe it presents as proven. This also
@@ -102,8 +102,8 @@ remains a named setup dependency. Provisioning continues to belong to the projec
 
 ### 2. Give the audit a maintenance publication contract
 
-Keep `anaphor-audit-feature-map` as the engine. Add a maintenance reference covering the named
-target, allowed edit scope, complete coverage accounting, and outcomes:
+Keep `audit-feature-map` as the engine. Add a maintenance reference covering the named target,
+allowed edit scope, complete coverage accounting, and outcomes:
 
 - **Clean:** complete source/live coverage; no changes and no PR.
 - **Changed:** proven verification-document or owned-helper corrections; at most one draft PR.

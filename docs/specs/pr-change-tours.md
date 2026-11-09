@@ -8,10 +8,9 @@ implementation, and connects each slice to its specification and verification ev
 the generated Markdown delivery walkthrough. Reusable verification recipes remain in their owning
 repositories.
 
-Evolve `anaphor-explain-change`; retain its name and existing composition guidance. Use the Anaphor
-application for both local and hosted reading. Local preview is the default and requires neither
-authentication nor publication. Hosting is an explicitly requested operation using the same content
-and media.
+Evolve `walkthrough`; retain its name and existing composition guidance. Use the Anaphor application
+for both local and hosted reading. Local preview is the default and requires neither authentication
+nor publication. Hosting is an explicitly requested operation using the same content and media.
 
 This spec covers `/Users/danfrenette/code/anaphor` and `/Users/danfrenette/code/skills`. Product
 decisions below were agreed in the planning conversation. Proposed implementation boundaries and
@@ -29,11 +28,10 @@ participating PRs with complete base and head SHAs. Section paragraphs render as
 existing contract does not support local unauthenticated loading, embedded evidence media, or
 updates to existing tours.
 
-The skills repository currently requires durable Markdown walkthroughs in
-`anaphor-explain-change/SKILL.md`. Its composition reference already covers scenarios, decisions,
-source anchors, screenshots, recordings, and evidence limits. Verification receipts are a separate
-evidence record whose format can follow the project; feature recipes are reusable instructions
-rather than per-run reports.
+The skills repository currently requires durable Markdown walkthroughs in `walkthrough/SKILL.md`.
+Its composition reference already covers scenarios, decisions, source anchors, screenshots,
+recordings, and evidence limits. Verification receipts are a separate evidence record whose format
+can follow the project; feature recipes are reusable instructions rather than per-run reports.
 
 ## Reader experience
 
@@ -164,7 +162,7 @@ success, following the existing private-tour environment gates.
 
 ## Skill and delivery integration
 
-### T8 Evolve anaphor-explain-change
+### T8 Evolve walkthrough
 
 Keep the skill name. Replace its Markdown-output requirement with this authoring process:
 
