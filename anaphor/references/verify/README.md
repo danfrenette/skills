@@ -1,23 +1,16 @@
----
-name: anaphor-verify
-description:
-  Verify changed behavior with repository tests and real user flows, update affected feature
-  recipes, and report revision-bound evidence or blockers.
----
-
 # Anaphor: verify behavior
 
 Prove the accepted outcomes on the surface where they occur. Read
-[evidence and blockers](references/evidence.md) before running checks. Project setup owns
-provisioning; this skill owns execution and observed results.
+[evidence and blockers](evidence.md) before running checks. Project setup owns provisioning; this
+procedure owns execution and observed results.
 
 ## Select and prepare
 
 1. Read the criteria, changed paths, project verification instructions, and relevant feature map.
    Select all affected entry points and roles that change the outcome. Update altered recipes and
    remove obsolete ones. For missing coverage, use
-   [anaphor-create-feature-map](../anaphor-create-feature-map/SKILL.md); read its shared
-   [recipe format](../anaphor-create-feature-map/references/recipe.md) when editing an existing map.
+   [create-feature-map](../../../create-feature-map/SKILL.md); read its shared
+   [recipe format](../../../create-feature-map/references/recipe.md) when editing an existing map.
 2. Identify the delivered source revision and the running target's corresponding build. Record local
    changes when testing an uncommitted state. Check the target, health, identity/role, and required
    data using the documented read-only doctor procedure. Start only the services needed by these
@@ -59,8 +52,8 @@ provisioning; this skill owns execution and observed results.
 **Done:** every selected criterion has a passing observed result on the matching surface, affected
 recipes are current and executed, required checks pass, and evidence identifies the tested contents.
 Failed product checks return to implementation; unresolved required prerequisites stop the run.
-Full-map auditing is a separate [audit](../anaphor-audit-feature-map/SKILL.md).
+Full-map auditing is a separate [audit](../../../audit-feature-map/SKILL.md).
 
-After integrated verification in an Anaphor run, the coordinator calls
-[anaphor-reconcile](../anaphor-reconcile/SKILL.md) for affected project records. Standalone
+After integrated verification in an Anaphor run, the coordinator runs the
+[reconciliation procedure](../reconcile/README.md) for affected project records. Standalone
 verification returns evidence for that step; it does not silently publish product or tracker edits.

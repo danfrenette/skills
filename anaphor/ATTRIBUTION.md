@@ -51,7 +51,7 @@ These are authoring influences, not additional runtime dependencies.
 
 ## Language and framework review
 
-The [Principles axis](../anaphor-review/references/principles/README.md) contains original Anaphor
+The [Principles axis](../cross-examine/references/principles/README.md) contains original Anaphor
 review questions informed by thoughtbot's Ruby Science, Sandi Metz's writing, Kent C. Dodds's
 testing guidance, Matt Pocock's Total TypeScript, and Vercel's React and interface guidelines. Each
 profile links the specific primary sources and records its research date.
@@ -63,15 +63,15 @@ skill invocation. Author heuristics remain distinct from mandatory repository ru
 UI craft review references selected official skills from
 [Emil Kowalski](https://github.com/emilkowalski/skills) and
 [Jakub Krehel](https://github.com/jakubkrehel/skills), installed through the project lock. The
-[UI craft profile](../anaphor-review/references/principles/ui-craft.md) owns concern-specific
+[UI craft profile](../cross-examine/references/principles/ui-craft.md) owns concern-specific
 selection and read-only reporting adaptations. The conditional
-[motion profile](../anaphor-review/references/principles/motion.md) also uses the user-supplied
+[motion profile](../cross-examine/references/principles/motion.md) also uses the user-supplied
 `emil-animations` collection's recipes and techniques when available, recording the loaded source.
 That local collection is distinct from the public packages tracked in the lock; its writing guidance
 also remains an authoring influence.
 
 Visual-design checks draw on Adam Wathan and Steve Schoger's public Refactoring UI material, linked
-in its [conditional profile](../anaphor-review/references/principles/refactoring-ui.md). These
+in its [conditional profile](../cross-examine/references/principles/refactoring-ui.md). These
 sources are guidance, not bundled copies or independent delivery approvals.
 
 ## Deliberate Anaphor choices
@@ -121,7 +121,7 @@ The project-bootstrap and audit-maintenance branches additionally adapt pstack's
 `create-verification-skill` and `maintain-verification-skill`, inspected 2026-10-11 at revision
 `ea32d9562a1c9f077d7cdd3be53d07383eb18866` (version 0.15.18). Both skill files are unchanged from
 the pstack revision already attributed above. The
-[integration assessment](../../docs/research/pstack-verification-fit.md) records the comparison.
+[integration assessment](../docs/research/pstack-verification-fit.md) records the comparison.
 Anaphor proves every seeded recipe, preserves project-owned setup and host-independent locations,
 and uses its existing audit procedure for maintenance. Maintenance requires passing coverage before
 one draft corrections PR; scheduling and publication authorization belong to project instructions

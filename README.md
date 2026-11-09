@@ -7,13 +7,12 @@ convention, including OpenCode.
 ## Install
 
 ```bash
-npx skills@latest add danfrenette/skills --full-depth
+npx skills@latest add danfrenette/skills
 # or
-pnpm dlx skills add danfrenette/skills --full-depth
+pnpm dlx skills add danfrenette/skills
 ```
 
-Use `--full-depth` so discovery includes the grouped Anaphor skills as well as the standalone
-skills. The installer lets you choose which skills to install and select a target agent.
+The installer lets you choose which skills to install and select a target agent.
 
 ## Skills
 
@@ -30,14 +29,13 @@ skills. The installer lets you choose which skills to install and select a targe
 
 - **`today`:** Assembles an ephemeral daily plan of to-dos, goals, and starting prompts.
 
-These standalone skills live at `<skill-name>/SKILL.md`. The Anaphor family lives together at the
-repository root under `software-factory/<skill-name>/`.
+Every skill lives at `<skill-name>/SKILL.md`, including the five Anaphor skills.
 
 Invoke `anaphor`, `slow-down`, `ticket-writer`, `today`, and `yesterday` by name. These workflows
 use
 [explicit-invocation frontmatter](https://code.claude.com/docs/en/skills#control-who-invokes-a-skill)
 and the [Codex invocation policy](https://learn.chatgpt.com/docs/build-skills). Scheduled work and
-Anaphor's supporting skills remain discoverable so their callers can load them.
+Anaphor's standalone skills remain discoverable so their callers can load them.
 
 ## Anaphor
 
@@ -51,21 +49,19 @@ available and sequential review passes when capacity is limited.
 
 ### Install the family
 
-Install all nine skills together so their sibling references resolve:
+Install all five skills together so their sibling references resolve:
 
 ```bash
-npx skills@latest add danfrenette/skills --full-depth --skill \
-  anaphor anaphor-compare-designs anaphor-implement-slices anaphor-review \
-  anaphor-verify anaphor-create-feature-map anaphor-audit-feature-map \
-  anaphor-explain-change anaphor-reconcile
+npx skills@latest add danfrenette/skills --skill \
+  anaphor cross-examine walkthrough \
+  create-feature-map audit-feature-map
 npx skills@latest add mattpocock/skills --skill \
   tdd code-review handoff writing-for-agents domain-modeling
 ```
 
 Choose your target agent and installation scope when prompted. The first command installs from the
 repository's default branch; to try unmerged work, install from that branch's GitHub URL instead.
-The [family guide](software-factory/anaphor/README.md) explains source resolution and conditional
-dependencies.
+The [family guide](anaphor/README.md) explains source resolution and conditional dependencies.
 
 ### Start a run
 
@@ -105,34 +101,35 @@ recovery attempt, the run stops and reports the block before PR delivery.
 ### The skills
 
 - **[anaphor][anaphor]:** Own the accepted spec through verified delivery.
-- **[anaphor-compare-designs][compare-designs]:** Explore alternatives with distinct goals and
-  compare their constraints, callers, tradeoffs, and evidence.
-- **[anaphor-implement-slices][implement-slices]:** Sequence dependent slices and verify the
-  integrated result before dispatching dependent work.
-- **[anaphor-review][review]:** Run separate review perspectives with sourced language and interface
-  guidance.
-- **[anaphor-verify][verify]:** Execute tests and real flows, retain evidence, and distinguish
-  defects from unavailable prerequisites.
-- **[anaphor-create-feature-map][create-feature-map]:** Add missing verification recipes for
-  affected behavior, or bootstrap an explicitly requested project's initial coverage, and prove they
-  work.
-- **[anaphor-audit-feature-map][audit-feature-map]:** Audit an entire existing map when broader
-  coverage is explicitly needed; maintenance mode delivers proven corrections in one draft PR.
-- **[anaphor-explain-change][explain-change]:** Create or update an evidence-linked PR tour, using
-  the same local and hosted reader with captures where they help prove behavior.
+- **[cross-examine][cross-examine]:** Run separate review perspectives with sourced language and
+  interface guidance.
+- **[create-feature-map][create-feature-map]:** Add missing verification recipes for affected
+  behavior, or bootstrap an explicitly requested project's initial coverage, and prove they work.
+- **[audit-feature-map][audit-feature-map]:** Audit an entire existing map when broader coverage is
+  explicitly needed; maintenance mode delivers proven corrections in one draft PR.
+- **[walkthrough][walkthrough]:** Create or update an evidence-linked PR tour, using the same local
+  and hosted reader with captures where they help prove behavior.
 
-- **[anaphor-reconcile][reconcile]:** Update affected project records after accepted decisions or
+`anaphor` loads its delivery-only procedures from `anaphor/references/` when a run reaches them:
+
+- **[Compare designs][compare-designs]:** Explore alternatives with distinct goals and compare their
+  constraints, callers, tradeoffs, and evidence.
+- **[Implement slices][implement-slices]:** Sequence dependent slices and verify the integrated
+  result before dispatching dependent work.
+- **[Verify][verify]:** Execute tests and real flows, retain evidence, and distinguish defects from
+  unavailable prerequisites.
+- **[Reconcile][reconcile]:** Update affected project records after accepted decisions or
   verification, using clear human-facing language and linked evidence.
 
-[reconcile]: software-factory/anaphor-reconcile/SKILL.md
-[anaphor]: software-factory/anaphor/SKILL.md
-[compare-designs]: software-factory/anaphor-compare-designs/SKILL.md
-[implement-slices]: software-factory/anaphor-implement-slices/SKILL.md
-[review]: software-factory/anaphor-review/SKILL.md
-[verify]: software-factory/anaphor-verify/SKILL.md
-[create-feature-map]: software-factory/anaphor-create-feature-map/SKILL.md
-[audit-feature-map]: software-factory/anaphor-audit-feature-map/SKILL.md
-[explain-change]: software-factory/anaphor-explain-change/SKILL.md
+[reconcile]: anaphor/references/reconcile/README.md
+[anaphor]: anaphor/SKILL.md
+[compare-designs]: anaphor/references/compare-designs/README.md
+[implement-slices]: anaphor/references/implement-slices/README.md
+[cross-examine]: cross-examine/SKILL.md
+[verify]: anaphor/references/verify/README.md
+[create-feature-map]: create-feature-map/SKILL.md
+[audit-feature-map]: audit-feature-map/SKILL.md
+[walkthrough]: walkthrough/SKILL.md
 
 ### Review guidance loads by concern
 
@@ -147,7 +144,7 @@ Installed dependencies are available references, not instructions to load every 
 review. Optional local Emil skills must be installed separately on each machine; the public
 dependency lock does not reproduce that collection.
 
-[principles-profiles]: software-factory/anaphor-review/references/principles/README.md
+[principles-profiles]: cross-examine/references/principles/README.md
 
 ### Project setup and ongoing use
 
@@ -159,24 +156,22 @@ persistent tours, captures, and receipts outside implementation worktrees. Local
 on the current machine; external readers need requested hosting and appropriate owner access. Retain
 original tested revisions as PRs evolve and flag stale evidence before claiming readiness.
 
-For project onboarding, explicitly request `anaphor-create-feature-map` bootstrap with the owning
-repository and desired coverage. Between delivery runs, use `anaphor-audit-feature-map` maintenance
-mode. Its [maintenance contract][maintenance] defines run inputs, publication authorization, and
-project-owned periodic instructions. Ordinary spec delivery continues to verify affected behavior.
+For project onboarding, explicitly request `create-feature-map` bootstrap with the owning repository
+and desired coverage. Between delivery runs, use `audit-feature-map` maintenance mode. Its
+[maintenance contract][maintenance] defines run inputs, publication authorization, and project-owned
+periodic instructions. Ordinary spec delivery continues to verify affected behavior.
 
-[maintenance]: software-factory/anaphor-audit-feature-map/references/maintenance.md
+[maintenance]: audit-feature-map/references/maintenance.md
 
-For frequent development, keep a Git checkout on each machine and link the nine Anaphor directories
-into that harness's supported skill directory. Pulling the checkout then updates those links. If
-they still target the old nested location, point them at the matching directories under
-`software-factory/`. Copy installations need an explicit update or reinstall; the source checkout
-alone does not update them. External and user-supplied skills have their own installation lifecycle.
+For frequent development, keep a Git checkout on each machine and link the five Anaphor directories
+into that harness's supported skill directory. Pulling the checkout then updates those links. Copy
+installations need an explicit update or reinstall; the source checkout alone does not update them.
+External and user-supplied skills have their own installation lifecycle.
 
 Anaphor is inspired by **Lauren Tan's pstack** and **Matt Pocock's skills**.
-[Attribution](software-factory/anaphor/ATTRIBUTION.md) records sources, deliberate adaptations, and
-license notices. Structural checks have passed; end-to-end agent reliability has not yet been
-established through live implementation trials. Change-specific verification belongs in the PR that
-introduces it.
+[Attribution](anaphor/ATTRIBUTION.md) records sources, deliberate adaptations, and license notices.
+Structural checks have passed; end-to-end agent reliability has not yet been established through
+live implementation trials. Change-specific verification belongs in the PR that introduces it.
 
 ## Project dependencies
 

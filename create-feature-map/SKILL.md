@@ -1,11 +1,11 @@
 ---
-name: anaphor-create-feature-map
+name: create-feature-map
 description:
   Create or extend project-local verification recipes when changed behavior lacks a feature map or
   repeatable coverage, or bootstrap verification for an explicitly requested project onboarding.
 ---
 
-# Anaphor: create a feature map
+# Create a feature map
 
 Write a recipe a fresh agent can execute without the originating conversation. Read the
 [recipe format](references/recipe.md). Keep setup facts in project-owned instructions and map
@@ -31,7 +31,7 @@ delivery selects only affected behavior.
    limits. A library feature can be an executable public-interface test; browser instructions are
    required only for browser behavior.
 5. Run every new or changed recipe through launch, doctor, drive, capture, and cleanup. Apply
-   [evidence and blockers](../anaphor-verify/references/evidence.md) directly; do not recursively
+   [evidence and blockers](../anaphor/references/verify/evidence.md) directly; do not recursively
    invoke map creation. Confirm artifacts survive cleanup and repair instructions that fail.
 
 **Done:** each generated recipe was executed successfully against the intended behavior and can be

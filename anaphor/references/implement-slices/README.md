@@ -1,15 +1,8 @@
----
-name: anaphor-implement-slices
-description:
-  Implement an accepted spec as dependent, verifiable slices when one change spans multiple
-  independently reviewable behaviors.
----
-
 # Anaphor: implement slices
 
 Own the integration branch, requirement coverage, and the next ready slice. Read
-[agent handoffs](../anaphor/references/agents.md). A slice graph organizes execution of the accepted
-spec; product discovery remains upstream.
+[agent handoffs](../agents.md). A slice graph organizes execution of the accepted spec; product
+discovery remains upstream.
 
 ## Form the graph
 
@@ -37,22 +30,22 @@ has a known baseline.
    findings with source/revision pointers in a location accessible to the workers. Link the notes
    from the brief; workers check their applicability when the relevant source changes.
 2. Give each selected ready slice to one implementation owner using
-   [implementation](../anaphor/references/implementation.md). Default to sequential work in the
-   supplied checkout. Parallelize independent slices only when their writable code and runtime
-   resources are isolated and an owner can integrate them. Record ownership before dispatch. Each
-   isolated worker confirms its branch starts from the assigned integration revision; preserve
-   existing work and correct a mismatched baseline before implementation.
+   [implementation](../implementation.md). Default to sequential work in the supplied checkout.
+   Parallelize independent slices only when their writable code and runtime resources are isolated
+   and an owner can integrate them. Record ownership before dispatch. Each isolated worker confirms
+   its branch starts from the assigned integration revision; preserve existing work and correct a
+   mismatched baseline before implementation.
 3. Inspect the returned commits, review dispositions, and criterion evidence. Accept the slice only
    when its required checks pass. Keep incomplete or blocked slices off the ready frontier for
    dependent work.
 4. One integration owner lands accepted changes serially. Recheck the integration tip before each
    merge; if it advanced since the worker's baseline, reconcile against the current tip and inspect
    the combined diff. Resolve conflicts from both changes' intended behavior and requirements.
-   Verify affected accumulated behavior with [anaphor-verify](../anaphor-verify/SKILL.md). A result
-   on an isolated branch does not establish that the integrated state works. Update the graph with
-   the integration revisions and evidence before releasing dependents or selecting more work from
-   the ready frontier. A failed integration check returns to the implementation owner; dependent
-   slices remain blocked until it passes.
+   Verify affected accumulated behavior with the [verification procedure](../verify/README.md). A
+   result on an isolated branch does not establish that the integrated state works. Update the graph
+   with the integration revisions and evidence before releasing dependents or selecting more work
+   from the ready frontier. A failed integration check returns to the implementation owner;
+   dependent slices remain blocked until it passes.
 5. When all slices are integrated, return the original baselines, final revisions, and complete
    criterion coverage to the coordinator for whole-change review and delivery. Standalone use
    reports this integrated result; it does not silently open PRs.
@@ -62,4 +55,4 @@ has a known baseline.
 
 **Done:** every requirement has reviewed, verified implementation on the integration branch, with
 evidence applicable to the accumulated state. A required verification blocker stops dispatch under
-`anaphor-verify`.
+the verification procedure.

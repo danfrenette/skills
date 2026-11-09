@@ -1,11 +1,11 @@
 ---
-name: anaphor-review
+name: cross-examine
 description:
-  Review a change through separate Standards, Spec, and language-specific Principles agents, with
-  execution and risk passes for changed runtime behavior.
+  Cross-examine a change through separate Standards, Spec, and language-specific Principles
+  reviewers in fresh contexts, with execution and risk passes for changed runtime behavior.
 ---
 
-# Anaphor: review
+# Cross-examine
 
 Read Matt Pocock's installed `code-review` and [agent handoffs](../anaphor/references/agents.md)
 before dispatch. Supply the accepted spec and original baseline directly; use tracker discovery only

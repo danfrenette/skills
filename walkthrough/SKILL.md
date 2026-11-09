@@ -1,11 +1,12 @@
 ---
-name: anaphor-explain-change
+name: walkthrough
 description:
-  Create or update an evidence-linked Anaphor tour explaining a PR's value, vertical implementation
-  slices, and verification. Use for standalone PR explanations or Anaphor delivery.
+  Create or update an evidence-linked walkthrough of a PR, as an Anaphor tour explaining its value,
+  vertical implementation slices, and verification. Use for standalone PR explanations or Anaphor
+  delivery.
 ---
 
-# Anaphor: explain a change
+# Walkthrough
 
 Help the owner decide whether a PR is ready to merge. Every PR delivered through Anaphor gets a
 proportionate tour, including documentation and nonvisual changes. Use the same reader locally and
@@ -21,16 +22,16 @@ and requested hosting. The app's schema and CLI help own exact fields and comman
 
 Read the accepted spec, participating PRs, pinned changes, surrounding code, decisions, and
 receipts. Confirm ambiguous PR membership before including it. Record each repository's base/head
-and actual tested contents using [evidence records](../anaphor-verify/references/evidence.md),
+and actual tested contents using [evidence records](../anaphor/references/verify/evidence.md),
 including its rules for uncommitted source and evidence applicability.
 
 Follow [content composition](references/content-composition.md) to outline the business case and
 code-led vertical slices. Pair each behavioral claim with its criterion and receipt; preserve
 supplied results as supplied, with provenance. Select captures by the claim they prove using the
-project's harness. Obtain required missing observations through
-[anaphor-verify](../anaphor-verify/SKILL.md). A standalone tour may explain incomplete work, with
-failed, blocked, unrun, or unavailable evidence visible; those gaps prevent completed factory
-delivery.
+project's harness. Obtain required missing observations through the
+[verification procedure](../anaphor/references/verify/README.md). A standalone tour may explain
+incomplete work, with failed, blocked, unrun, or unavailable evidence visible; those gaps prevent
+completed factory delivery.
 
 **Done:** every primary slice has pinned source or an observed artifact, concise annotations, and
 supporting criteria, decisions, and evidence. The main path is readable with supporting details
