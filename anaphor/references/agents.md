@@ -24,7 +24,8 @@ boundaries, and completion requirements explicit in the handoff, and confirm eac
 the referenced artifacts.
 
 Disable conversation-history inheritance so reviewers assess source before the builder's defense.
-With Codex's `collaboration.spawn_agent`, set `fork_turns: "none"` explicitly; on other hosts, use
+With Codex's `collaboration.spawn_agent`, set `fork_turns: "none"` explicitly. OpenCode's `subagent`
+tool always starts a fresh child session, so record it as the isolation option. On other hosts, use
 the corresponding supported isolation option. A new agent identifier alone does not establish a
 fresh context. Record the dispatch option used. If isolation is unavailable, disclose reduced
 separation.
