@@ -17,15 +17,17 @@ Before dispatch, give each worker:
 - Required return: changes or findings, revision, commands/actions actually run, evidence locations,
   and unresolved gaps.
 
-Link shared specs, research notes, and evidence instead of copying their contents into every
-message. Keep the assigned role, write boundaries, and completion requirements explicit in the
-handoff, and confirm each worker can access the referenced artifacts.
+Before dispatch, save the spec, research notes, exploration findings, and evidence as files the
+worker can read. Link them, and name the sections each change needs, instead of copying their
+contents into every message or asking the worker to gather them again. Keep the assigned role, write
+boundaries, and completion requirements explicit in the handoff, and confirm each worker can access
+the referenced artifacts.
 
 Disable conversation-history inheritance so reviewers assess source before the builder's defense.
-With Codex's
-`collaboration.spawn_agent`, set `fork_turns: "none"` explicitly; on other hosts, use the
-corresponding supported isolation option. A new agent identifier alone does not establish a fresh
-context. Record the dispatch option used. If isolation is unavailable, disclose reduced separation.
+With Codex's `collaboration.spawn_agent`, set `fork_turns: "none"` explicitly; on other hosts, use
+the corresponding supported isolation option. A new agent identifier alone does not establish a
+fresh context. Record the dispatch option used. If isolation is unavailable, disclose reduced
+separation.
 
 Give reviewers accepted requirements, pinned source, applicable standards, and verification
 provenance. Keep the initial brief separate from the builder's design defense and other reviewers'
@@ -42,6 +44,10 @@ With limited concurrency, run roles sequentially in fresh contexts. With one con
 passes and disclose the reduced separation. Never describe role agreement as independent model
 consensus.
 
-The coordinator checks returned diffs and evidence. A handoff missing its revision or observed
-results is incomplete. Fixes return to the implementation owner, followed by affected review and
-verification.
+The coordinator checks returned diffs and evidence. A worker's report arrives when its turn ends;
+output from a job that outlives the turn never reaches the coordinator. A handoff missing its
+revision or observed results is incomplete. Return it to the same worker with the missing items.
+
+Route review fixes to a fresh implementation worker. Give it the findings, the change's diff, and
+the brief; it becomes the implementation owner for those fixes. Resume an existing implementation
+session only to finish work it left unfinished. Affected review and verification follow.
