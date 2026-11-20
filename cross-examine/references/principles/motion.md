@@ -5,15 +5,14 @@ a user-facing surface. A static spacing or copy change does not load this profil
 
 ## Select the depth
 
-Read installed `review-animations` for the review method. Also read the user-supplied
-`emil-animations` when available: it supplies the decision process and deeper references below.
-Resolve each skill through the host and record its actual path and version or access date. The
-project lock tracks the public `review-animations`; it does not represent the separate local
-`emil-animations` collection as an upstream package.
+Read installed `emil-ui-review` for the review method and `emil-animations` for the decision process
+and deeper references below. Resolve each skill through the host and record its actual path and
+version or access date. Both belong to the separately installed aiforui collection; the public
+project lock does not restore them.
 
 Load supporting material only for the changed concern:
 
-- A finding needs an exact threshold, easing curve, or cited rule: `review-animations/STANDARDS.md`.
+- A finding needs an exact threshold, easing curve, or cited rule: `emil-ui-review/STANDARDS.md`.
 - Modal, drawer, popover, tooltip, or toast behavior: the matching section of
   `emil-animations/patterns.md`, including paired backdrops and trigger-relative origins.
 - Icon swaps, press feedback, list exits, or first-render behavior: the matching lifecycle section
@@ -23,9 +22,9 @@ Load supporting material only for the changed concern:
 - Jitter, hover flicker, dropped frames, or theme-wide transitions: the performance and debugging
   sections of `techniques.md`. Read only the relevant implementation-stack branch.
 
-If the local collection is unavailable, use the public review skill's applicable standards and
-disclose the missing recipe coverage. A question neither source nor the local procedure can assess
-remains unassessed. Do not silently substitute another skill with a similar name.
+If the collection is unavailable, use the local checks below and disclose missing source and recipe
+coverage. A question the local procedure cannot assess remains unassessed. Do not silently
+substitute another skill with a similar name.
 
 ## Examine the changed interaction
 
@@ -55,11 +54,10 @@ remains unassessed. Do not silently substitute another skill with a similar name
 
 ## Resolve conflicting guidance
 
-The inspected local `emil-animations` disables all transitions under reduced motion, while
-`review-animations` permits gentler opacity/color effects. They also differ on whether an `ease-in`
-exit can be appropriate. Record the conflict when it affects a finding. Apply the project's
-documented accessibility and motion contract first; otherwise inspect the affected behavior and
-explain the proposed choice. Neither source's blanket rule alone establishes a blocker.
+When installed sources differ on reduced motion, exit easing, or another rule, record the conflict
+when it affects a finding. Apply the project's documented accessibility and motion contract first;
+otherwise inspect the affected behavior and explain the proposed choice. Neither source's blanket
+rule alone establishes a blocker.
 
 Recipe exceptions matter: icon swaps, continuous progress, and gesture-driven springs need their own
 rationale rather than a universal scale, curve, or duration. Use exact numbers only after checking
@@ -78,5 +76,6 @@ profile. A missing required browser check follows Anaphor's verification blocker
 review cannot stand in for that evidence. This procedure does not require an arbitrary waiting
 period before delivery to satisfy a source's suggestion to revisit the motion with fresh eyes.
 
-Local sources inspected 2026-10-04: `emil-animations/SKILL.md`, `patterns.md`, `techniques.md`, and
-`review-animations/SKILL.md`. These are routing and evidence adaptations, not copies of the recipes.
+Source routing updated 2026-11-20 for the official aiforui collection: `emil-animations/SKILL.md`,
+`patterns.md`, `techniques.md`, and `emil-ui-review/STANDARDS.md`. Inspect the installed rules for
+each review. These are routing and evidence adaptations, not copies of the recipes.

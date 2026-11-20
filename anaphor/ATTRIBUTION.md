@@ -60,15 +60,19 @@ The Vercel skills are optional referenced sources, not bundled copies. Local pro
 triggers, evidence requirements, and applicability limits so the review can expand beyond a bare
 skill invocation. Author heuristics remain distinct from mandatory repository rules.
 
-UI craft review references selected official skills from
-[Emil Kowalski](https://github.com/emilkowalski/skills) and
-[Jakub Krehel](https://github.com/jakubkrehel/skills), installed through the project lock. The
-[UI craft profile](../cross-examine/references/principles/ui-craft.md) owns concern-specific
+UI craft review now references
+[Emil Kowalski's aiforui collection](https://aiforui.dev/learn/skills), installed globally through
+its authenticated installer. The 2026-11-20 migration replaces the public `emilkowalski/skills` and
+`jakubkrehel/skills` UI dependencies previously recorded in the project lock. Those sources informed
+the original review profiles; this change preserves their historical provenance while routing
+ongoing reviews to the aiforui specialists.
+
+The [UI craft profile](../cross-examine/references/principles/ui-craft.md) owns concern-specific
 selection and read-only reporting adaptations. The conditional
-[motion profile](../cross-examine/references/principles/motion.md) also uses the user-supplied
-`emil-animations` collection's recipes and techniques when available, recording the loaded source.
-That local collection is distinct from the public packages tracked in the lock; its writing guidance
-also remains an authoring influence.
+[motion profile](../cross-examine/references/principles/motion.md) uses `emil-ui-review` and
+`emil-animations`, including the latter's recipes and techniques. Resolve the actual installed
+source and access date for each review. The public lock does not reproduce paid content; each
+machine installs the collection with its own account access.
 
 Visual-design checks draw on Adam Wathan and Steve Schoger's public Refactoring UI material, linked
 in its [conditional profile](../cross-examine/references/principles/refactoring-ui.md). These
@@ -101,10 +105,11 @@ owns user-requested continuation documents. Inspected 2026-10-04 and installed t
 lock. Its temporary document references existing artifacts; Anaphor retains draft-PR delivery and
 the inspected reviewer tour as distinct outputs.
 
-The local collection additionally supplies `emil-ui-review`, `emil-design-foundations`,
-`emil-color`, `emil-typography`, and `emil-performance` through UI-specific triggers.
-`emil-unslop-code` supplies a cross-language cleanup lens adapted to read-only findings. Resolve
-these user-provided sources through the host; they are not claimed as public lockfile entries.
+The aiforui collection supplies UI review, typography, color, performance, and other specialists
+through UI-specific triggers. The legacy local `emil-unslop-code` supplies an optional
+cross-language cleanup lens adapted to read-only findings; it is outside the current 28-skill
+aiforui catalog. Resolve these user-provided sources through the host; they are not public lockfile
+entries.
 
 ## Project-record reconciliation
 

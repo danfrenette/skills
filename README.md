@@ -132,14 +132,14 @@ recovery attempt, the run stops and reports the block before PR delivery.
 
 The Principles reviewer selects language profiles from changed behavior. Ruby/Rails draws on
 thoughtbot and Sandi Metz; JavaScript/TypeScript draws on Kent C. Dodds and Matt Pocock. Frontend
-changes can add Vercel guidance. UI concerns select Emil Kowalski and Jakub Krehel skills, with
-Refactoring UI for visual hierarchy and layout. Motion reaches component recipes and interruption
-checks only when relevant. The local `emil-unslop-code` lens can also apply outside UI.
+changes can add Vercel guidance. UI concerns select Emil Kowalski's aiforui skills, with Refactoring
+UI for visual hierarchy and layout. Motion reaches component recipes and interruption checks only
+when relevant. The legacy local `emil-unslop-code` lens can also apply outside UI when available.
 
 The [Principles profiles][principles-profiles] own these triggers and source-specific adaptations.
 Installed dependencies are available references, not instructions to load every skill into every
-review. Optional local Emil skills must be installed separately on each machine; the public
-dependency lock does not reproduce that collection.
+review. Install Emil's collection separately on each machine using the authenticated installer
+below; the public dependency lock does not reproduce that collection.
 
 [principles-profiles]: cross-examine/references/principles/README.md
 
@@ -192,6 +192,49 @@ development tool, not a required phase or transitive dependency of the Anaphor f
 The lock records sources and content hashes. With floating upstream references, restore can fetch
 newer content; review resulting lock changes before adoption. It is not a frozen package restore,
 and installing Anaphor elsewhere does not automatically install these dependencies.
+
+### Emil's aiforui collection
+
+UI design and review use [Emil's official collection](https://aiforui.dev/learn/skills). Install or
+update it globally with the token from your signed-in Skills page:
+
+```bash
+npx --yes @aiforui/install@0.1.7 --global --token="<your install token>"
+```
+
+Choose the agents and skills interactively, keeping their `emil-*` names. Add `--yes` to install all
+skills your account can access into every detected agent. Installer 0.1.7 downloads nested support
+files as well as Markdown. On 2026-11-20 this account had access to all 28 listed skills, including
+`emil-get-creative`. Rerun the installer to update; the pinned installer version does not pin the
+server-provided skill content.
+
+The paid collection stays in each agent's global skill directory, outside this public repository.
+Each machine needs its own authenticated installation. Keep account tokens and downloaded content
+out of Git; `skills experimental_install` restores only the public dependencies, and installing this
+repository's skills elsewhere does not grant access to Emil's collection. The generic skills CLI
+does not implement aiforui's token-gated installation protocol, so the public lock contains no
+placeholder GitHub sources or token-bearing URLs for these skills.
+
+The dependency migration replaces:
+
+- `better-accessibility` with `emil-touch-and-accessibility` and `emil-forms-and-inputs`.
+- `better-colors` with `emil-color`.
+- `better-layout` with the hierarchy and spacing guidance in `emil-ui-review`, plus
+  `emil-unslop-design` for design critique.
+- `better-typography` with `emil-typography`.
+- `better-ui` with `emil-ui-polish` and `emil-surfaces`.
+- `better-writing` with `emil-unslop-writing` and form-specific guidance in `emil-forms-and-inputs`.
+- The older public `emil-design-eng` with the matching component, form, interaction, and polish
+  specialists.
+- `review-animations` with `emil-ui-review` and `emil-animations`.
+- `web-design-guidelines` with `emil-ui-review` and the matching interface specialists.
+
+Matt's `prototype` remains for logic and state-model experiments; UI alternatives use
+`emil-prototype`. `writing-for-agents` remains for agent-facing documentation and retrospective
+work; `emil-writing-skills` covers skill authoring and `emil-design-system-docs` covers
+design-system documentation. Vercel's React performance skill remains for framework-specific checks.
+The Principles profiles own concern-specific routing and disclose missing optional source coverage.
+Legacy global skills outside this project's lock are managed separately.
 
 Management and review of this skillset belong to the external review mechanism. The source
 attribution records design provenance; this repository does not maintain an upstream-review loop.
