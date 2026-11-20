@@ -1,14 +1,15 @@
 ---
 name: yesterday
 description:
-  Assemble an ephemeral standup update from yesterday's Linear work, meetings, and Slack activity.
+  Assemble an ephemeral standup update from yesterday's Linear work, meetings, messages, and agent
+  sessions.
 disable-model-invocation: true
 ---
 
 # Yesterday
 
 Build a standup brief from the prior local workday. Linear is required and is the source of truth
-for assigned issue work. Google Calendar, Granola, and Slack are optional evidence sources.
+for assigned issue work. Every other source adds evidence when this machine and harness provide it.
 
 ## Reporting Window
 
@@ -20,33 +21,37 @@ for assigned issue work. Google Calendar, Granola, and Slack are optional eviden
 
 ## Gather Evidence
 
-1. Identify the authenticated Linear user.
-2. Find issues assigned to that user with activity in the reporting window. For each issue, gather
-   its identifier, title, status transitions, and every issue comment posted in the window,
-   including comments by other people.
-3. Query every issue assigned to the user in an in-development status (for example In Progress or In
-   Review), regardless of recent activity. Review each issue's recent comments and updates to check
-   that the status still looks accurate, and to surface activity that the movement-based query
-   missed. Flag issues that appear stale or finished but still sit in development.
-4. If Google Calendar tools are connected, list the user's events in the reporting window to
-   establish which meetings actually happened and who attended. Google Calendar is the schedule of
-   record.
-5. If Granola MCP tools are connected, read the note summaries for meetings in the window that
-   involved the user. Extract decisions, commitments, action items, and unresolved questions
-   relevant to the user's work. Granola is the record for transcribed huddles.
-6. If Slack MCP tools are connected, search the window for the user's work messages and read
-   relevant thread replies. Include only context that clarifies progress, feedback, decisions, or
-   blockers; do not turn the brief into a message log.
-7. Note each source that was unavailable or returned no evidence. Do not infer a meeting, huddle
-   outcome, or work item from missing data. The evidence is complete when every available source has
-   either contributed relevant context or been accounted for.
+1. Take an inventory of the source directory below. Run each source's probe and record it as
+   available, unavailable, or needing authorization.
+2. If Linear is unavailable, stop and tell the user that the brief needs Linear.
+3. For each available source, read its reference and follow it. Read references only for available
+   sources.
+
+The evidence is complete when every source is either gathered or recorded with its reason. Infer
+meetings, outcomes, and work items only from evidence that exists.
+
+### Source directory
+
+- **Linear** (required): available when Linear MCP tools or the `linear` CLI exist. Read
+  [Linear](references/linear.md).
+- **Google Workspace**: available when Google Calendar or Gmail tools exist. Read
+  [Google Workspace](references/google-workspace.md).
+- **Granola**: available when Granola MCP tools exist. Read [Granola](references/granola.md).
+- **Slack**: available when Slack MCP tools exist. Read [Slack](references/slack.md).
+- **Agent sessions**: always read the [session router](references/sessions/README.md), with the
+  reporting window as its session window. It probes each harness's local history.
+
+A tool that exists but asks for authorization counts as needing authorization: name it in the brief
+so the user can connect it.
 
 ## Brief And Interview
 
-Present a compact factual brief grouped by Linear issue, with `IDENTIFIER: title`, status movement,
-and relevant comment, meeting, or Slack context. Include in-development issues that had updates but
-no status movement, and flag any in-development issue whose status appears stale. Deduplicate
-evidence repeated across sources.
+Open the brief with one orienting line: the reporting date, the sources read, and the headline (for
+example, "Two issues moved; `ENG-123` waits on review"). Then present a compact factual brief
+grouped by Linear issue, with `IDENTIFIER: title`, status movement, and relevant meeting, message,
+or session context. Include in-development issues that had updates but no status movement, and flag
+any in-development issue whose status appears stale. List evidence that maps to no issue under
+`Untracked work`. Deduplicate evidence repeated across sources.
 
 If no assigned Linear issue changed, say explicitly:
 
@@ -66,18 +71,21 @@ Then ask only questions needed to resolve ambiguity in the evidence. Useful exam
   should the update mention it?
 - A meeting assigned you an action: did you complete it yesterday, or should it be framed as a
   follow-up?
+- The session "Auth refactor" stopped mid-migration: should the update mention it as in progress?
 
 Treat answers as the user's authoritative account. The interview is complete when every material
 ambiguity has an answer or is explicitly marked unresolved.
 
 ## Standup Update
 
-Draft concise past-tense bullets about work completed or advanced yesterday. Include issue
+Draft concise past-tense bullets about work completed or advanced yesterday. Write each bullet for a
+**cold reader**: a teammate at standup who knows the product but not the ticket. Use ASD-STE100
+Simplified Technical English: active voice, one idea per bullet, at most 25 words. Include issue
 identifiers and titles when applicable. Combine related ticket transitions into one outcome-oriented
 bullet; do not narrate raw status changes or repeat source text.
 
 Include a `Blockers` bullet only when there is a real blocker, risk, or unresolved dependency.
-Include untracked work as ordinary bullets. Keep the result ephemeral: do not create, update, or
-store anything in Linear, Slack, Granola, Google Calendar, files, or memory.
+Include untracked work as ordinary bullets. Keep the result ephemeral: treat every source as
+read-only, and keep the brief and bullets in this conversation.
 
 End by asking whether the user wants the bullets revised.

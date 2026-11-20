@@ -18,10 +18,6 @@ Google Calendar, Granola, Slack, and recent agent sessions are additional eviden
 2. The planning window is today from local midnight through 23:59:59. The session-mining window is
    the last 48 hours regardless of date.
 3. State the date and timezone before gathering evidence.
-4. Determine whether the current harness supports listing and reading past sessions. Load the
-   harness's own skill or manual for session history (for example, the skill that documents the
-   harness itself) and follow its mechanism. If the harness has no such mechanism, skip session
-   mining and note it as an unavailable source.
 
 ## Gather Evidence
 
@@ -37,25 +33,20 @@ Google Calendar, Granola, Slack, and recent agent sessions are additional eviden
 3. If Slack MCP tools are connected, search the last few days for threads where someone asked the
    user for something that appears unanswered. Include only actionable asks; do not turn the plan
    into a message log.
-4. If the harness supports session history (per the Planning Window step), mine recent sessions for
-   open threads:
-   - List sessions and keep those updated in the last 48 hours, across all projects. Exclude the
-     current session.
-   - For each candidate, read the tail of the conversation and judge from the last few messages
-     whether the session ended with unfinished work: a task left mid-way, an open question never
-     answered, or an explicit next step that never happened. Note the session's title, directory,
-     and what it was doing when it stopped.
-   - Skip sessions that clearly wrapped up.
+4. Read the [session router](references/sessions/README.md), with the session-mining window as its
+   session window. Keep sessions that ended with unfinished work: a task left mid-way, an open
+   question never answered, or an explicit next step that never happened. Skip sessions that clearly
+   wrapped up.
 5. Note each source that was unavailable or returned no evidence. Do not infer a task from missing
    data. The evidence is complete when every available source has either contributed relevant
    context or been accounted for.
 
 ## Brief And Interview
 
-Present a compact factual brief before asking anything. Group it as: `Open threads` (recent
-sessions, with titles), `Linear carryover` (identifiers, titles, next actions),
-`Meeting commitments`, and `Slack asks`. Deduplicate items repeated across sources, and note how
-much of the day is consumed by meetings.
+Present a compact factual brief before asking anything. Open with one orienting line: the date, how
+much of the day meetings consume, and how many open items surfaced. Then group the brief as:
+`Open threads` (recent sessions, with titles), `Linear carryover` (identifiers, titles, next
+actions), `Meeting commitments`, and `Slack asks`. Deduplicate items repeated across sources.
 
 If no source surfaced any open work, say so explicitly and ask what the user intends to work on
 today.
@@ -83,8 +74,10 @@ Draft the plan in three parts:
    day.
 2. **To-dos**: a prioritized list. Each item names its source (issue identifier, session title, or
    meeting) and gets a suggested starting prompt in its own fenced code block so the user can copy
-   it cleanly to the clipboard. Prompts should be specific enough to paste into a fresh session and
-   immediately orient the agent: state the goal, the relevant identifiers, and any constraints.
+   it cleanly to the clipboard. Write each prompt for a **cold reader**: the fresh session that
+   receives it knows nothing of today's evidence. Open with where the work stands, then state the
+   goal, the relevant identifiers, and any constraints. Use ASD-STE100 Simplified Technical English,
+   and the repo's glossary terms when it has a `GLOSSARY.md` or `GLOSSARY-MAP.md`.
 3. **Deferred**: items explicitly pushed to another day, listed in one line each so nothing silently
    disappears.
 
