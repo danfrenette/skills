@@ -21,8 +21,6 @@ The installer lets you choose which skills to install and select a target agent.
 - **`periodic-work`:** Runs daily, weekly, or monthly project instructions from an editable
   registry, with one subagent per project.
 
-- **`slow-down`:** Keeps agent edits sequential and explains how each one advances the session goal.
-
 - **`ticket-writer`:** Turns requirements, bugs, chores, or diffs into Linear tickets.
 
 - **`yesterday`:** Assembles an ephemeral standup update from the prior workday.
@@ -31,8 +29,7 @@ The installer lets you choose which skills to install and select a target agent.
 
 Every skill lives at `<skill-name>/SKILL.md`, including the five Anaphor skills.
 
-Invoke `anaphor`, `slow-down`, `ticket-writer`, `today`, and `yesterday` by name. These workflows
-use
+Invoke `anaphor`, `ticket-writer`, `today`, and `yesterday` by name. These workflows use
 [explicit-invocation frontmatter](https://code.claude.com/docs/en/skills#control-who-invokes-a-skill)
 and the [Codex invocation policy](https://learn.chatgpt.com/docs/build-skills). Scheduled work and
 Anaphor's standalone skills remain discoverable so their callers can load them.
