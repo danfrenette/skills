@@ -120,9 +120,8 @@ influence, not an additional runtime dependency. Existing MIT notices remain app
 The project-bootstrap and audit-maintenance branches additionally adapt pstack's
 `create-verification-skill` and `maintain-verification-skill`, inspected 2026-10-11 at revision
 `ea32d9562a1c9f077d7cdd3be53d07383eb18866` (version 0.15.18). Both skill files are unchanged from
-the pstack revision already attributed above. The
-[integration assessment](../docs/research/pstack-verification-fit.md) records the comparison.
-Anaphor proves every seeded recipe, preserves project-owned setup and host-independent locations,
-and uses its existing audit procedure for maintenance. Maintenance requires passing coverage before
-one draft corrections PR; scheduling and publication authorization belong to project instructions
-and the host. These sources remain authoring influences rather than new runtime dependencies.
+the pstack revision already attributed above. Anaphor proves every seeded recipe, preserves
+project-owned setup and host-independent locations, and uses its existing audit procedure for
+maintenance. Maintenance requires passing coverage before one draft corrections PR; scheduling and
+publication authorization belong to project instructions and the host. These sources remain
+authoring influences rather than new runtime dependencies.
