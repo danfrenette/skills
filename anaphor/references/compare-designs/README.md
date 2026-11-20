@@ -19,7 +19,8 @@ Settle one implementation decision while preserving the accepted product behavio
    from every candidate; alternatives cannot gain points by omitting requirements.
 4. Give each candidate a fresh context and the same baseline. For source-level designs, request
    interfaces, caller examples, and a traced scenario. Build the smallest experiment when source
-   reasoning cannot settle the question; read installed `prototype` for that disposable experiment.
+   reasoning cannot settle the question. For UI alternatives, read installed `emil-prototype`; for
+   logic or state-model experiments, read Matt Pocock's installed `prototype` and its `LOGIC.md`.
    Keep the accepted spec fixed and record the answer before returning to implementation. Isolate
    writable experiments; obtain runtime resources through project setup instructions only when
    needed.
