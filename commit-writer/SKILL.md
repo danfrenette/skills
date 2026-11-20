@@ -15,13 +15,16 @@ When asked to create a commit message:
    `git status`, or `git log` as appropriate.
 2. Analyze what the code accomplishes and infer the business logic.
 3. Create a concise commit message and description.
-4. Output escaped markdown via a code fence that can be copied directly into a terminal when useful.
+4. Reread the message as the cold reader and revise each line that needs this session to make sense.
+   The message is ready when the cold reader can tell what changed and why.
+5. Output escaped markdown via a code fence that can be copied directly into a terminal when useful.
 
 Rules for commit messages:
 
 - Observe repo commit conventions and mimic them (conventional vs non-conventional, etc.)
 - Use conventional commit formatting as a default.
-- Sacrifice grammar for the sake of concision.
+- Write for a **cold reader**: a future contributor reading `git log` with none of this session's
+  context.
 - Make reasonable assumptions about business logic, or ask questions if unclear.
 
 ## Default Commit Message Structure
@@ -38,7 +41,9 @@ Valid types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`
 `revert`.
 
 Scope should identify a specific code area or module (e.g., `parser`, `auth`), a technical concern
-(e.g., `deps`, `config`), or a business domain (e.g., `checkout`, `billing`).
+(e.g., `deps`, `config`), or a business domain (e.g., `checkout`, `billing`). Name business domains
+with the project's glossary terms when one exists: `GLOSSARY.md`, or the glossary that
+`GLOSSARY-MAP.md` points to.
 
 Formatting:
 
@@ -63,8 +68,8 @@ commit actually does.
 - Short, clear, and meaningful
 - Succinct, but not terse
 - Imperative mood, present tense, active voice
-- Self-contained: don't assume access to issue trackers, conversations, or PRs (e.g., avoid
-  `fix issue #123` without describing the fix)
+- Self-contained: readable by the cold reader without the issue tracker, conversation, or PR (e.g.,
+  `fix issue #123` fails this; describe the fix instead)
 - Focused on what the change accomplishes for the application or codebase
 
 ### Avoid subject lines that are:
@@ -79,6 +84,9 @@ commit actually does.
 
 The body is an escalation path for context that the subject line can't carry. Use it when the "what"
 is clear from the subject but the "why" isn't obvious.
+
+Write the body in ASD-STE100 Simplified Technical English: active voice, one idea per sentence, at
+most 25 words per sentence. Keep the body short by cutting ideas, not grammar.
 
 When to include a body:
 
@@ -108,9 +116,9 @@ understand why the change was made.
 ```text
 fix(checkout): prevent timeout by capping concurrent payment calls
 
-Checkout requests were timing out under load because each cart
-item opened its own payment-provider connection. Cap concurrency
-at 5 to stay within the provider's rate limits.
+Under load, checkout requests timed out because each cart item
+opened its own payment-provider connection. Cap concurrent payment
+calls at 5 to stay within the provider's rate limits.
 
 Refs: ENG-1234
 ```

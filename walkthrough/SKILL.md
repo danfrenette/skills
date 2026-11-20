@@ -12,8 +12,9 @@ Help the owner decide whether a PR is ready to merge. Every PR delivered through
 proportionate tour, including documentation and nonvisual changes. Use the same reader locally and
 hosted; an inspected local preview satisfies delivery. Hosting requires an explicit request.
 
-Read Matt Pocock's installed writing-for-agents skill before authoring. Use the project's glossary
-for domain terms. If the dependency is missing, report it before drafting. Read
+Read Matt Pocock's installed writing-for-agents skill before authoring. Name domain concepts with
+the project's glossary terms: `GLOSSARY.md`, or the glossary that `GLOSSARY-MAP.md` points to for
+the changed code. If the dependency is missing, report it before drafting. Read
 [content composition](references/content-composition.md) for narrative decisions and
 [Anaphor integration](references/anaphor-integration.md) for local preparation, preview, updates,
 and requested hosting. The app's schema and CLI help own exact fields and command syntax.

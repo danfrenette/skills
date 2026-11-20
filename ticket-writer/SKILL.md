@@ -12,12 +12,14 @@ When asked to create a Linear ticket:
 
 1. Review the changes or requirements provided.
 2. Determine ticket type: Feature, Bug, or Chore.
-3. Create the ticket with the first available tool, in order of preference:
+3. Draft the ticket, then reread it as the cold reader described in [Writing](#writing). The draft
+   is ready when every sentence makes sense without this conversation.
+4. Create the ticket with the first available tool, in order of preference:
    1. Linear MCP tools, if available.
    2. The `linear` CLI (check availability with `linear issue list --help`), using
       `linear issue create` with appropriate flags.
    3. Otherwise, output escaped markdown via a code fence that can be copied directly into Linear.
-4. When a ticket is created in Linear, return the issue ID or URL.
+5. When a ticket is created in Linear, return the issue ID or URL.
 
 ## Linear CLI
 
@@ -39,6 +41,17 @@ linear issue create \
 ```
 
 For complex queries not supported by the CLI, use the GraphQL API directly only when necessary.
+
+## Writing
+
+Write for a **cold reader**: a teammate who opens the ticket weeks later from a backlog list, with
+none of this conversation's context.
+
+- Write sentences in ASD-STE100 Simplified Technical English: active voice, one idea per sentence,
+  at most 20 words per instruction and 25 per description. Keep tickets short by cutting ideas, not
+  grammar.
+- Use one term for each concept, taken from the project's glossary when one exists: `GLOSSARY.md`,
+  or the glossary that `GLOSSARY-MAP.md` points to for the affected area.
 
 ## Titles
 
@@ -144,7 +157,6 @@ What does this improve? What problem are we solving?
 
 - Follow the chosen format religiously with no deviations.
 - Be judicious about extra content.
-- Sacrifice grammar for concision.
 - When the ticket originates from code changes, reference the branch, PR, or commits in the Context
   section so readers can trace the ticket to its origin.
 - Only set priority, estimate, or labels when the input gives you a basis for them; otherwise omit

@@ -45,9 +45,10 @@ reader's design-system disclosures. Keep consequential failures and missing requ
 visible at the decision boundary. Supporting detail remains available; disclosure changes its
 prominence, not its provenance or completeness.
 
-Review the flow once with supporting details closed. Remove prose that repeats an annotation, code,
-or capture. A slice without useful code may lead with its observed artifact or short explanation;
-nonvisual changes still need evidence and a clear connection to the changed source.
+Review the flow once with supporting details closed, as a **cold reader** who knows the product but
+was not in the session. Remove prose that repeats an annotation, code, or capture. A slice without
+useful code may lead with its observed artifact or short explanation; nonvisual changes still need
+evidence and a clear connection to the changed source.
 
 ## Select visuals by the question
 
